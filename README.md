@@ -2,7 +2,9 @@
 
 Every penalty the Centers for Medicare & Medicaid Services (CMS) has published against a US nursing home, counted against the homes it inspected, and kept after CMS stops publishing it.
 
-CMS publishes nursing-home penalties as a rolling three-year window. A fine older than that disappears from the public file, and CMS's archive page offers no machine-readable way back to it. This project keeps each monthly edition from 2026-09-18 onward, so a penalty that ages out stays visible here. Anything from before the first capture can't be recovered.
+CMS publishes nursing-home penalties as a rolling three-year window. A fine older than that disappears from the current file. This project keeps each monthly edition from 2026-09-18 onward, so a penalty that ages out stays visible here.
+
+**Correction, 2026-09-19: older history *can* be recovered.** This README used to say it could not. CMS keeps 97 monthly snapshot ZIPs of the whole nursing-home dataset, listed as JSON at `data.cms.gov/provider-data/api/1/archive/aggregate/theme/nursing-homes/relative`. They run from 2019-01-17 to 2026-08-26, and the oldest one contains `Penalties_Download.csv` and `HealthDeficiencies_Download.csv`. So penalties back to about 2016, and the citations this page says are not archived, are both obtainable now. What makes Docket worth building is not that it alone keeps the history. It's that no consumer tool shows it: ProPublica's Nursing Home Inspect, LTCCC's NursingHome411, The Care Ratings and Care Compare all stop at about three years. **The next step is to backfill from CMS's archive**, not to wait for weekly captures to accumulate.
 
 ## Usage
 
@@ -52,4 +54,4 @@ Seven tests drive the rendered page in headless Chromium and check it against `d
 
 ## Status
 
-Private, unpublished and not tagged for production. The name "Docket" hasn't been checked against existing tools, and publishing requires going through `PRE-PUBLIC-CHECKLIST.md` in the workstation repository first.
+Private, unpublished and not tagged for production. **Checked against existing tools on 2026-09-19.** Every consumer tool found (ProPublica, NursingHome411, The Care Ratings, Care Compare) shows about three years, so multi-year penalty history is a real gap. See the correction at the top: that history is buildable from CMS's own archive. The name "Docket" itself hasn't been searched, and publishing requires going through `PRE-PUBLIC-CHECKLIST.md` in the workstation repository first.
