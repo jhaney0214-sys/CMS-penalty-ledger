@@ -237,14 +237,15 @@ function facilityView(f) {
   }
 
   html += "<h3>Penalties CMS no longer publishes</h3>";
-  if (m.captures.length < 2) {
+  const from = m.history ? m.history.first : m.captures[0];
+  if (m.captures.length < 2 && !m.history) {
     html += "<p>Nothing to compare yet. This archive holds one capture, from " + esc(m.captures[0]) +
       ", and a dropped penalty only shows up once a later capture no longer lists it. That is not the same as none having been dropped.</p>";
   } else if (!f.dropped.length) {
-    html += "<p>None across the " + m.captures.length + " captures held, " + esc(m.captures[0]) +
-      " to " + esc(m.capture) + ".</p>";
+    html += "<p>None in any CMS edition from " + esc(from) + " to " + esc(m.capture) +
+      ". Penalties from before the earliest edition's window are outside this record, not absent from the facility’s history.</p>";
   } else {
-    html += "<p>CMS listed these in an earlier edition and has since stopped. This archive is now the only place they appear.</p>" +
+    html += "<p>CMS listed these in an earlier edition and has since stopped. They have aged out of its window; that is not a reversal. CMS’s current file no longer shows them.</p>" +
       table([["Kind"], ["Penalty date"], ["Amount or days", 1], ["Last listed"]],
         f.dropped.map((x) => [esc(x.kind), esc(x.date),
           x.kind === "Fine" ? money(x.value) : count(x.value) + " days", esc(x.lastSeen)]));
@@ -269,7 +270,12 @@ function basis() {
     note("CMS stamps each monthly edition with a processing date. The capture date is when this archive fetched it.") +
     ". Penalty dates in it run " + esc(m.window[0]) + " to " + esc(m.window[1]) +
     ". The start of that range is where CMS’s rolling three-year window opens, not where any facility’s history begins.</p>" +
-    "<p>CMS drops a penalty once it ages out of that window. This archive has kept a copy of each monthly edition since 2026-09-18, so from then on a dropped penalty stays visible here. Nothing from before the first capture can be recovered.</p>" +
+    (m.history
+      ? "<p>CMS drops a penalty once it ages out of that window, but CMS also keeps an archive of its past monthly editions. " +
+        m.history.editions + " of them, from " + esc(m.history.first) + " to " + esc(m.history.last) +
+        ", were read to rebuild every penalty published in that time, so a dropped penalty stays visible here." +
+        note("Penalty dates in the earliest edition go back to January 2016. Anything older is outside every archived edition.") + "</p>"
+      : "<p>CMS drops a penalty once it ages out of that window. This archive has kept a copy of each monthly edition since 2026-09-18, so from then on a dropped penalty stays visible here.</p>") +
     (m.not_kept.length ? "<p>Not held: " + esc(m.not_kept.join(" and ")) +
       ". They are too large to keep monthly, so this page reports inspection counts and never names a citation.</p>" : "") +
     "<p>Everything on this page is a static file. Searches run in your browser and are sent nowhere.</p>";

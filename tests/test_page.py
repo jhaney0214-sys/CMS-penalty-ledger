@@ -101,10 +101,20 @@ class TestPage(unittest.TestCase):
 
     def test_one_capture_is_nothing_to_compare_not_nothing_dropped(self):
         text = self.view("ccn=015019")
-        if len(META["captures"]) < 2:
+        if len(META["captures"]) < 2 and not META.get("history"):
             self.assertIn("Nothing to compare yet", text)
         else:
             self.assertNotIn("Nothing to compare yet", text)
+
+    def test_a_penalty_cms_dropped_is_shown_as_aged_out_not_reversed(self):
+        """Merry Wood's 2019-03-02 fine left CMS's file after 2022-03-27; the
+        rebuilt history is the only place it still appears."""
+        if not META.get("history"):
+            self.skipTest("no rebuilt history in docs/data")
+        text = self.view("ccn=015019")
+        self.assertIn("that is not a reversal", text)
+        self.assertIn("2019-03-02", text)
+        self.assertIn("$78,676", text)
 
     def test_an_unknown_ccn_is_not_an_empty_record(self):
         text = self.view("ccn=999999")

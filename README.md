@@ -4,7 +4,7 @@ Every penalty the Centers for Medicare & Medicaid Services (CMS) has published a
 
 CMS publishes nursing-home penalties as a rolling three-year window. A fine older than that disappears from the current file. This project keeps each monthly edition from 2026-09-18 onward, so a penalty that ages out stays visible here.
 
-**Correction, 2026-09-19: older history *can* be recovered.** This README used to say it could not. CMS keeps 97 monthly snapshot ZIPs of the whole nursing-home dataset, listed as JSON at `data.cms.gov/provider-data/api/1/archive/aggregate/theme/nursing-homes/relative`. They run from 2019-01-17 to 2026-08-26, and the oldest one contains `Penalties_Download.csv` and `HealthDeficiencies_Download.csv`. So penalties back to about 2016, and the citations this page says are not archived, are both obtainable now. What makes Docket worth building is not that it alone keeps the history. It's that no consumer tool shows it: ProPublica's Nursing Home Inspect, LTCCC's NursingHome411, The Care Ratings and Care Compare all stop at about three years. **The next step is to backfill from CMS's archive**, not to wait for weekly captures to accumulate.
+**Correction, 2026-09-19: older history *can* be recovered.** This README used to say it could not. CMS keeps 97 monthly snapshot ZIPs of the whole nursing-home dataset, listed as JSON at `data.cms.gov/provider-data/api/1/archive/aggregate/theme/nursing-homes/relative`. They run from 2019-01-17 to 2026-08-26, and the oldest one contains `Penalties_Download.csv` and `HealthDeficiencies_Download.csv`. So penalties back to about 2016, and the citations this page says are not archived, are both obtainable now. What makes Docket worth building is not that it alone keeps the history. It's that no consumer tool shows it: ProPublica's Nursing Home Inspect, LTCCC's NursingHome411, The Care Ratings and Care Compare all stop at about three years. **Backfilled 2026-09-19.** `tools/backfill_cms.py` in the workstation read 83 distinct editions and rebuilt 83,164 penalties. 67,468 of them CMS no longer publishes, and each facility's page now lists those under "Penalties CMS no longer publishes", with the edition that last listed them. Penalties whose amount CMS revised while listing them (29,545, often cut by 35%) are shown once, at the current amount.
 
 ## Usage
 
@@ -29,6 +29,7 @@ Then open `http://127.0.0.1:8765/`. The page supports these links:
 | Step | Command (from the workstation root) |
 | --- | --- |
 | Capture a CMS edition | `python tools/snapshot_cms.py` |
+| Rebuild history since 2019-01 from CMS's own archive | `python tools/backfill_cms.py` |
 | Rebuild this page's data | `python tools/cms_export.py --out CMS-penalty-ledger/docs/data` |
 | Both, unattended | Windows task *CMS nursing-home capture*, weekly, runs `tools/cms_scheduled.py` |
 
@@ -50,7 +51,7 @@ The exporter computes everything through `tools/cms_ledger.py`, the command-line
 python tests/test_page.py
 ```
 
-Seven tests drive the rendered page in headless Chromium and check it against `docs/data/meta.json`, so they stay valid as the captures change. They need Playwright (`pip install playwright`, then `python -m playwright install chromium`) and skip cleanly without it. The exporter's own tests are in the workstation repository, at `tools/tests/test_cms_export.py`.
+Eight tests drive the rendered page in headless Chromium and check it against `docs/data/meta.json`, so they stay valid as the captures change. They need Playwright (`pip install playwright`, then `python -m playwright install chromium`) and skip cleanly without it. The exporter's own tests are in the workstation repository, at `tools/tests/test_cms_export.py`.
 
 ## Status
 
