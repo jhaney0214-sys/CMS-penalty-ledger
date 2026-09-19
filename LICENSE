@@ -1,0 +1,17 @@
+Copyright (c) 2026 Jhane. All rights reserved.
+
+This software is proprietary and is not licensed for redistribution, modification
+or commercial use by others.
+
+Deliberately not an open-source licence, for the same reason as the author's
+other projects: this was built as a side project with the intention that it
+might eventually earn money, and a permissive licence would let anyone stand up
+a competing service from the same code. If that stops being the goal, MIT is a
+one-file change.
+
+This notice covers the code. It does not cover the data in docs/data/, which is
+generated from files the Centers for Medicare & Medicaid Services publishes in
+its Provider Data Catalog (data.cms.gov), including its archive of past monthly
+editions. Those facts belong to CMS's public record rather than to this project,
+and nothing in this notice grants or restricts rights over them. The data files
+are included because the page in docs/ is static and reads them directly.

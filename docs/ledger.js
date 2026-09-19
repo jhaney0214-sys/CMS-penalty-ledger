@@ -1,4 +1,4 @@
-/* Docket: reads the data tools/cms_export.py writes, and nothing else.
+/* Nursing Home Penalty Ledger: reads the data tools/cms_export.py writes, and nothing else.
  *
  * No number is computed here that the exporter could have computed instead,
  * and no refusal is worded here: the sentences come from meta.text, which is
@@ -6,7 +6,7 @@
  */
 "use strict";
 
-const Docket = (() => {
+const Ledger = (() => {
   let meta = null, index = null;
   const stateCache = {};
 
@@ -20,14 +20,14 @@ const Docket = (() => {
     base = base || "data/";
     [meta, index] = await Promise.all([getJSON(base + "meta.json"),
                                        getJSON(base + "index.json")]);
-    Docket.base = base;
+    Ledger.base = base;
     return meta;
   }
 
   async function state(code) {
     code = String(code).toUpperCase();
     if (!stateCache[code]) {
-      stateCache[code] = getJSON(Docket.base + "states/" + code + ".json");
+      stateCache[code] = getJSON(Ledger.base + "states/" + code + ".json");
     }
     return stateCache[code];
   }
@@ -103,4 +103,4 @@ const Docket = (() => {
            get meta() { return meta; } };
 })();
 
-if (typeof module !== "undefined") module.exports = Docket;
+if (typeof module !== "undefined") module.exports = Ledger;

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Docket</title>
+<title>Nursing Home Penalty Ledger</title>
 <meta name="description" content="Every penalty CMS has published against a US nursing home, with the denominator, and the penalties CMS has since stopped publishing.">
 <style>
 /* Ledger house style, inlined. Webfonts deliberately not loaded: a search on
@@ -105,7 +105,7 @@ ol.results .where { color:var(--ink-muted); font-size:.9em; }
 <body>
 <div class="page">
 
-<h1>Docket</h1>
+<h1>Nursing Home Penalty Ledger</h1>
 <p>Every penalty the Centers for Medicare &amp; Medicaid Services (CMS) has published against a US nursing home, counted against the homes it inspected, and kept after CMS stops publishing it.</p>
 
 <form id="find" role="search">
@@ -126,7 +126,7 @@ ol.results .where { color:var(--ink-muted); font-size:.9em; }
 <div id="basis"><p class="muted">Loading.</p></div>
 </div>
 
-<script src="docket.js"></script>
+<script src="ledger.js"></script>
 <script>
 "use strict";
 const $ = (s) => document.querySelector(s);
@@ -167,7 +167,7 @@ function table(head, rows) {
 /* ---- views ----------------------------------------------------------- */
 
 function home() {
-  const m = Docket.meta;
+  const m = Ledger.meta;
   const clean = m.surveyed - m.penalised;
   return "<p>Search for a facility above, or choose a state for its totals.</p>" +
     '<p><span class="stat">' + count(m.penalised) + " of " + count(m.surveyed) + "</span>" +
@@ -199,17 +199,17 @@ function results(found, q, st) {
 }
 
 function stateBlock(st) {
-  const s = Docket.meta.states[st];
+  const s = Ledger.meta.states[st];
   if (!s) return "";
   return "<h2>" + esc(stateName(st)) + "</h2>" +
     "<p>" + count(s.penalised) + " of " + count(s.surveyed) + " inspected facilities carry at least one penalty. " +
-    "The other " + count(s.not_penalised) + " have no penalty row. " + esc(Docket.meta.text.none_penalised) + "</p>" +
+    "The other " + count(s.not_penalised) + " have no penalty row. " + esc(Ledger.meta.text.none_penalised) + "</p>" +
     "<p>" + plural(s.fines, "fine", "fines") + ", " + money(s.fine_total) + " in total, and " +
     plural(s.denials, "payment denial", "payment denials") + '.</p><div id="largest"></div>';
 }
 
 async function largest(st) {
-  const top = await Docket.largestFines(st, 10);
+  const top = await Ledger.largestFines(st, 10);
   const el = $("#largest");
   if (!el || !top.length) return;
   el.innerHTML = "<h3>Largest fine totals</h3>" + table([["Facility"], ["Fines", 1]],
@@ -217,7 +217,7 @@ async function largest(st) {
 }
 
 function facilityView(f) {
-  const m = Docket.meta;
+  const m = Ledger.meta;
   let html = "<h2>" + esc(f.name) + "</h2><p class=\"muted\">" + esc(f.city) + ", " +
     esc(stateName(f.state)) + ", CCN " + esc(f.ccn) + "</p>";
 
@@ -265,7 +265,7 @@ function facilityView(f) {
 const n = (v) => v == null ? "not given" : count(v);
 
 function basis() {
-  const m = Docket.meta;
+  const m = Ledger.meta;
   return "<p>Captured " + esc(m.capture) + " from CMS’s Provider Data Catalog, edition " + esc(m.edition) +
     note("CMS stamps each monthly edition with a processing date. The capture date is when this archive fetched it.") +
     ". Penalty dates in it run " + esc(m.window[0]) + " to " + esc(m.window[1]) +
@@ -288,14 +288,14 @@ async function route() {
   const h = new URLSearchParams(location.hash.slice(1));
   try {
     if (h.get("ccn")) {
-      const f = await Docket.facility(h.get("ccn"));
+      const f = await Ledger.facility(h.get("ccn"));
       out.innerHTML = f ? facilityView(f)
-        : "<p>No facility with CCN <strong>" + esc(Docket.normaliseCcn(h.get("ccn"))) +
+        : "<p>No facility with CCN <strong>" + esc(Ledger.normaliseCcn(h.get("ccn"))) +
           "</strong> is in this capture. That is different from a facility with no penalties: CMS’s files do not list this number at all.</p>";
     } else if (h.get("q") || h.get("state")) {
       const q = h.get("q") || "", st = h.get("state") || "";
       $("#q").value = q; $("#st").value = st;
-      out.innerHTML = results(Docket.search(q, st, 50), q, st);
+      out.innerHTML = results(Ledger.search(q, st, 50), q, st);
       if (st && !q) largest(st);
     } else {
       out.innerHTML = home();
@@ -315,7 +315,7 @@ $("#find").addEventListener("submit", (e) => {
 });
 window.addEventListener("hashchange", route);
 
-Docket.load("data/").then((m) => {
+Ledger.load("data/").then((m) => {
   for (const code of Object.keys(m.states).sort((a, b) => stateName(a).localeCompare(stateName(b)))) {
     const o = document.createElement("option");
     o.value = code; o.textContent = stateName(code);
