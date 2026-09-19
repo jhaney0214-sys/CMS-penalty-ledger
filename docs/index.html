@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Docket</title>
+<meta name="description" content="Every penalty CMS has published against a US nursing home, with the denominator, and the penalties CMS has since stopped publishing.">
+<style>
+/* Ledger house style, inlined. Webfonts deliberately not loaded: a search on
+   this page should reach nobody, so the fallback stacks carry it. */
+:root {
+  --paper:#FCFCFA; --paper-sunk:#F4F5F2; --ink:#191C1A; --ink-muted:#5F645F;
+  --rule:#DCE0DA; --accent:#1F6F5C; --accent-sunk:#E9F1ED;
+  --font-display:'Source Serif 4', Georgia, 'Times New Roman', serif;
+  --font-body:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono:'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  --measure:68ch; --note-width:17ch; --note-gap:3ch;
+  --s1:.25rem; --s2:.5rem; --s3:.75rem; --s4:1rem; --s5:1.5rem; --s6:2.5rem; --s7:4rem; --s8:6rem;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --paper:#121413; --paper-sunk:#1A1D1B; --ink:#E8EAE5; --ink-muted:#9AA098;
+          --rule:#2C302D; --accent:#6FBFA3; --accent-sunk:#182420; }
+}
+*, *::before, *::after { box-sizing:border-box; }
+html { -webkit-text-size-adjust:100%; }
+body { margin:0; padding:var(--s6) var(--s5) var(--s8); background:var(--paper); color:var(--ink);
+  font-family:var(--font-body); font-size:clamp(1.0625rem, 1rem + .25vw, 1.1875rem); line-height:1.6;
+  font-feature-settings:'kern' 1, 'liga' 1; counter-reset:sidenote; }
+/* One wrapper at body size, not `body > *`: a ch measure on an h1 is measured
+   in the h1's own, much wider, characters and overran the viewport. */
+.page { max-width:var(--measure); margin:0 auto; }
+h1, h2, h3 { font-family:var(--font-display); font-weight:600; color:var(--ink); text-wrap:balance; margin:0 0 var(--s4); }
+h1 { font-size:clamp(2rem, 1.55rem + 1.9vw, 3rem); line-height:1.08; letter-spacing:-.021em; margin-bottom:var(--s3); }
+h2 { font-size:clamp(1.5rem, 1.34rem + .72vw, 1.95rem); line-height:1.16; letter-spacing:-.014em;
+  margin-top:var(--s7); padding-bottom:var(--s3); border-bottom:1px solid var(--rule); }
+h3 { font-size:1.25rem; line-height:1.3; letter-spacing:-.008em; margin-top:var(--s6); }
+p { margin:0 0 var(--s4); }
+h1 + p { font-size:1.15em; line-height:1.5; color:var(--ink-muted); margin-bottom:var(--s6); }
+.sn { counter-increment:sidenote; }
+.sn-toggle { position:absolute; width:1px; height:1px; opacity:0; clip-path:inset(50%); }
+.sn-mark { font-size:.68em; font-weight:600; color:var(--accent); vertical-align:super; line-height:0; padding:0 .12em; cursor:pointer; }
+.sn-mark::after { content:counter(sidenote); }
+.sn-toggle:focus-visible + .sn-mark { outline:2px solid var(--accent); outline-offset:2px; border-radius:2px; }
+.sn-body { float:right; clear:right; width:var(--note-width); margin:.4rem calc(-1 * (var(--note-width) + var(--note-gap))) var(--s4) 0;
+  font-size:.8125rem; line-height:1.45; color:var(--ink-muted); }
+.sn-body::before { content:counter(sidenote); font-weight:600; color:var(--accent); font-size:.85em; vertical-align:super; line-height:0; margin-right:.35em; }
+@media (max-width:78rem) {
+  .sn-mark { background:var(--accent-sunk); border-radius:2px; padding:.1em .32em; vertical-align:baseline; line-height:normal; font-size:.72em; }
+  .sn-body { display:none; }
+  .sn-toggle:checked ~ .sn-body { display:block; float:none; width:auto; margin:var(--s3) 0 var(--s4); padding-left:var(--s4); border-left:2px solid var(--accent); }
+}
+a { color:var(--accent); text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:.18em;
+  text-decoration-color:color-mix(in srgb, var(--accent) 40%, transparent); }
+a:hover { text-decoration-color:var(--accent); }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible { outline:2px solid var(--accent); outline-offset:3px; border-radius:2px; }
+strong { font-weight:600; }
+code { font-family:var(--font-mono); font-size:.86em; background:var(--paper-sunk); padding:.12em .34em; border-radius:2px; }
+table, .num, time, .stat { font-variant-numeric:tabular-nums lining-nums; }
+.table-wrap { max-width:var(--measure); margin:var(--s5) auto; overflow-x:auto; -webkit-overflow-scrolling:touch; }
+.table-wrap table { margin:0; min-width:24rem; }
+table { width:100%; border-collapse:collapse; margin:var(--s5) auto; font-size:.94em; }
+thead th { font-size:.8rem; font-weight:600; color:var(--ink-muted); text-align:left; padding:0 var(--s3) var(--s2);
+  border-bottom:1px solid var(--ink); white-space:nowrap; }
+thead th.num { text-align:right; }
+tbody td { padding:var(--s3); border-bottom:1px solid var(--rule); vertical-align:top; }
+tbody tr:last-child td { border-bottom:1px solid var(--ink); }
+.num { text-align:right; }
+.callout { margin:var(--s5) auto; padding:var(--s4); background:var(--accent-sunk); border-left:2px solid var(--accent); font-size:.96em; }
+.callout p:last-child { margin-bottom:0; }
+.stat { font-family:var(--font-display); font-size:2.5rem; font-weight:600; line-height:1; letter-spacing:-.02em; display:block; }
+.stat-label { font-size:.875rem; color:var(--ink-muted); margin-top:var(--s2); }
+
+/* This page's own controls. Hairlines and paper, nothing rounded past 2px. */
+form { display:grid; grid-template-columns:1fr auto auto; gap:var(--s3); align-items:end; }
+label.field { display:block; font-size:.8rem; font-weight:600; color:var(--ink-muted); margin-bottom:var(--s1); }
+input[type=search], select, button { font:inherit; font-size:1rem; color:var(--ink); background:var(--paper);
+  border:1px solid var(--rule); border-radius:2px; padding:var(--s2) var(--s3); min-height:2.75rem; }
+input[type=search] { width:100%; }
+button { background:var(--accent); border-color:var(--accent); color:var(--paper); font-weight:600; cursor:pointer; }
+@media (max-width:34rem) {
+  body { padding:var(--s5) var(--s4) var(--s7); }
+  h2 { margin-top:var(--s6); }
+  form { grid-template-columns:1fr 1fr; }
+  form > div:first-child { grid-column:1 / -1; }
+  table { font-size:.88em; }
+}
+ol.results { list-style:none; padding:0; margin:var(--s5) auto; }
+ol.results li { padding:var(--s3) 0; border-bottom:1px solid var(--rule); margin:0; }
+ol.results .where { color:var(--ink-muted); font-size:.9em; }
+.muted { color:var(--ink-muted); }
+.hidden { display:none; }
+@media (prefers-reduced-motion:reduce) { *, *::before, *::after { animation-duration:.01ms !important; transition-duration:.01ms !important; } }
+@media print {
+  :root { --paper:#fff; --ink:#000; --ink-muted:#444; --accent:#000; }
+  body { font-size:11pt; padding:0; }
+  form { display:none; }
+  a { text-decoration:none; color:inherit; }
+  h2, h3 { break-after:avoid; }
+  table { break-inside:avoid; }
+  .table-wrap { overflow:visible; }
+  .sn-body { display:block !important; float:none; width:auto; margin:var(--s2) 0 var(--s3); padding-left:var(--s4); border-left:1px solid #999; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<h1>Docket</h1>
+<p>Every penalty the Centers for Medicare &amp; Medicaid Services (CMS) has published against a US nursing home, counted against the homes it inspected, and kept after CMS stops publishing it.</p>
+
+<form id="find" role="search">
+  <div>
+    <label class="field" for="q">Facility name or CMS Certification Number (CCN)</label>
+    <input type="search" id="q" autocomplete="off" placeholder="e.g. merry wood, or 015019">
+  </div>
+  <div>
+    <label class="field" for="st">State</label>
+    <select id="st"><option value="">All</option></select>
+  </div>
+  <button type="submit">Search</button>
+</form>
+
+<main id="out" aria-live="polite"><p class="muted">Loading the archive.</p></main>
+
+<h2>Basis</h2>
+<div id="basis"><p class="muted">Loading.</p></div>
+</div>
+
+<script src="docket.js"></script>
+<script>
+"use strict";
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s == null ? "" : s).replace(/[<>&"]/g,
+  (c) => ({ "<": "&lt;", ">": "&gt;", "&": "&amp;", '"': "&quot;" }[c]));
+const money = (n) => "$" + Number(n).toLocaleString("en-US");
+const count = (n) => Number(n).toLocaleString("en-US");
+const plural = (n, one, many) => count(n) + " " + (n === 1 ? one : many);
+
+const NAMES = { AK:"Alaska", AL:"Alabama", AR:"Arkansas", AZ:"Arizona", CA:"California",
+  CO:"Colorado", CT:"Connecticut", DC:"District of Columbia", DE:"Delaware", FL:"Florida",
+  GA:"Georgia", GU:"Guam", HI:"Hawaii", IA:"Iowa", ID:"Idaho", IL:"Illinois", IN:"Indiana",
+  KS:"Kansas", KY:"Kentucky", LA:"Louisiana", MA:"Massachusetts", MD:"Maryland", ME:"Maine",
+  MI:"Michigan", MN:"Minnesota", MO:"Missouri", MS:"Mississippi", MT:"Montana",
+  NC:"North Carolina", ND:"North Dakota", NE:"Nebraska", NH:"New Hampshire", NJ:"New Jersey",
+  NM:"New Mexico", NV:"Nevada", NY:"New York", OH:"Ohio", OK:"Oklahoma", OR:"Oregon",
+  PA:"Pennsylvania", PR:"Puerto Rico", RI:"Rhode Island", SC:"South Carolina",
+  SD:"South Dakota", TN:"Tennessee", TX:"Texas", UT:"Utah", VA:"Virginia", VI:"Virgin Islands",
+  VT:"Vermont", WA:"Washington", WI:"Wisconsin", WV:"West Virginia", WY:"Wyoming" };
+const stateName = (c) => NAMES[c] || c;
+
+let noteId = 0;
+function note(text) {
+  const id = "sn" + (++noteId);
+  return '<span class="sn"><input type="checkbox" id="' + id + '" class="sn-toggle" ' +
+    'aria-label="Show note ' + noteId + '"><label for="' + id + '" class="sn-mark"></label>' +
+    '<span class="sn-body">' + text + "</span></span>";
+}
+
+function table(head, rows) {
+  return '<div class="table-wrap"><table><thead><tr>' +
+    head.map((h) => "<th" + (h[1] ? ' class="num"' : "") + ">" + h[0] + "</th>").join("") +
+    "</tr></thead><tbody>" +
+    rows.map((r) => "<tr>" + r.map((v, i) => "<td" + (head[i][1] ? ' class="num"' : "") + ">" +
+      v + "</td>").join("") + "</tr>").join("") + "</tbody></table></div>";
+}
+
+/* ---- views ----------------------------------------------------------- */
+
+function home() {
+  const m = Docket.meta;
+  const clean = m.surveyed - m.penalised;
+  return "<p>Search for a facility above, or choose a state for its totals.</p>" +
+    '<p><span class="stat">' + count(m.penalised) + " of " + count(m.surveyed) + "</span>" +
+    '<span class="stat-label">inspected nursing homes carry at least one penalty in CMS’s current window</span></p>' +
+    "<p>The other " + count(clean) + " have no penalty row. " + esc(m.text.none_penalised) + "</p>" +
+    "<p>Across all of them CMS lists " + plural(m.fines, "fine", "fines") + " totalling " +
+    money(m.fine_total) + ", and " + plural(m.denials, "payment denial", "payment denials") +
+    note("A denial of payment for new admissions is measured in days, not dollars, so it is never added to a fine total anywhere on this page.") +
+    " for new admissions.</p>";
+}
+
+function results(found, q, st) {
+  const where = st ? " in " + esc(stateName(st)) : "";
+  if (!found.total) {
+    return "<p>No facility matches <strong>" + esc(q || "") + "</strong>" + where +
+      ". A name is matched as typed, so try a shorter part of it.</p>";
+  }
+  let html = "";
+  if (st && !q) html += stateBlock(st);
+  html += "<h2>" + plural(found.total, "facility", "facilities") + where + "</h2>";
+  if (found.total > found.rows.length) {
+    html += '<p class="muted">Showing the first ' + found.rows.length + ". Narrow the search to see the rest.</p>";
+  }
+  html += '<ol class="results">' + found.rows.map((r) =>
+    '<li><a href="#ccn=' + esc(r.ccn) + '">' + esc(r.name) + "</a><br>" +
+    '<span class="where">' + esc(r.city) + ", " + esc(r.state) + ", CCN " + esc(r.ccn) +
+    (r.penalised ? "" : ", no penalty row in this window") + "</span></li>").join("") + "</ol>";
+  return html;
+}
+
+function stateBlock(st) {
+  const s = Docket.meta.states[st];
+  if (!s) return "";
+  return "<h2>" + esc(stateName(st)) + "</h2>" +
+    "<p>" + count(s.penalised) + " of " + count(s.surveyed) + " inspected facilities carry at least one penalty. " +
+    "The other " + count(s.not_penalised) + " have no penalty row. " + esc(Docket.meta.text.none_penalised) + "</p>" +
+    "<p>" + plural(s.fines, "fine", "fines") + ", " + money(s.fine_total) + " in total, and " +
+    plural(s.denials, "payment denial", "payment denials") + '.</p><div id="largest"></div>';
+}
+
+async function largest(st) {
+  const top = await Docket.largestFines(st, 10);
+  const el = $("#largest");
+  if (!el || !top.length) return;
+  el.innerHTML = "<h3>Largest fine totals</h3>" + table([["Facility"], ["Fines", 1]],
+    top.map((t) => ['<a href="#ccn=' + esc(t.ccn) + '">' + esc(t.name) + "</a>", money(t.total)]));
+}
+
+function facilityView(f) {
+  const m = Docket.meta;
+  let html = "<h2>" + esc(f.name) + "</h2><p class=\"muted\">" + esc(f.city) + ", " +
+    esc(stateName(f.state)) + ", CCN " + esc(f.ccn) + "</p>";
+
+  html += "<h3>Penalties in CMS’s current window</h3>";
+  if (!f.fines.length && !f.denials.length) {
+    html += '<div class="callout"><p>' + esc(m.text.no_penalty) + "</p></div>";
+  } else {
+    if (f.fines.length) {
+      html += "<p>" + plural(f.fines.length, "fine", "fines") + ", " + money(f.fineTotal) + " in total.</p>" +
+        table([["Penalty date"], ["Amount", 1]], f.fines.map((x) => [esc(x.date), money(x.amount)]));
+    }
+    if (f.denials.length) {
+      html += "<p>" + plural(f.denials.length, "payment denial", "payment denials") + " for new admissions.</p>" +
+        table([["Penalty date"], ["Denial began"], ["Days", 1]],
+          f.denials.map((x) => [esc(x.date), esc(x.start || "not given"), x.days == null ? "not given" : count(x.days)]));
+    }
+  }
+
+  html += "<h3>Penalties CMS no longer publishes</h3>";
+  if (m.captures.length < 2) {
+    html += "<p>Nothing to compare yet. This archive holds one capture, from " + esc(m.captures[0]) +
+      ", and a dropped penalty only shows up once a later capture no longer lists it. That is not the same as none having been dropped.</p>";
+  } else if (!f.dropped.length) {
+    html += "<p>None across the " + m.captures.length + " captures held, " + esc(m.captures[0]) +
+      " to " + esc(m.capture) + ".</p>";
+  } else {
+    html += "<p>CMS listed these in an earlier edition and has since stopped. This archive is now the only place they appear.</p>" +
+      table([["Kind"], ["Penalty date"], ["Amount or days", 1], ["Last listed"]],
+        f.dropped.map((x) => [esc(x.kind), esc(x.date),
+          x.kind === "Fine" ? money(x.value) : count(x.value) + " days", esc(x.lastSeen)]));
+  }
+
+  html += "<h3>Inspections</h3>";
+  if (!f.surveys.length) {
+    html += "<p>CMS’s survey summary lists no inspection for this CCN in this capture.</p>";
+  } else {
+    html += "<p>Deficiency counts from CMS’s survey summary, most recent cycle first" +
+      note("Counts only. The files naming each citation are 158 MB and 66 MB a month and are not held, so which rule was broken is not shown here.") +
+      ".</p>" + table([["Health survey"], ["Health", 1], ["Fire safety", 1], ["Abuse or neglect", 1], ["Infection control", 1]],
+        f.surveys.map((s) => [esc(s.health_date || "not given"), n(s.health), n(s.fire), n(s.abuse), n(s.infection)]));
+  }
+  return html;
+}
+const n = (v) => v == null ? "not given" : count(v);
+
+function basis() {
+  const m = Docket.meta;
+  return "<p>Captured " + esc(m.capture) + " from CMS’s Provider Data Catalog, edition " + esc(m.edition) +
+    note("CMS stamps each monthly edition with a processing date. The capture date is when this archive fetched it.") +
+    ". Penalty dates in it run " + esc(m.window[0]) + " to " + esc(m.window[1]) +
+    ". The start of that range is where CMS’s rolling three-year window opens, not where any facility’s history begins.</p>" +
+    "<p>CMS drops a penalty once it ages out of that window. This archive has kept a copy of each monthly edition since 2026-09-18, so from then on a dropped penalty stays visible here. Nothing from before the first capture can be recovered.</p>" +
+    (m.not_kept.length ? "<p>Not held: " + esc(m.not_kept.join(" and ")) +
+      ". They are too large to keep monthly, so this page reports inspection counts and never names a citation.</p>" : "") +
+    "<p>Everything on this page is a static file. Searches run in your browser and are sent nowhere.</p>";
+}
+
+/* ---- routing --------------------------------------------------------- */
+
+async function route() {
+  const out = $("#out");
+  const h = new URLSearchParams(location.hash.slice(1));
+  try {
+    if (h.get("ccn")) {
+      const f = await Docket.facility(h.get("ccn"));
+      out.innerHTML = f ? facilityView(f)
+        : "<p>No facility with CCN <strong>" + esc(Docket.normaliseCcn(h.get("ccn"))) +
+          "</strong> is in this capture. That is different from a facility with no penalties: CMS’s files do not list this number at all.</p>";
+    } else if (h.get("q") || h.get("state")) {
+      const q = h.get("q") || "", st = h.get("state") || "";
+      $("#q").value = q; $("#st").value = st;
+      out.innerHTML = results(Docket.search(q, st, 50), q, st);
+      if (st && !q) largest(st);
+    } else {
+      out.innerHTML = home();
+    }
+  } catch (e) {
+    out.innerHTML = '<div class="callout"><p>Could not read the archive: ' + esc(e.message) + "</p></div>";
+  }
+}
+
+$("#find").addEventListener("submit", (e) => {
+  e.preventDefault();
+  const p = new URLSearchParams();
+  const q = $("#q").value.trim(), st = $("#st").value;
+  if (q) p.set("q", q);
+  if (st) p.set("state", st);
+  location.hash = p.toString();
+});
+window.addEventListener("hashchange", route);
+
+Docket.load("data/").then((m) => {
+  for (const code of Object.keys(m.states).sort((a, b) => stateName(a).localeCompare(stateName(b)))) {
+    const o = document.createElement("option");
+    o.value = code; o.textContent = stateName(code);
+    $("#st").appendChild(o);
+  }
+  $("#basis").innerHTML = basis();
+  route();
+}).catch((e) => {
+  $("#out").innerHTML = '<div class="callout"><p>Could not load the archive: ' + esc(e.message) + "</p></div>";
+});
+</script>
+</body>
+</html>

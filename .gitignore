@@ -1,0 +1,5 @@
+__pycache__/
+*.py[cod]
+
+# Wrangler's local cache names the deploying account.
+.wrangler/
