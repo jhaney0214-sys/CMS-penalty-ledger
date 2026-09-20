@@ -1,0 +1,49 @@
+# Runs the test suite. Nothing here fetches CMS data, captures an edition,
+# commits, pushes or deploys anything - the weekly capture is a scheduled task
+# on a workstation, deliberately not a workflow, because a workflow that
+# commits back to its own repository is a different risk from one that reads.
+#
+# Read before making this repository public: a workflow can publish something
+# other than the page you meant. This one uploads nothing.
+
+name: tests
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # The engine needs nothing. The 8 page tests drive the rendered page in
+      # a real browser and skip themselves without one - so a runner without
+      # chromium would go green while testing the page not at all, which is
+      # how Assay's browser tests spent weeks proving nothing. Installed on
+      # purpose, and the step below fails if they end up skipped anyway.
+      - name: Install Playwright
+        run: |
+          python -m pip install --quiet playwright
+          python -m playwright install --with-deps chromium
+
+      - name: Test
+        run: python -m unittest discover -s tests --verbose 2>&1 | tee out.txt
+
+      - name: The browser tests must have actually run
+        run: |
+          if grep -qi "skipped" out.txt; then
+            echo "::error::Tests were skipped. A skipped browser test is not a passing one."
+            grep -i "skipped" out.txt
+            exit 1
+          fi
+          echo "No skips."

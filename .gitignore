@@ -1,5 +1,13 @@
 __pycache__/
 *.py[cod]
 
+# The downloaded CMS archive ZIPs - 310 MB across 98 monthly editions, every
+# one of them re-fetchable from data.cms.gov and none of them ours to
+# redistribute. backfill_cms.py rebuilds this cache on demand.
+data/cms-archive/
+
+# The unattended run's log. Local to whichever machine ran the task.
+snapshots/cms/.last_run.log
+
 # Wrangler's local cache names the deploying account.
 .wrangler/

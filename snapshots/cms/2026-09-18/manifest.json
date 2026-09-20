@@ -1,0 +1,66 @@
+{
+  "captured": "2026-09-18",
+  "files": [
+    {
+      "archived": true,
+      "bytes": 96713,
+      "filename": "NH_CitationDescriptions_Aug2026.csv",
+      "identifier": "tagd-9999",
+      "modified": "2026-08-01",
+      "name": "citation_codes",
+      "rows": 643,
+      "sha256": "063ad15eeb92aad2d65d44995be5cb6220dab715cc01437e43b694e9c218f6c8",
+      "status": "new",
+      "title": "Citation Code Look-up",
+      "url": "https://data.cms.gov/provider-data/sites/default/files/resources/6d684830d328710dabe0a20c096bcab7_1786724152/NH_CitationDescriptions_Aug2026.csv"
+    },
+    {
+      "archived": false,
+      "bytes": 69332299,
+      "filename": "NH_FireSafetyCitations_Aug2026.csv",
+      "identifier": "ifjz-ge4w",
+      "modified": "2026-08-01",
+      "name": "fire_safety_deficiencies",
+      "status": "manifest_only",
+      "title": "Fire Safety Deficiencies",
+      "url": "https://data.cms.gov/provider-data/sites/default/files/resources/3d8cda3e909d835f20cecf639d7e21ad_1786724148/NH_FireSafetyCitations_Aug2026.csv"
+    },
+    {
+      "archived": false,
+      "bytes": 165336194,
+      "filename": "NH_HealthCitations_Aug2026.csv",
+      "identifier": "r5ix-sfxw",
+      "modified": "2026-08-01",
+      "name": "health_deficiencies",
+      "status": "manifest_only",
+      "title": "Health Deficiencies",
+      "url": "https://data.cms.gov/provider-data/sites/default/files/resources/600f5d1861dd2e0280b2e961e8396245_1786724148/NH_HealthCitations_Aug2026.csv"
+    },
+    {
+      "archived": true,
+      "bytes": 2712484,
+      "filename": "NH_Penalties_Aug2026.csv",
+      "identifier": "g6vv-u9sr",
+      "modified": "2026-08-01",
+      "name": "penalties",
+      "rows": 15696,
+      "sha256": "3683f1debe5a19073075b3d5a1ceaa417971705d725d8c72cb568db95a39124d",
+      "status": "new",
+      "title": "Penalties",
+      "url": "https://data.cms.gov/provider-data/sites/default/files/resources/22b16c9dfd718b1b2a003eb8d4222046_1786724150/NH_Penalties_Aug2026.csv"
+    },
+    {
+      "archived": true,
+      "bytes": 9925239,
+      "filename": "NH_SurveySummary_Aug2026.csv",
+      "identifier": "tbry-pc2d",
+      "modified": "2026-08-01",
+      "name": "survey_summary",
+      "rows": 43931,
+      "sha256": "76ad33cab36e5a07b0046669eefb1cdaf3f2e3e0766345a772a90498bde52844",
+      "status": "new",
+      "title": "Survey Summary",
+      "url": "https://data.cms.gov/provider-data/sites/default/files/resources/072c3220af015d4b4fb4d471cf790c78_1786724152/NH_SurveySummary_Aug2026.csv"
+    }
+  ]
+}

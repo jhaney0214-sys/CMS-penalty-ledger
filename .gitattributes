@@ -1,0 +1,16 @@
+# Normalise to LF in the repository and on checkout.
+#
+# Not cosmetic: docs/ is uploaded to Cloudflare Pages verbatim, so a CRLF
+# working copy deploys bytes a clone does not produce, and "the served files
+# match the committed ones" stops being checkable. Outcrop shipped exactly
+# that on 2026-09-19 and it took reading a git warning to notice.
+#
+# tools/cms_export.py already writes its JSON with newline="\n", so the
+# generated data is LF by construction. This covers the hand-edited files.
+* text=auto eol=lf
+
+# Binary, never touched.
+*.gz binary
+*.zip binary
+*.png binary
+*.jpg binary

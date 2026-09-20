@@ -1,0 +1,1707 @@
+{
+ "archives": [
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2019-01-17.zip",
+   "archive_date": "2019-01-17",
+   "archive_name": "Theme: nursing-homes (2019-01-17) Snapshot",
+   "bytes": 1193500,
+   "denials": 1609,
+   "encoding": "utf-8",
+   "era": "2019",
+   "fines": 7180,
+   "member": "Penalties_Download.csv",
+   "note": "cache",
+   "processing_date": "2019-01-01",
+   "rows": 8789,
+   "sha256": "24df5659ee1cb2471340ecf1a290529326916db91155f8c5049e4610a6c04c06",
+   "window": [
+    "2016-01-04",
+    "2018-10-31"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2019-02-09.zip",
+   "archive_date": "2019-02-09",
+   "archive_name": "Theme: nursing-homes (2019-02-09) Snapshot",
+   "bytes": 1206841,
+   "denials": 1616,
+   "encoding": "utf-8",
+   "era": "2019",
+   "fines": 7269,
+   "member": "Penalties_Download.csv",
+   "note": "cache",
+   "processing_date": "2019-02-01",
+   "rows": 8885,
+   "sha256": "de6815024973ca296a285dc9514b4c7d1522c29e52d226c7dceadc618c949d64",
+   "window": [
+    "2016-02-02",
+    "2018-12-31"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2019-03-09.zip",
+   "archive_date": "2019-03-09",
+   "archive_name": "Theme: nursing-homes (2019-03-09) Snapshot",
+   "bytes": 1213402,
+   "denials": 1619,
+   "encoding": "utf-8",
+   "era": "2019",
+   "fines": 7320,
+   "member": "Penalties_Download.csv",
+   "note": "cache",
+   "processing_date": "2019-03-01",
+   "rows": 8939,
+   "sha256": "f1ea3190c59716cb1b7dbf44eec37af82cf4d98ba554905615001801a99b53c3",
+   "window": [
+    "2016-02-29",
+    "2019-01-28"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2019-04-09.zip",
+   "archive_date": "2019-04-09",
+   "archive_name": "Theme: nursing-homes (2019-04-09) Snapshot",
+   "bytes": 1211984,
+   "denials": 1608,
+   "encoding": "utf-8",
+   "era": "2019",
+   "fines": 7320,
+   "member": "Penalties_Download.csv",
+   "note": "cache",
+   "processing_date": "2019-04-01",
+   "rows": 8928,
+   "sha256": "d3ce6fb902b98869382066ed1bbd39290a473a653bca0386a86ecb9d88ba06cf",
+   "window": [
+    "2016-04-01",
+    "2019-01-26"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2019-05-09.zip",
+   "archive_date": "2019-05-09",
+   "archive_name": "Theme: nursing-homes (2019-05-09) Snapshot",
+   "bytes": 1215499,
+   "denials": 1598,
+   "encoding": "utf-8",
+   "era": "2019",
+   "fines": 7360,
+   "member": "Penalties_Download.csv",
+   "note": "cache",
+   "processing_date": "2019-05-01",
+   "rows": 8958,
+   "sha256": "e4481566569ada6d375eb8ceaa69e7cd9a779fbb6eb6a59a324565454df4798c",
+   "window": [
+    "2016-04-07",
+    "2019-03-21"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2019-06-09.zip",
+   "archive_date": "2019-06-09",
+   "archive_name": "Theme: nursing-homes (2019-06-09) Snapshot",
+   "bytes": 1221792,
+   "denials": 1601,
+   "encoding": "utf-8",
+   "era": "2019",
+   "fines": 7403,
+   "member": "Penalties_Download.csv",
+   "note": "cache",
+   "processing_date": "2019-06-01",
+   "rows": 9004,
+   "sha256": "b0131a8c83fa99b953f7dff0915427740e2439450382567b79756851b5913ca5",
+   "window": [
+    "2016-04-07",
+    "2019-04-09"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2019-07-09.zip",
+   "archive_date": "2019-07-09",
+   "archive_name": "Theme: nursing-homes (2019-07-09) Snapshot",
+   "bytes": 1229646,
+   "denials": 1595,
+   "encoding": "utf-8",
+   "era": "2019",
+   "fines": 7466,
+   "member": "Penalties_Download.csv",
+   "note": "cache",
+   "processing_date": "2019-07-01",
+   "rows": 9061,
+   "sha256": "382f6e9338249da83bffb75b98e817ff4186995ebd209d101bdcd29214b5bb90",
+   "window": [
+    "2016-04-07",
+    "2019-05-14"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2019-08-09.zip",
+   "archive_date": "2019-08-09",
+   "archive_name": "Theme: nursing-homes (2019-08-09) Snapshot",
+   "bytes": 1239722,
+   "denials": 1622,
+   "encoding": "utf-8",
+   "era": "2019",
+   "fines": 7512,
+   "member": "Penalties_Download.csv",
+   "note": "cache",
+   "processing_date": "2019-08-01",
+   "rows": 9134,
+   "sha256": "82e353090b6c2f5b088219d9746277f5fb349a7dcd0b0f34dbdda2b79d06f094",
+   "window": [
+    "2016-04-07",
+    "2019-06-14"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2019-09-09.zip",
+   "archive_date": "2019-09-09",
+   "archive_name": "Theme: nursing-homes (2019-09-09) Snapshot",
+   "bytes": 1237018,
+   "denials": 1617,
+   "encoding": "utf-8",
+   "era": "2019",
+   "fines": 7499,
+   "member": "Penalties_Download.csv",
+   "note": "cache",
+   "processing_date": "2019-09-01",
+   "rows": 9116,
+   "sha256": "2fa7ae4b4dad643f722926f663f02d85a8690bc23e37a89d4751f0077dde6b6b",
+   "window": [
+    "2016-09-02",
+    "2019-07-31"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2019-10-09.zip",
+   "archive_date": "2019-10-09",
+   "archive_name": "Theme: nursing-homes (2019-10-09) Snapshot",
+   "bytes": 1231659,
+   "denials": 1614,
+   "encoding": "utf-8",
+   "era": "2019",
+   "fines": 7463,
+   "member": "Penalties_Download.csv",
+   "note": "cache",
+   "processing_date": "2019-10-01",
+   "rows": 9077,
+   "sha256": "d9a0a0056a8d6b3eb6ed7e38fdf5a84fce1c15381985ca8493c6432152e275a0",
+   "window": [
+    "2016-10-01",
+    "2019-08-15"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2019-12-17.zip",
+   "archive_date": "2019-12-17",
+   "archive_name": "Theme: nursing-homes (2019-12-17) Snapshot",
+   "bytes": 1230118,
+   "denials": 1627,
+   "encoding": "utf-8",
+   "era": "2019",
+   "fines": 7440,
+   "member": "Penalties_Download.csv",
+   "note": "cache",
+   "processing_date": "2019-11-01",
+   "rows": 9067,
+   "sha256": "0d05bbec358125dc526589bb1ff2b0a9f6d99d093205e3a79ba0420c442b446c",
+   "window": [
+    "2016-11-03",
+    "2019-09-25"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_annual_2019.zip",
+   "archive_date": "2019-12-31",
+   "archive_name": "Annual: Theme nursing-homes (2019)",
+   "member": null,
+   "note": "no penalties member"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2020-01-09.zip",
+   "archive_date": "2020-01-09",
+   "archive_name": "Theme: nursing-homes (2020-01-09) Snapshot",
+   "bytes": 1216571,
+   "denials": 1634,
+   "encoding": "utf-8",
+   "era": "2019",
+   "fines": 7329,
+   "member": "Penalties_Download.csv",
+   "note": "cache",
+   "processing_date": "2020-01-01",
+   "rows": 8963,
+   "sha256": "2b5629ee90ae6c1c45dc564fc3c9f8fcc2ec8bd6385247ad8565995f4650864f",
+   "window": [
+    "2017-01-03",
+    "2019-11-01"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2020-02-09.zip",
+   "archive_date": "2020-02-09",
+   "archive_name": "Theme: nursing-homes (2020-02-09) Snapshot",
+   "bytes": 1208161,
+   "denials": 1648,
+   "encoding": "utf-8",
+   "era": "2019",
+   "fines": 7242,
+   "member": "Penalties_Download.csv",
+   "note": "cache",
+   "processing_date": "2020-02-01",
+   "rows": 8890,
+   "sha256": "70d782910ae62ca508d4084c39dae63fde7e9c395ca0af32a73f47f05476bd78",
+   "window": [
+    "2017-02-02",
+    "2019-12-17"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2020-03-09.zip",
+   "archive_date": "2020-03-09",
+   "archive_name": "Theme: nursing-homes (2020-03-09) Snapshot",
+   "bytes": 1197923,
+   "denials": 1649,
+   "encoding": "utf-8",
+   "era": "2019",
+   "fines": 7161,
+   "member": "Penalties_Download.csv",
+   "note": "cache",
+   "processing_date": "2020-03-01",
+   "rows": 8810,
+   "sha256": "626637fc8ca7701d95e161243083db642d83798412de3d90cd754e723e37da5f",
+   "window": [
+    "2017-03-02",
+    "2020-01-15"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2020-04-09.zip",
+   "archive_date": "2020-04-09",
+   "archive_name": "Theme: nursing-homes (2020-04-09) Snapshot",
+   "bytes": 1183946,
+   "denials": 1625,
+   "encoding": "utf-8",
+   "era": "2019",
+   "fines": 7081,
+   "member": "Penalties_Download.csv",
+   "note": "cache",
+   "processing_date": "2020-04-01",
+   "rows": 8706,
+   "sha256": "9fa041dac1a67d9e31593b58755f6cc5f313e60458ff46948153d45aed1526d6",
+   "window": [
+    "2017-03-27",
+    "2020-02-07"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2020-05-09.zip",
+   "archive_date": "2020-05-09",
+   "archive_name": "Theme: nursing-homes (2020-05-09) Snapshot",
+   "bytes": 1130401,
+   "denials": 1567,
+   "encoding": "utf-8",
+   "era": "2019",
+   "fines": 6741,
+   "member": "Penalties_Download.csv",
+   "note": "cache",
+   "processing_date": "2020-05-01",
+   "rows": 8308,
+   "sha256": "eb974ab0ee2d9a3bcade969eb95aec0d3b3a6fd3f399e80c186b277691394282",
+   "window": [
+    "2017-05-04",
+    "2020-02-13"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2020-06-17.zip",
+   "archive_date": "2020-06-17",
+   "archive_name": "Theme: nursing-homes (2020-06-17) Snapshot",
+   "bytes": 1089673,
+   "denials": 1512,
+   "encoding": "utf-8",
+   "era": "2019",
+   "fines": 6497,
+   "member": "Penalties_Download.csv",
+   "note": "cache",
+   "processing_date": "2020-06-01",
+   "rows": 8009,
+   "sha256": "138456c73f7233fe5f049e18d3a311e164ac49968e7553a6dd89671369be02b9",
+   "window": [
+    "2017-05-16",
+    "2020-02-13"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2020-07-09.zip",
+   "archive_date": "2020-07-09",
+   "archive_name": "Theme: nursing-homes (2020-07-09) Snapshot",
+   "bytes": 1034758,
+   "denials": 1450,
+   "encoding": "utf-8",
+   "era": "2019",
+   "fines": 6153,
+   "member": "Penalties_Download.csv",
+   "note": "cache",
+   "processing_date": "2020-07-01",
+   "rows": 7603,
+   "sha256": "13256f635670c9f807c4bdaeb44ec926acc07222d1c37f128953f1bfd1ace466",
+   "window": [
+    "2017-06-05",
+    "2020-03-03"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2020-08-09.zip",
+   "archive_date": "2020-08-09",
+   "archive_name": "Theme: nursing-homes (2020-08-09) Snapshot",
+   "bytes": 1295163,
+   "denials": 1412,
+   "encoding": "utf-8",
+   "era": "2020",
+   "fines": 5912,
+   "member": "NH_Penalties_Aug2020.csv",
+   "note": "cache",
+   "processing_date": "2020-08-01",
+   "rows": 7324,
+   "sha256": "6f0d5937f683899217dacaa141b02a833066f7bc60a921aab7f53c6de72d7bb6",
+   "window": [
+    "2017-06-05",
+    "2020-03-03"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2020-09-09.zip",
+   "archive_date": "2020-09-09",
+   "archive_name": "Theme: nursing-homes (2020-09-09) Snapshot",
+   "bytes": 1242424,
+   "denials": 1367,
+   "encoding": "utf-8",
+   "era": "2020",
+   "fines": 5656,
+   "member": "NH_Penalties_Sep2020.csv",
+   "note": "cache",
+   "processing_date": "2020-09-01",
+   "rows": 7023,
+   "sha256": "5d68d314ab0867e53bc6fa41ba06c5203cf79e201697cf801e2b43f108f27d08",
+   "window": [
+    "2017-06-05",
+    "2020-03-03"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2020-10-09.zip",
+   "archive_date": "2020-10-09",
+   "archive_name": "Theme: nursing-homes (2020-10-09) Snapshot",
+   "bytes": 1206136,
+   "denials": 1348,
+   "encoding": "utf-8",
+   "era": "2020",
+   "fines": 5465,
+   "member": "NH_Penalties.csv",
+   "note": "cache",
+   "processing_date": "2020-10-01",
+   "rows": 6813,
+   "sha256": "b49e4da2817c2cc399cf96da26938f34b9536b0a45b2d299388d4f3030dbf7a4",
+   "window": [
+    "2017-06-05",
+    "2020-03-03"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2020-11-21.zip",
+   "archive_date": "2020-11-21",
+   "archive_name": "Theme: nursing-homes (2020-11-21) Snapshot",
+   "bytes": 1175313,
+   "denials": 1318,
+   "encoding": "utf-8",
+   "era": "2020",
+   "fines": 5322,
+   "member": "NH_Penalties_Nov2020.csv",
+   "note": "cache",
+   "processing_date": "2020-11-01",
+   "rows": 6640,
+   "sha256": "bf9a1c63096d0c92cf5a1183a18bd9896d381d3d4b6451fd6acfd0abef2f24a7",
+   "window": [
+    "2017-06-05",
+    "2020-03-03"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2020-12-21.zip",
+   "archive_date": "2020-12-21",
+   "archive_name": "Theme: nursing-homes (2020-12-21) Snapshot",
+   "bytes": 1175313,
+   "duplicate_of": "2020-11-21",
+   "member": "NH_Penalties_Nov2020.csv",
+   "note": "cache",
+   "sha256": "bf9a1c63096d0c92cf5a1183a18bd9896d381d3d4b6451fd6acfd0abef2f24a7"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_annual_2020.zip",
+   "archive_date": "2020-12-31",
+   "archive_name": "Annual: Theme nursing-homes (2020)",
+   "member": null,
+   "note": "no penalties member"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2021-01-27.zip",
+   "archive_date": "2021-01-27",
+   "archive_name": "Theme: nursing-homes (2021-01-27) Snapshot",
+   "bytes": 1381989,
+   "denials": 1457,
+   "encoding": "utf-8",
+   "era": "2020",
+   "fines": 6378,
+   "member": "NH_Penalties_Jan2021.csv",
+   "note": "cache",
+   "processing_date": "2021-01-01",
+   "rows": 7835,
+   "sha256": "01c578e49fe5c8b65a912c1ea202e7a0881b32888bf38abfb63bff487ee00e56",
+   "window": [
+    "2018-01-04",
+    "2020-11-05"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2021-02-27.zip",
+   "archive_date": "2021-02-27",
+   "archive_name": "Theme: nursing-homes (2021-02-27) Snapshot",
+   "bytes": 1435958,
+   "denials": 1497,
+   "encoding": "utf-8",
+   "era": "2020",
+   "fines": 6657,
+   "member": "NH_Penalties_Feb2021.csv",
+   "note": "cache",
+   "processing_date": "2021-02-01",
+   "rows": 8154,
+   "sha256": "0bcbf8d8cf5bb4f0463a9c0decac173af090bcafa272df7d64788a8db10f7550",
+   "window": [
+    "2018-02-02",
+    "2020-12-28"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2021-03-27.zip",
+   "archive_date": "2021-03-27",
+   "archive_name": "Theme: nursing-homes (2021-03-27) Snapshot",
+   "bytes": 1486510,
+   "denials": 1567,
+   "encoding": "utf-8",
+   "era": "2020",
+   "fines": 6881,
+   "member": "NH_Penalties_Mar2021.csv",
+   "note": "cache",
+   "processing_date": "2021-03-01",
+   "rows": 8448,
+   "sha256": "6846668a24cab244da2d5957fd2a429f396699671d0a6d72013fb9dd0db7f8cd",
+   "window": [
+    "2018-03-02",
+    "2021-01-06"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2021-04-27.zip",
+   "archive_date": "2021-04-27",
+   "archive_name": "Theme: nursing-homes (2021-04-27) Snapshot",
+   "bytes": 1588856,
+   "denials": 1625,
+   "encoding": "utf-8",
+   "era": "2020",
+   "fines": 7417,
+   "member": "NH_Penalties_Apr2021.csv",
+   "note": "cache",
+   "processing_date": "2021-04-01",
+   "rows": 9042,
+   "sha256": "80ab8b47d62eb676eb54643936f0bece35cf19eeba611319769c42ed45825f47",
+   "window": [
+    "2018-04-02",
+    "2021-03-02"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2021-05-27.zip",
+   "archive_date": "2021-05-27",
+   "archive_name": "Theme: nursing-homes (2021-05-27) Snapshot",
+   "bytes": 1879758,
+   "denials": 1695,
+   "encoding": "utf-8",
+   "era": "2020",
+   "fines": 9033,
+   "member": "NH_Penalties_May2021.csv",
+   "note": "cache",
+   "processing_date": "2021-05-01",
+   "rows": 10728,
+   "sha256": "f11debc3fc5b70aba05b152085648ba0e3488b2407986d1a2464ce563a2c3812",
+   "window": [
+    "2018-01-02",
+    "2021-04-08"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2021-06-27.zip",
+   "archive_date": "2021-06-27",
+   "archive_name": "Theme: nursing-homes (2021-06-27) Snapshot",
+   "bytes": 1995718,
+   "denials": 1734,
+   "encoding": "latin-1",
+   "era": "2020",
+   "fines": 9662,
+   "member": "NH_Penalties_Jun2021.csv",
+   "note": "cache",
+   "processing_date": "2021-06-01",
+   "rows": 11396,
+   "sha256": "84ed35a37ad29879e3af6f3ec1451d6431ab1d8e3c1c1e2841622ddceb38af0a",
+   "window": [
+    "2018-01-02",
+    "2021-04-30"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2021-07-27.zip",
+   "archive_date": "2021-07-27",
+   "archive_name": "Theme: nursing-homes (2021-07-27) Snapshot",
+   "bytes": 2185548,
+   "denials": 1755,
+   "encoding": "latin-1",
+   "era": "2020",
+   "fines": 10751,
+   "member": "NH_Penalties_Jul2021.csv",
+   "note": "cache",
+   "processing_date": "2021-07-01",
+   "rows": 12506,
+   "sha256": "29e726ec4305d77640098c65381bfbd41254c8bc6a0a937f63a44905d0c2758e",
+   "window": [
+    "2018-01-02",
+    "2021-05-27"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2021-08-27.zip",
+   "archive_date": "2021-08-27",
+   "archive_name": "Theme: nursing-homes (2021-08-27) Snapshot",
+   "bytes": 2361560,
+   "denials": 1780,
+   "encoding": "latin-1",
+   "era": "2020",
+   "fines": 11755,
+   "member": "NH_Penalties_Aug2021.csv",
+   "note": "cache",
+   "processing_date": "2021-08-01",
+   "rows": 13535,
+   "sha256": "7485f8636d0e16e7fded1b889c95790f126724a91edc4331ac7ca8629e88b281",
+   "window": [
+    "2018-01-02",
+    "2021-06-21"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2021-09-27.zip",
+   "archive_date": "2021-09-27",
+   "archive_name": "Theme: nursing-homes (2021-09-27) Snapshot",
+   "bytes": 2539059,
+   "denials": 1825,
+   "encoding": "latin-1",
+   "era": "2020",
+   "fines": 12742,
+   "member": "NH_Penalties_Sep2021.csv",
+   "note": "cache",
+   "processing_date": "2021-09-01",
+   "rows": 14567,
+   "sha256": "906f3a13ea3da5475b1ae88bdc95965c23cc39a70b19d89da5406a8bca01c499",
+   "window": [
+    "2018-01-02",
+    "2021-07-29"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2021-10-27.zip",
+   "archive_date": "2021-10-27",
+   "archive_name": "Theme: nursing-homes (2021-10-27) Snapshot",
+   "bytes": 2765409,
+   "denials": 1871,
+   "encoding": "latin-1",
+   "era": "2020",
+   "fines": 14003,
+   "member": "NH_Penalties_Oct2021.csv",
+   "note": "cache",
+   "processing_date": "2021-10-01",
+   "rows": 15874,
+   "sha256": "0dc6284137b6c61dd6f471ee34abeb9a23144e6d3884a90231f60d778c8d849f",
+   "window": [
+    "2018-01-02",
+    "2021-09-07"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2021-11-27.zip",
+   "archive_date": "2021-11-27",
+   "archive_name": "Theme: nursing-homes (2021-11-27) Snapshot",
+   "bytes": 2765409,
+   "duplicate_of": "2021-10-27",
+   "member": "NH_Penalties_Oct2021.csv",
+   "note": "cache",
+   "sha256": "0dc6284137b6c61dd6f471ee34abeb9a23144e6d3884a90231f60d778c8d849f"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2021-12-27.zip",
+   "archive_date": "2021-12-27",
+   "archive_name": "Theme: nursing-homes (2021-12-27) Snapshot",
+   "bytes": 4537328,
+   "denials": 1916,
+   "encoding": "latin-1",
+   "era": "2020",
+   "fines": 24230,
+   "member": "NH_Penalties_Nov2021.csv",
+   "note": "cache",
+   "processing_date": "2021-11-01",
+   "rows": 26146,
+   "sha256": "165247e19d9e38bbb502f8b71d526ba3fee70f1edf00a7497e391bcd940510a8",
+   "window": [
+    "2018-01-02",
+    "2021-09-22"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_annual_2021.zip",
+   "archive_date": "2021-12-31",
+   "archive_name": "Annual: Theme nursing-homes (2021)",
+   "member": null,
+   "note": "no penalties member"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2022-01-27.zip",
+   "archive_date": "2022-01-27",
+   "archive_name": "Theme: nursing-homes (2022-01-27) Snapshot",
+   "bytes": 4588046,
+   "denials": 2017,
+   "encoding": "latin-1",
+   "era": "2020",
+   "fines": 24413,
+   "member": "NH_Penalties_Jan2022.csv",
+   "note": "cache",
+   "processing_date": "2022-01-01",
+   "rows": 26430,
+   "sha256": "55e01e7ff8435ead89e23ded0d750b45ebc1e1e39b3233c36f8ebed3957e710f",
+   "window": [
+    "2019-01-03",
+    "2021-11-09"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2022-02-27.zip",
+   "archive_date": "2022-02-27",
+   "archive_name": "Theme: nursing-homes (2022-02-27) Snapshot",
+   "bytes": 4615551,
+   "denials": 2047,
+   "encoding": "latin-1",
+   "era": "2020",
+   "fines": 24536,
+   "member": "NH_Penalties_Feb2022.csv",
+   "note": "cache",
+   "processing_date": "2022-02-01",
+   "rows": 26583,
+   "sha256": "12e9549f6b3959fbd1a34a652ca1489c736018fd81ac39879e81f11fa3bfac56",
+   "window": [
+    "2019-02-02",
+    "2021-12-06"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2022-03-27.zip",
+   "archive_date": "2022-03-27",
+   "archive_name": "Theme: nursing-homes (2022-03-27) Snapshot",
+   "bytes": 4839947,
+   "denials": 2085,
+   "encoding": "latin-1",
+   "era": "2020",
+   "fines": 25796,
+   "member": "NH_Penalties_Mar2022.csv",
+   "note": "cache",
+   "processing_date": "2022-03-01",
+   "rows": 27881,
+   "sha256": "67d1dd61c13e0d0db41e73dd553b5873ded9c69e9576e6b945b0a5b6c624c4e9",
+   "window": [
+    "2019-03-02",
+    "2021-12-22"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2022-04-27.zip",
+   "archive_date": "2022-04-27",
+   "archive_name": "Theme: nursing-homes (2022-04-27) Snapshot",
+   "bytes": 5159380,
+   "denials": 2146,
+   "encoding": "latin-1",
+   "era": "2020",
+   "fines": 27577,
+   "member": "NH_Penalties_Apr2022.csv",
+   "note": "cache",
+   "processing_date": "2022-04-01",
+   "rows": 29723,
+   "sha256": "745996ff3cc3bec97bb72d9c14012f83c4287e7073114720e5f302a629f6c576",
+   "window": [
+    "2019-04-04",
+    "2022-02-15"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2022-05-27.zip",
+   "archive_date": "2022-05-27",
+   "archive_name": "Theme: nursing-homes (2022-05-27) Snapshot",
+   "bytes": 5407323,
+   "denials": 2195,
+   "encoding": "latin-1",
+   "era": "2020",
+   "fines": 28963,
+   "member": "NH_Penalties_May2022.csv",
+   "note": "cache",
+   "processing_date": "2022-05-01",
+   "rows": 31158,
+   "sha256": "a27713f6243a162014d76541b5aec28b2f326dd7cca845337bb08369a7c7aa09",
+   "window": [
+    "2019-05-02",
+    "2022-03-21"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2022-06-27.zip",
+   "archive_date": "2022-06-27",
+   "archive_name": "Theme: nursing-homes (2022-06-27) Snapshot",
+   "bytes": 5627721,
+   "denials": 2265,
+   "encoding": "latin-1",
+   "era": "2020",
+   "fines": 30168,
+   "member": "NH_Penalties_Jun2022.csv",
+   "note": "cache",
+   "processing_date": "2022-06-01",
+   "rows": 32433,
+   "sha256": "6c20c98f16d647ce38c7c8a3914dfdc2c043d3738250f7c2196a2e707e2c3f02",
+   "window": [
+    "2019-06-03",
+    "2022-04-06"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2022-07-27.zip",
+   "archive_date": "2022-07-27",
+   "archive_name": "Theme: nursing-homes (2022-07-27) Snapshot",
+   "bytes": 5859040,
+   "denials": 2293,
+   "encoding": "latin-1",
+   "era": "2020",
+   "fines": 31479,
+   "member": "NH_Penalties_Jul2022.csv",
+   "note": "cache",
+   "processing_date": "2022-07-01",
+   "rows": 33772,
+   "sha256": "6111e9b34605f55712a200a3fdb2e69d99cd0466c1c7af9c45579383d18bec2c",
+   "window": [
+    "2019-07-05",
+    "2022-05-10"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2022-08-27.zip",
+   "archive_date": "2022-08-27",
+   "archive_name": "Theme: nursing-homes (2022-08-27) Snapshot",
+   "bytes": 5987865,
+   "denials": 2328,
+   "encoding": "latin-1",
+   "era": "2020",
+   "fines": 32190,
+   "member": "NH_Penalties_Aug2022.csv",
+   "note": "cache",
+   "processing_date": "2022-08-01",
+   "rows": 34518,
+   "sha256": "75df83175f7b53e59d24453951e863f50232381f52d61f4a7fd0a0f1c61c19bc",
+   "window": [
+    "2019-08-02",
+    "2022-06-09"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2022-09-27.zip",
+   "archive_date": "2022-09-27",
+   "archive_name": "Theme: nursing-homes (2022-09-27) Snapshot",
+   "bytes": 6058283,
+   "denials": 2416,
+   "encoding": "latin-1",
+   "era": "2020",
+   "fines": 32497,
+   "member": "NH_Penalties_Sep2022.csv",
+   "note": "cache",
+   "processing_date": "2022-09-01",
+   "rows": 34913,
+   "sha256": "e65cce3c7bc276e4168c1d0d550001d3bc54899d3c1403bf800dc3b0476725c2",
+   "window": [
+    "2019-09-03",
+    "2022-08-04"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2022-10-27.zip",
+   "archive_date": "2022-10-27",
+   "archive_name": "Theme: nursing-homes (2022-10-27) Snapshot",
+   "bytes": 6102448,
+   "denials": 2435,
+   "encoding": "latin-1",
+   "era": "2020",
+   "fines": 32736,
+   "member": "NH_Penalties_Oct2022.csv",
+   "note": "cache",
+   "processing_date": "2022-10-01",
+   "rows": 35171,
+   "sha256": "11dfca49214b4ee886be9ce71f7771f804405c794301218e2d39a7e60743e8cf",
+   "window": [
+    "2019-10-04",
+    "2022-08-04"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2022-11-27.zip",
+   "archive_date": "2022-11-27",
+   "archive_name": "Theme: nursing-homes (2022-11-27) Snapshot",
+   "bytes": 6102448,
+   "duplicate_of": "2022-10-27",
+   "member": "NH_Penalties_Oct2022.csv",
+   "note": "cache",
+   "sha256": "11dfca49214b4ee886be9ce71f7771f804405c794301218e2d39a7e60743e8cf"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2022-12-02.zip",
+   "archive_date": "2022-12-02",
+   "archive_name": "Theme: nursing-homes (2022-12-02) Snapshot",
+   "bytes": 6215638,
+   "denials": 2486,
+   "encoding": "latin-1",
+   "era": "2020",
+   "fines": 33367,
+   "member": "NH_Penalties_Nov2022.csv",
+   "note": "cache",
+   "processing_date": "2022-11-01",
+   "rows": 35853,
+   "sha256": "56da695c276e5b4e7ac802f63f01f49b46372930ef7d279f73f615292232be9d",
+   "window": [
+    "2019-11-01",
+    "2022-08-26"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_annual_2022.zip",
+   "archive_date": "2022-12-31",
+   "archive_name": "Annual: Theme nursing-homes (2022)",
+   "member": null,
+   "note": "no penalties member"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2023-01-02.zip",
+   "archive_date": "2023-01-02",
+   "archive_name": "Theme: nursing-homes (2023-01-02) Snapshot",
+   "bytes": 6334983,
+   "denials": 2609,
+   "encoding": "latin-1",
+   "era": "2020",
+   "fines": 33907,
+   "member": "NH_Penalties_Jan2023.csv",
+   "note": "cache",
+   "processing_date": "2023-01-01",
+   "rows": 36516,
+   "sha256": "70c07459598f82b1008e9d73ad816d543771b38e221707cd7f096bd2d4e5f38a",
+   "window": [
+    "2020-01-03",
+    "2022-11-08"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2023-02-21.zip",
+   "archive_date": "2023-02-21",
+   "archive_name": "Theme: nursing-homes (2023-02-21) Snapshot",
+   "bytes": 6407371,
+   "denials": 2681,
+   "encoding": "latin-1",
+   "era": "2020",
+   "fines": 34246,
+   "member": "NH_Penalties_Feb2023.csv",
+   "note": "cache",
+   "processing_date": "2023-02-01",
+   "rows": 36927,
+   "sha256": "368dc362d065e6930a160e96d26bba02f4c7a59d0585e8e9efb013adf220806f",
+   "window": [
+    "2020-02-01",
+    "2022-12-13"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2023-03-02.zip",
+   "archive_date": "2023-03-02",
+   "archive_name": "Theme: nursing-homes (2023-03-02) Snapshot",
+   "bytes": 6541337,
+   "denials": 2783,
+   "encoding": "latin-1",
+   "era": "2020",
+   "fines": 34909,
+   "member": "NH_Penalties_Mar2023.csv",
+   "note": "cache",
+   "processing_date": "2023-03-01",
+   "rows": 37692,
+   "sha256": "1a0a3ea9a863ea61b71be865054f35715260c2d7d1c16b7c5d5dbc452a7dded3",
+   "window": [
+    "2020-03-02",
+    "2023-01-20"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2023-04-26.zip",
+   "archive_date": "2023-04-26",
+   "archive_name": "Theme: nursing-homes (2023-04-26) Snapshot",
+   "bytes": 6704160,
+   "denials": 2904,
+   "encoding": "latin-1",
+   "era": "2020",
+   "fines": 35717,
+   "member": "NH_Penalties_Apr2023.csv",
+   "note": "cache",
+   "processing_date": "2023-04-01",
+   "rows": 38621,
+   "sha256": "cec13200840b3dca50ae3fa6c47c76c0027935c7094765c7e22e48d241e6ac0d",
+   "window": [
+    "2020-04-03",
+    "2023-02-09"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2023-05-30.zip",
+   "archive_date": "2023-05-30",
+   "archive_name": "Theme: nursing-homes (2023-05-30) Snapshot",
+   "bytes": 6828938,
+   "denials": 3014,
+   "encoding": "utf-8",
+   "era": "2020",
+   "fines": 36312,
+   "member": "NH_Penalties_May2023.csv",
+   "note": "cache",
+   "processing_date": "2023-05-01",
+   "rows": 39326,
+   "sha256": "eb8cbfd8b02853e478a0e7c5bb28eaa5ba0f743ea539820f3e247bc97f1c1a28",
+   "window": [
+    "2020-05-01",
+    "2023-03-02"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2023-06-27.zip",
+   "archive_date": "2023-06-27",
+   "archive_name": "Theme: nursing-homes (2023-06-27) Snapshot",
+   "bytes": 6982368,
+   "denials": 3127,
+   "encoding": "utf-8",
+   "era": "ccn",
+   "fines": 37082,
+   "member": "NH_Penalties_Jun2023.csv",
+   "note": "cache",
+   "processing_date": "2023-06-01",
+   "rows": 40209,
+   "sha256": "0c347ce2d5c834b26b5896de747c45afa57faff5092b394a4bec3241c18c528f",
+   "window": [
+    "2020-06-04",
+    "2023-03-27"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2023-07-25.zip",
+   "archive_date": "2023-07-25",
+   "archive_name": "Theme: nursing-homes (2023-07-25) Snapshot",
+   "bytes": 6821666,
+   "denials": 3143,
+   "encoding": "utf-8",
+   "era": "ccn",
+   "fines": 36113,
+   "member": "NH_Penalties_Jul2023.csv",
+   "note": "cache",
+   "processing_date": "2023-07-01",
+   "rows": 39256,
+   "sha256": "2e9515a48d0aec591ea097ebd40214e8a5c14ef91718dcce872bb71efc9ebbb8",
+   "window": [
+    "2020-07-05",
+    "2023-05-11"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2023-08-30.zip",
+   "archive_date": "2023-08-30",
+   "archive_name": "Theme: nursing-homes (2023-08-30) Snapshot",
+   "bytes": 6737266,
+   "denials": 3146,
+   "encoding": "utf-8",
+   "era": "ccn",
+   "fines": 35620,
+   "member": "NH_Penalties_Aug2023.csv",
+   "note": "cache",
+   "processing_date": "2023-08-01",
+   "rows": 38766,
+   "sha256": "28623b4c94fd2078b1169503dc9824b297888be3a828b4465a46f049ba22e3d0",
+   "window": [
+    "2020-08-01",
+    "2023-06-06"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2023-09-02.zip",
+   "archive_date": "2023-09-02",
+   "archive_name": "Theme: nursing-homes (2023-09-02) Snapshot",
+   "bytes": 6700786,
+   "denials": 3128,
+   "encoding": "utf-8",
+   "era": "ccn",
+   "fines": 35420,
+   "member": "NH_Penalties_Sep2023.csv",
+   "note": "cache",
+   "processing_date": "2023-09-01",
+   "rows": 38548,
+   "sha256": "affc282032a1a9d2db890ed6d46a762a0578828c65884a50dbd8682f2cc6c209",
+   "window": [
+    "2020-09-04",
+    "2023-07-19"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2023-10-02.zip",
+   "archive_date": "2023-10-02",
+   "archive_name": "Theme: nursing-homes (2023-10-02) Snapshot",
+   "bytes": 6666909,
+   "denials": 3134,
+   "encoding": "utf-8",
+   "era": "ccn",
+   "fines": 35211,
+   "member": "NH_Penalties_Oct2023.csv",
+   "note": "cache",
+   "processing_date": "2023-10-01",
+   "rows": 38345,
+   "sha256": "515f35f3f13d3b72907b742878e3f5d10415399334dd4af7f4b15422bc882337",
+   "window": [
+    "2020-10-02",
+    "2023-08-21"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2023-11-02.zip",
+   "archive_date": "2023-11-02",
+   "archive_name": "Theme: nursing-homes (2023-11-02) Snapshot",
+   "bytes": 6666909,
+   "duplicate_of": "2023-10-02",
+   "member": "NH_Penalties_Oct2023.csv",
+   "note": "cache",
+   "sha256": "515f35f3f13d3b72907b742878e3f5d10415399334dd4af7f4b15422bc882337"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2023-12-21.zip",
+   "archive_date": "2023-12-21",
+   "archive_name": "Theme: nursing-homes (2023-12-21) Snapshot",
+   "bytes": 6560495,
+   "denials": 3116,
+   "encoding": "utf-8",
+   "era": "ccn",
+   "fines": 34597,
+   "member": "NH_Penalties_Nov2023.csv",
+   "note": "cache",
+   "processing_date": "2023-11-01",
+   "rows": 37713,
+   "sha256": "86c40f7cad14ebbea05d02750e1d201fbd090dcfd2710331e8aeb6290cef5b6f",
+   "window": [
+    "2020-11-02",
+    "2023-09-14"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_annual_2023.zip",
+   "archive_date": "2023-12-31",
+   "archive_name": "Annual: Theme nursing-homes (2023)",
+   "member": null,
+   "note": "no penalties member"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2024-01-31.zip",
+   "archive_date": "2024-01-31",
+   "archive_name": "Theme: nursing-homes (2024-01-31) Snapshot",
+   "bytes": 6425650,
+   "denials": 3152,
+   "encoding": "utf-8",
+   "era": "ccn",
+   "fines": 33769,
+   "member": "NH_Penalties_Jan2024.csv",
+   "note": "cache",
+   "processing_date": "2024-01-01",
+   "rows": 36921,
+   "sha256": "946bd12460a970333e07bc5a9b8d9a4df80b200e9c46249e94727caefae57cf6",
+   "window": [
+    "2021-01-02",
+    "2023-11-14"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2024-02-29.zip",
+   "archive_date": "2024-02-29",
+   "archive_name": "Theme: nursing-homes (2024-02-29) Snapshot",
+   "bytes": 6390211,
+   "denials": 3209,
+   "encoding": "utf-8",
+   "era": "ccn",
+   "fines": 33510,
+   "member": "NH_Penalties_Feb2024.csv",
+   "note": "cache",
+   "processing_date": "2024-02-01",
+   "rows": 36719,
+   "sha256": "4c7a75eac3c2d37918530f53b3ee136514fe1035baf7e992d3a3ccdf3ef5043d",
+   "window": [
+    "2021-02-01",
+    "2023-12-27"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2024-03-28.zip",
+   "archive_date": "2024-03-28",
+   "archive_name": "Theme: nursing-homes (2024-03-28) Snapshot",
+   "bytes": 6312487,
+   "denials": 3227,
+   "encoding": "utf-8",
+   "era": "ccn",
+   "fines": 33050,
+   "member": "NH_Penalties_Mar2024.csv",
+   "note": "cache",
+   "processing_date": "2024-03-01",
+   "rows": 36277,
+   "sha256": "6de020602e482d3f698372444c6ad53ebdecb851c7752f17772a76fa9ed893f1",
+   "window": [
+    "2021-03-05",
+    "2024-01-11"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2024-04-25.zip",
+   "archive_date": "2024-04-25",
+   "archive_name": "Theme: nursing-homes (2024-04-25) Snapshot",
+   "bytes": 6226699,
+   "denials": 3221,
+   "encoding": "utf-8",
+   "era": "ccn",
+   "fines": 32572,
+   "member": "NH_Penalties_Apr2024.csv",
+   "note": "cache",
+   "processing_date": "2024-04-01",
+   "rows": 35793,
+   "sha256": "c407bba14750f842d6dd4f0b0f227101c7ed0e2c2408371642113c718a9c32a6",
+   "window": [
+    "2021-04-02",
+    "2024-03-08"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2024-05-29.zip",
+   "archive_date": "2024-05-29",
+   "archive_name": "Theme: nursing-homes (2024-05-29) Snapshot",
+   "bytes": 6149746,
+   "denials": 3221,
+   "encoding": "utf-8",
+   "era": "ccn",
+   "fines": 32129,
+   "member": "NH_Penalties_May2024.csv",
+   "note": "cache",
+   "processing_date": "2024-05-01",
+   "rows": 35350,
+   "sha256": "2296ba9c0d0e45a68c528079a7a757f1d634b9ade1b2fd1052324193b545bcc9",
+   "window": [
+    "2021-05-02",
+    "2024-03-02"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2024-06-26.zip",
+   "archive_date": "2024-06-26",
+   "archive_name": "Theme: nursing-homes (2024-06-26) Snapshot",
+   "bytes": 6015764,
+   "denials": 3227,
+   "encoding": "utf-8",
+   "era": "ccn",
+   "fines": 31347,
+   "member": "NH_Penalties_Jun2024.csv",
+   "note": "cache",
+   "processing_date": "2024-06-01",
+   "rows": 34574,
+   "sha256": "986987522bb593854e6f0dca287bba248e75bdb251b0ec46ed603c685d81c7c2",
+   "window": [
+    "2021-06-04",
+    "2024-04-14"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2024-07-31.zip",
+   "archive_date": "2024-07-31",
+   "archive_name": "Theme: nursing-homes (2024-07-31) Snapshot",
+   "bytes": 5725387,
+   "denials": 3221,
+   "encoding": "utf-8",
+   "era": "ccn",
+   "fines": 29660,
+   "member": "NH_Penalties_Jul2024.csv",
+   "note": "cache",
+   "processing_date": "2024-07-01",
+   "rows": 32881,
+   "sha256": "b9b6680f540302b81e1aa6969860d1d742e026d15318b72a3ab49416a38105ee",
+   "window": [
+    "2021-07-03",
+    "2024-05-10"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2024-08-29.zip",
+   "archive_date": "2024-08-29",
+   "archive_name": "Theme: nursing-homes (2024-08-29) Snapshot",
+   "bytes": 5433094,
+   "denials": 3207,
+   "encoding": "utf-8",
+   "era": "ccn",
+   "fines": 27983,
+   "member": "NH_Penalties_Aug2024.csv",
+   "note": "cache",
+   "processing_date": "2024-08-01",
+   "rows": 31190,
+   "sha256": "4f0f8abda99137e369f7d1b8951fa56ad9f675b140bb64c84510edfda8d73328",
+   "window": [
+    "2021-08-02",
+    "2024-06-07"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2024-09-26.zip",
+   "archive_date": "2024-09-26",
+   "archive_name": "Theme: nursing-homes (2024-09-26) Snapshot",
+   "bytes": 4920905,
+   "denials": 3188,
+   "encoding": "utf-8",
+   "era": "ccn",
+   "fines": 26436,
+   "member": "NH_Penalties_Sep2024.csv",
+   "note": "cache",
+   "processing_date": "2024-09-01",
+   "rows": 29624,
+   "sha256": "833688748face23d7f9cd0739e4186f92747bc4e7ac0a5e2217379b2529e6c1d",
+   "window": [
+    "2021-09-03",
+    "2024-06-28"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2024-10-30.zip",
+   "archive_date": "2024-10-30",
+   "archive_name": "Theme: nursing-homes (2024-10-30) Snapshot",
+   "bytes": 4735052,
+   "denials": 3167,
+   "encoding": "utf-8",
+   "era": "ccn",
+   "fines": 25338,
+   "member": "NH_Penalties_Oct2024.csv",
+   "note": "cache",
+   "processing_date": "2024-10-01",
+   "rows": 28505,
+   "sha256": "98aeebdfde431ff38bedde2fba5a3fdf10fc928b94353f88feebd57aa7e79bdf",
+   "window": [
+    "2021-10-02",
+    "2024-07-30"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2024-11-07.zip",
+   "archive_date": "2024-11-07",
+   "archive_name": "Theme: nursing-homes (2024-11-07) Snapshot",
+   "bytes": 4735052,
+   "duplicate_of": "2024-10-30",
+   "member": "NH_Penalties_Oct2024.csv",
+   "note": "cache",
+   "sha256": "98aeebdfde431ff38bedde2fba5a3fdf10fc928b94353f88feebd57aa7e79bdf"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2024-12-20.zip",
+   "archive_date": "2024-12-20",
+   "archive_name": "Theme: nursing-homes (2024-12-20) Snapshot",
+   "bytes": 4707468,
+   "denials": 3180,
+   "encoding": "utf-8",
+   "era": "ccn",
+   "fines": 25158,
+   "member": "NH_Penalties_Nov2024.csv",
+   "note": "cache",
+   "processing_date": "2024-11-01",
+   "rows": 28338,
+   "sha256": "85ee1c9cf7b4e2a18a937d7f951b0b8c211246be6b73e3562a600fa7994434e0",
+   "window": [
+    "2021-11-04",
+    "2024-10-02"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_annual_2024.zip",
+   "archive_date": "2024-12-31",
+   "archive_name": "Annual: Theme nursing-homes (2024)",
+   "member": null,
+   "note": "no penalties member"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2025-02-26.zip",
+   "archive_date": "2025-02-26",
+   "archive_name": "Theme: nursing-homes (2025-02-26) Snapshot",
+   "bytes": 4097632,
+   "denials": 3142,
+   "encoding": "utf-8",
+   "era": "ccn",
+   "fines": 21472,
+   "member": "NH_Penalties_Feb2025.csv",
+   "note": "cache",
+   "processing_date": "2025-02-01",
+   "rows": 24614,
+   "sha256": "c5649c039537a16a42503a97ac05bc4ee7c05e0b90e0af434a00822957f29fa8",
+   "window": [
+    "2022-02-03",
+    "2024-12-19"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2025-03-26.zip",
+   "archive_date": "2025-03-26",
+   "archive_name": "Theme: nursing-homes (2025-03-26) Snapshot",
+   "bytes": 3938293,
+   "denials": 3155,
+   "encoding": "utf-8",
+   "era": "ccn",
+   "fines": 20482,
+   "member": "NH_Penalties_Mar2025.csv",
+   "note": "cache",
+   "processing_date": "2025-03-01",
+   "rows": 23637,
+   "sha256": "32abfb667187116de11f2a04b8801362282e43a5c86160d6af5d75607a008a8a",
+   "window": [
+    "2022-03-03",
+    "2025-01-14"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2025-04-30.zip",
+   "archive_date": "2025-04-30",
+   "archive_name": "Theme: nursing-homes (2025-04-30) Snapshot",
+   "bytes": 3775451,
+   "denials": 3118,
+   "encoding": "utf-8",
+   "era": "ccn",
+   "fines": 19528,
+   "member": "NH_Penalties_Apr2025.csv",
+   "note": "cache",
+   "processing_date": "2025-04-01",
+   "rows": 22646,
+   "sha256": "39fefef5b13ba8229bf78886618cd160236cc4ce6287e13e5de0facda82d6bbc",
+   "window": [
+    "2022-04-02",
+    "2025-02-19"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2025-05-28.zip",
+   "archive_date": "2025-05-28",
+   "archive_name": "Theme: nursing-homes (2025-05-28) Snapshot",
+   "bytes": 3655972,
+   "denials": 3114,
+   "encoding": "utf-8",
+   "era": "ccn",
+   "fines": 18801,
+   "member": "NH_Penalties_May2025.csv",
+   "note": "cache",
+   "processing_date": "2025-05-01",
+   "rows": 21915,
+   "sha256": "4062a127d0d7e0d8dbd12caa225fa40f5ac5f581fd051b1bec03129ef3c856ba",
+   "window": [
+    "2022-05-02",
+    "2025-03-15"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2025-06-25.zip",
+   "archive_date": "2025-06-25",
+   "archive_name": "Theme: nursing-homes (2025-06-25) Snapshot",
+   "bytes": 3597021,
+   "denials": 3072,
+   "encoding": "utf-8",
+   "era": "ccn",
+   "fines": 18482,
+   "member": "NH_Penalties_Jun2025.csv",
+   "note": "cache",
+   "processing_date": "2025-06-01",
+   "rows": 21554,
+   "sha256": "5c88cb3e3b7d388b8bd6db9b7ba8bcdb595278157572edc5a68aaf304dd081f3",
+   "window": [
+    "2022-06-02",
+    "2025-04-03"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2025-07-30.zip",
+   "archive_date": "2025-07-30",
+   "archive_name": "Theme: nursing-homes (2025-07-30) Snapshot",
+   "bytes": 3467416,
+   "denials": 3039,
+   "encoding": "utf-8",
+   "era": "ccn",
+   "fines": 17720,
+   "member": "NH_Penalties_Jul2025.csv",
+   "note": "cache",
+   "processing_date": "2025-07-01",
+   "rows": 20759,
+   "sha256": "c59529b6e80be105f630819c8f590ec0969424fdabc3c84310cdbf79c2e6dcd1",
+   "window": [
+    "2022-07-01",
+    "2025-05-22"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2025-09-24.zip",
+   "archive_date": "2025-09-24",
+   "archive_name": "Theme: nursing-homes (2025-09-24) Snapshot",
+   "bytes": 3467416,
+   "denials": 3039,
+   "encoding": "utf-8",
+   "era": "ccn",
+   "fines": 17720,
+   "member": "NH_Penalties_Sep2025.csv",
+   "note": "cache",
+   "processing_date": "2025-09-01",
+   "rows": 20759,
+   "sha256": "6408ce6d4fab82f2254d25ed3ddd3bf3e19609c55e2dd2b10db3e74eb6afebc2",
+   "window": [
+    "2022-07-01",
+    "2025-05-22"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2025-11-20.zip",
+   "archive_date": "2025-11-20",
+   "archive_name": "Theme: nursing-homes (2025-11-20) Snapshot",
+   "bytes": 3360346,
+   "denials": 2808,
+   "encoding": "utf-8",
+   "era": "ccn",
+   "fines": 17297,
+   "member": "NH_Penalties_Oct2025.csv",
+   "note": "cache",
+   "processing_date": "2025-10-01",
+   "rows": 20105,
+   "sha256": "03717b625b131f5de9525cf21862b6f7e56ef5909de6dc5735ec174994561138",
+   "window": [
+    "2022-10-17",
+    "2025-09-25"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2025-12-15.zip",
+   "archive_date": "2025-12-15",
+   "archive_name": "Theme: nursing-homes (2025-12-15) Snapshot",
+   "bytes": 3202845,
+   "denials": 2730,
+   "encoding": "utf-8",
+   "era": "ccn",
+   "fines": 16428,
+   "member": "NH_Penalties_Nov2025.csv",
+   "note": "cache",
+   "processing_date": "2025-11-01",
+   "rows": 19158,
+   "sha256": "d71ecc43e826edd0025a8c9be8fc5e433f16e8b4a07db1f0ee6f21c34d6bd974",
+   "window": [
+    "2022-11-20",
+    "2025-10-22"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_annual_2025.zip",
+   "archive_date": "2025-12-31",
+   "archive_name": "Annual: Theme nursing-homes (2025)",
+   "member": null,
+   "note": "no penalties member"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2026-01-14.zip",
+   "archive_date": "2026-01-14",
+   "archive_name": "Theme: nursing-homes (2026-01-14) Snapshot",
+   "bytes": 3088385,
+   "denials": 2699,
+   "encoding": "utf-8",
+   "era": "ccn",
+   "fines": 15768,
+   "member": "NH_Penalties_Dec2025.csv",
+   "note": "cache",
+   "processing_date": "2025-12-01",
+   "rows": 18467,
+   "sha256": "31394c8b7ec39bf610849582eba44f4b2578582d8ef61933ccbfff77da96ef09",
+   "window": [
+    "2023-01-02",
+    "2025-11-24"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2026-02-25.zip",
+   "archive_date": "2026-02-25",
+   "archive_name": "Theme: nursing-homes (2026-02-25) Snapshot",
+   "bytes": 2920748,
+   "denials": 2628,
+   "encoding": "utf-8",
+   "era": "ccn",
+   "fines": 14835,
+   "member": "NH_Penalties_Feb2026.csv",
+   "note": "cache",
+   "processing_date": "2026-02-01",
+   "rows": 17463,
+   "sha256": "022c1e8f1bab51bb64179d339d1a33dd297ab4d39907431fa9e283e1e3025bba",
+   "window": [
+    "2023-02-20",
+    "2026-01-16"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2026-03-25.zip",
+   "archive_date": "2026-03-25",
+   "archive_name": "Theme: nursing-homes (2026-03-25) Snapshot",
+   "bytes": 2827943,
+   "denials": 2583,
+   "encoding": "utf-8",
+   "era": "ccn",
+   "fines": 14332,
+   "member": "NH_Penalties_Mar2026.csv",
+   "note": "cache",
+   "processing_date": "2026-03-01",
+   "rows": 16915,
+   "sha256": "9ee8e6e8b050cbdff55e733256ff3553de28a80ba57cd05e1bce317a57110b92",
+   "window": [
+    "2023-03-17",
+    "2026-02-13"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2026-04-29.zip",
+   "archive_date": "2026-04-29",
+   "archive_name": "Theme: nursing-homes (2026-04-29) Snapshot",
+   "bytes": 2813104,
+   "denials": 2553,
+   "encoding": "utf-8",
+   "era": "ccn",
+   "fines": 14279,
+   "member": "NH_Penalties_Apr2026.csv",
+   "note": "cache",
+   "processing_date": "2026-04-01",
+   "rows": 16832,
+   "sha256": "474208b978c714dc60d3c6631c8b6e485426ffe8d341c3cf65129429abe31d47",
+   "window": [
+    "2023-04-17",
+    "2026-03-18"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2026-05-27.zip",
+   "archive_date": "2026-05-27",
+   "archive_name": "Theme: nursing-homes (2026-05-27) Snapshot",
+   "bytes": 2768010,
+   "denials": 2513,
+   "encoding": "utf-8",
+   "era": "ccn",
+   "fines": 14058,
+   "member": "NH_Penalties_May2026.csv",
+   "note": "cache",
+   "processing_date": "2026-05-01",
+   "rows": 16571,
+   "sha256": "e52709f93e1d627f78fa64e32ea246c0938810fdbbb23c7267a6d6f9c4c4e195",
+   "window": [
+    "2023-05-17",
+    "2026-04-17"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2026-06-24.zip",
+   "archive_date": "2026-06-24",
+   "archive_name": "Theme: nursing-homes (2026-06-24) Snapshot",
+   "bytes": 2792800,
+   "denials": 2470,
+   "encoding": "utf-8",
+   "era": "current",
+   "fines": 13710,
+   "member": "NH_Penalties_Jun2026.csv",
+   "note": "cache",
+   "processing_date": "2026-06-01",
+   "rows": 16180,
+   "sha256": "937687ecb01f742663172947b33e06c73cfa3c8024caeeba8e6a4c7f9c7ded69",
+   "window": [
+    "2023-06-17",
+    "2026-05-13"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2026-07-29.zip",
+   "archive_date": "2026-07-29",
+   "archive_name": "Theme: nursing-homes (2026-07-29)",
+   "bytes": 2790747,
+   "denials": 2479,
+   "encoding": "utf-8",
+   "era": "current",
+   "fines": 13687,
+   "member": "g6vv-u9sr_2026-07-01_NH_Penalties_Jul2026.csv",
+   "note": "cache",
+   "processing_date": "2026-07-01",
+   "rows": 16166,
+   "sha256": "beeadfdb2ad5a1c8324548e260929419960bfe3948b5fec3b4febce99b28cb5f",
+   "window": [
+    "2023-07-17",
+    "2026-06-11"
+   ]
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2026-08-06.zip",
+   "archive_date": "2026-08-06",
+   "archive_name": "Theme: nursing-homes (2026-08-06)",
+   "member": null,
+   "note": "no penalties member"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_annual_2026.zip",
+   "archive_date": "2026-08-26",
+   "archive_name": "Annual: Theme nursing-homes (2026)",
+   "member": null,
+   "note": "no penalties member"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/unknown-type/nursing-homes_2026-08-26.zip",
+   "archive_date": "2026-08-26",
+   "archive_name": "Theme: nursing-homes (2026-08-26)",
+   "bytes": 2712484,
+   "denials": 2440,
+   "encoding": "utf-8",
+   "era": "current",
+   "fines": 13256,
+   "member": "g6vv-u9sr_2026-08-01_NH_Penalties_Aug2026.csv",
+   "note": "cache",
+   "processing_date": "2026-08-01",
+   "rows": 15696,
+   "sha256": "3683f1debe5a19073075b3d5a1ceaa417971705d725d8c72cb568db95a39124d",
+   "window": [
+    "2023-08-19",
+    "2026-07-29"
+   ]
+  }
+ ],
+ "summary": {
+  "ambiguous_versions": 2536,
+  "built": "2026-09-19",
+  "editions": 83,
+  "first_edition": "2019-01-17",
+  "last_edition": "2026-08-26",
+  "listing": "https://data.cms.gov/provider-data/api/1/archive/aggregate/theme/nursing-homes/relative",
+  "not_in_latest": 67468,
+  "penalties": 83164,
+  "revised": 29545,
+  "revisions_linked": 35183,
+  "with_gaps": 1141
+ }
+}

@@ -26,12 +26,24 @@ Then open `http://127.0.0.1:8765/`. The page supports these links:
 
 `docs/data/` is generated, never edited by hand. The archive, and the code that reads it, live in the private `ai-workstation` repository:
 
-| Step | Command (from the workstation root) |
+| Step | Command (from this repository's root) |
 | --- | --- |
 | Capture a CMS edition | `python tools/snapshot_cms.py` |
 | Rebuild history since 2019-01 from CMS's own archive | `python tools/backfill_cms.py` |
-| Rebuild this page's data | `python tools/cms_export.py --out CMS-penalty-ledger/docs/data` |
+| Rebuild this page's data | `python tools/cms_export.py --out docs/data` |
 | Both, unattended | Windows task *CMS nursing-home capture*, weekly, runs `tools/cms_scheduled.py` |
+
+**These commands moved into this repository on 2026-09-19, and until then they
+were not here.** `cms_ledger.py`, `backfill_cms.py`, `cms_export.py`,
+`snapshot_cms.py` and `cms_scheduled.py` lived in a private workstation
+repository, with the 69 tests covering them, while this repository held only
+the page and its exported data. So this table named commands a reader could
+not run, and the project's central claim — that the history survives here
+after CMS drops it — rested on code nobody reading this could see. The archive
+itself (`snapshots/`) came with them.
+
+Python 3, **standard library only** for the engine. Only the 8 page tests need
+anything installed.
 
 The exporter computes everything through `tools/cms_ledger.py`, the command-line reader, so the page can't disagree with it. The page doesn't word its own refusals either; it prints the reader's sentences from `meta.json`.
 
@@ -48,11 +60,54 @@ The exporter computes everything through `tools/cms_ledger.py`, the command-line
 ## Tests
 
 ```bash
-python tests/test_page.py
+python -m unittest discover -s tests     # 84 tests
 ```
 
-Eight tests drive the rendered page in headless Chromium and check it against `docs/data/meta.json`, so they stay valid as the captures change. They need Playwright (`pip install playwright`, then `python -m playwright install chromium`) and skip cleanly without it. The exporter's own tests are in the workstation repository, at `tools/tests/test_cms_export.py`.
+**84 tests: 69 over the engine, 8 driving the page, 7 over the unattended run.**
+All 84 are in this repository as of 2026-09-19; 76 of them used to be in the
+workstation, which meant a clone could run 8.
+
+`discover`, not a loop over `tests/test_*.py` — a file that calls
+`unittest.main()` above its last class runs green while skipping it and prints
+a total that looks right, which hid three tests in a sibling project here.
+
+The 8 page tests drive the rendered page in headless Chromium and check it
+against `docs/data/meta.json`, so they stay valid as the captures move the
+numbers. They need Playwright (`pip install playwright`, then
+`python -m playwright install chromium`) and **skip without it** — which is a
+real hazard rather than a convenience, because a green `OK (skipped=8)` looks
+exactly like a suite that tested the page. CI installs chromium on purpose and
+fails the run if anything reports as skipped. The 69 engine tests need nothing.
 
 ## Status
 
-Private, unpublished and not tagged for production. **Checked against existing tools on 2026-09-19.** Every consumer tool found (ProPublica, NursingHome411, The Care Ratings, Care Compare) shows about three years, so multi-year penalty history is a real gap. See the correction at the top: that history is buildable from CMS's own archive. Renamed from Docket on 2026-09-19: no nursing-home tool used that name, but legal software crowds it (Docket Alarm, Clarivate Docket, Docket for in-house counsel), so a search for it would never find this page. No product was found using "Nursing Home Penalty Ledger". Publishing requires going through `PRE-PUBLIC-CHECKLIST.md` in the workstation repository first.
+**The page is live at `cms-penalty-ledger.pages.dev`; this repository stays
+private.** Deployed to Cloudflare Pages on 2026-09-19 from an account that is
+not the real-name one, the same arrangement Outcrop uses. So the
+surface is public and the code is not.
+
+**That is worth stating precisely, because it bounds what the engine move
+bought.** Moving the engine in makes this repository self-contained: everything
+needed to capture an edition, rebuild the history from `data.cms.gov` and
+regenerate the page is here, and its own suite runs against it. What it does
+**not** yet do is let anyone else rebuild the data, because nobody else can
+clone a private repository. The fourth production criterion — documented well
+enough for someone else to run it — is met by the repository and blocked by its
+visibility, which is a different thing from the defect that used to be here.
+
+**Checked against existing tools on 2026-09-19, and re-checked on the same
+day.** Every consumer tool found — ProPublica's Nursing Home Inspect,
+LTCCC/NursingHome411, The Care Ratings, Care Compare, and an Apify CMS penalty
+scraper — shows about three years. LTCCC's own alert page says "the past three
+years" in as many words. Multi-year penalty history is a real gap, and the
+correction at the top is what makes it fillable.
+
+**The name was searched.** No product was found using "Nursing Home Penalty
+Ledger", and a trademark search returns only unrelated marks (Legal Ledger, the
+Ledger hardware wallet). Renamed from Docket on 2026-09-19: no nursing-home
+tool used that name either, but legal software crowds it — Docket Alarm,
+Clarivate Docket, Docket for in-house counsel — so a search for it would never
+have found this page.
+
+Not tagged for production. Making this repository public would run through
+`PRE-PUBLIC-CHECKLIST.md` in the workstation repository first.
