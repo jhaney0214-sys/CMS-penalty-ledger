@@ -24,7 +24,7 @@ Then open `http://127.0.0.1:8765/`. The page supports these links:
 
 ## Where the data comes from
 
-`docs/data/` is generated, never edited by hand. The archive, and the code that reads it, live in the private `ai-workstation` repository:
+`docs/data/` is generated, never edited by hand. The archive and the code that reads it are in this repository, in `snapshots/` and `tools/` — see [`tools/README.md`](tools/README.md) for what each module does and the traps in CMS's own files that it handles. *(This sentence said they "live in the private `ai-workstation` repository" until 2026-09-20, which the paragraph directly below it had already contradicted since the 19th. A correction added beneath a claim does not correct the claim.)*
 
 | Step | Command (from this repository's root) |
 | --- | --- |
