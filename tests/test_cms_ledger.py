@@ -298,8 +298,18 @@ class CommandLine(LedgerTest):
         self.assertIn("--captures", text)
 
 
-REAL = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(
-    os.path.dirname(__file__)))), "snapshots", "cms")
+# The archive in THIS repository. One dirname fewer than it used to be: these
+# tests lived in the workstation's tools/tests/, two levels below that root, so
+# the old expression landed on it correctly from there and lands one level
+# ABOVE this repository from here.
+#
+# It went unnoticed for a moment because it kept working for the wrong reason -
+# the workstation still held its copy of snapshots/cms, so these four tests
+# read that instead of the one they ship beside, and passed. Deleting the old
+# copy turned them into skips, and `OK (skipped=4)` is what a suite that has
+# stopped checking anything looks like.
+REAL = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                    "snapshots", "cms")
 
 
 @unittest.skipUnless(os.path.isdir(REAL) and cms_ledger.captures(REAL),
