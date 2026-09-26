@@ -31,6 +31,7 @@ Then open `http://127.0.0.1:8765/`. The page supports these links:
 | Capture a CMS edition | `python tools/snapshot_cms.py` |
 | Rebuild history since 2019-01 from CMS's own archive | `python tools/backfill_cms.py` |
 | Rebuild this page's data | `python tools/cms_export.py --out docs/data` |
+| Every figure a written piece quotes | `python tools/findings.py` |
 | Both, unattended | Windows task *CMS nursing-home capture*, weekly, runs `tools/cms_scheduled.py` |
 
 **These commands moved into this repository on 2026-09-19, and until then they
@@ -60,10 +61,10 @@ The exporter computes everything through `tools/cms_ledger.py`, the command-line
 ## Tests
 
 ```bash
-python -m unittest discover -s tests     # 84 tests
+python -m unittest discover -s tests     # 88 tests
 ```
 
-**84 tests: 69 over the engine, 8 driving the page, 7 over the unattended run.**
+**88 tests: 69 over the engine, 4 over the article's figures, 8 driving the page, 7 over the unattended run.**
 All 84 are in this repository as of 2026-09-19; 76 of them used to be in the
 workstation, which meant a clone could run 8.
 
