@@ -41,9 +41,12 @@ jobs:
 
       - name: The browser tests must have actually run
         run: |
-          if grep -qi "skipped" out.txt; then
+          # unittest's own skip marks only: "... skipped 'why'" on a test's
+          # line, "skipped=N" in the summary. A bare "skipped" also matched a
+          # test named ..._said_not_skipped and failed every run from 2026-09-26.
+          if grep -qE "\.\.\. skipped|skipped=[0-9]+" out.txt; then
             echo "::error::Tests were skipped. A skipped browser test is not a passing one."
-            grep -i "skipped" out.txt
+            grep -E "\.\.\. skipped|skipped=[0-9]+" out.txt
             exit 1
           fi
           echo "No skips."
