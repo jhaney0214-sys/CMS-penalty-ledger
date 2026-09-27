@@ -22,6 +22,28 @@ Then open `http://127.0.0.1:8765/`. The page supports these links:
 | `#state=IL` | A state's totals with its denominator, and its largest fine totals |
 | `#q=merry wood` | A name search (a CCN works too) |
 
+## Facility pages
+
+```bash
+python tools/facility_pages.py              # the 30 homes with the most in dropped fines
+python tools/facility_pages.py --ccn 105407 # or named homes
+```
+
+One static page per home under `docs/facilities/`, listing every penalty in
+CMS's archive since 2019, including those the current file no longer shows.
+Each row gives the amount as first and as last published (CMS revises
+amounts while a penalty is listed: Siesta Key's $799,880 fine was first
+published as $125,970), the name the home used at the time, the first and
+last archived editions that listed it, each linked to CMS's own ZIP, and the
+edition it was gone from. A penalty that left before the usual three years
+is flagged, with the file's silence on why stated rather than filled in.
+
+Built 2026-09-27 as a demand test: whether people, and the lawyers who sue
+nursing homes, find and use a complete history. A free site already shows
+some old penalties; compared on Siesta Key it missed the two largest fines
+and showed the $799,880 one at its first amount. See `IDEAS.md` Round 10 in
+the workstation for the incumbent check.
+
 ## Where the data comes from
 
 `docs/data/` is generated, never edited by hand. The archive and the code that reads it are in this repository, in `snapshots/` and `tools/` — see [`tools/README.md`](tools/README.md) for what each module does and the traps in CMS's own files that it handles. *(This sentence said they "live in the private `ai-workstation` repository" until 2026-09-20, which the paragraph directly below it had already contradicted since the 19th. A correction added beneath a claim does not correct the claim.)*

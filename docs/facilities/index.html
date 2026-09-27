@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nursing homes with the largest fines CMS no longer shows</title>
+<meta name="description" content="Full CMS penalty histories, including fines older than the three years Care Compare shows, for the homes with the most in dropped fines.">
+<style>
+
+:root {
+  --paper:#FCFCFA; --paper-sunk:#F4F5F2; --ink:#191C1A; --ink-muted:#5F645F;
+  --rule:#DCE0DA; --accent:#1F6F5C; --accent-sunk:#E9F1ED;
+  --font-display:'Source Serif 4', Georgia, 'Times New Roman', serif;
+  --font-body:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono:'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  --measure:68ch; --note-width:17ch; --note-gap:3ch;
+  --s1:.25rem; --s2:.5rem; --s3:.75rem; --s4:1rem; --s5:1.5rem; --s6:2.5rem; --s7:4rem; --s8:6rem;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --paper:#121413; --paper-sunk:#1A1D1B; --ink:#E8EAE5; --ink-muted:#9AA098;
+          --rule:#2C302D; --accent:#6FBFA3; --accent-sunk:#182420; }
+}
+*, *::before, *::after { box-sizing:border-box; }
+html { -webkit-text-size-adjust:100%; }
+body { margin:0; padding:var(--s6) var(--s5) var(--s8); background:var(--paper); color:var(--ink);
+  font-family:var(--font-body); font-size:clamp(1.0625rem, 1rem + .25vw, 1.1875rem); line-height:1.6;
+  font-feature-settings:'kern' 1, 'liga' 1; counter-reset:sidenote; }
+
+.page { max-width:var(--measure); margin:0 auto; }
+h1, h2, h3 { font-family:var(--font-display); font-weight:600; color:var(--ink); text-wrap:balance; margin:0 0 var(--s4); }
+h1 { font-size:clamp(2rem, 1.55rem + 1.9vw, 3rem); line-height:1.08; letter-spacing:-.021em; margin-bottom:var(--s3); }
+h2 { font-size:clamp(1.5rem, 1.34rem + .72vw, 1.95rem); line-height:1.16; letter-spacing:-.014em;
+  margin-top:var(--s7); padding-bottom:var(--s3); border-bottom:1px solid var(--rule); }
+h3 { font-size:1.25rem; line-height:1.3; letter-spacing:-.008em; margin-top:var(--s6); }
+p { margin:0 0 var(--s4); }
+h1 + p { font-size:1.15em; line-height:1.5; color:var(--ink-muted); margin-bottom:var(--s6); }
+.sn { counter-increment:sidenote; }
+.sn-toggle { position:absolute; width:1px; height:1px; opacity:0; clip-path:inset(50%); }
+.sn-mark { font-size:.68em; font-weight:600; color:var(--accent); vertical-align:super; line-height:0; padding:0 .12em; cursor:pointer; }
+.sn-mark::after { content:counter(sidenote); }
+.sn-toggle:focus-visible + .sn-mark { outline:2px solid var(--accent); outline-offset:2px; border-radius:2px; }
+.sn-body { float:right; clear:right; width:var(--note-width); margin:.4rem calc(-1 * (var(--note-width) + var(--note-gap))) var(--s4) 0;
+  font-size:.8125rem; line-height:1.45; color:var(--ink-muted); }
+.sn-body::before { content:counter(sidenote); font-weight:600; color:var(--accent); font-size:.85em; vertical-align:super; line-height:0; margin-right:.35em; }
+@media (max-width:78rem) {
+  .sn-mark { background:var(--accent-sunk); border-radius:2px; padding:.1em .32em; vertical-align:baseline; line-height:normal; font-size:.72em; }
+  .sn-body { display:none; }
+  .sn-toggle:checked ~ .sn-body { display:block; float:none; width:auto; margin:var(--s3) 0 var(--s4); padding-left:var(--s4); border-left:2px solid var(--accent); }
+}
+a { color:var(--accent); text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:.18em;
+  text-decoration-color:color-mix(in srgb, var(--accent) 40%, transparent); }
+a:hover { text-decoration-color:var(--accent); }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible { outline:2px solid var(--accent); outline-offset:3px; border-radius:2px; }
+strong { font-weight:600; }
+code { font-family:var(--font-mono); font-size:.86em; background:var(--paper-sunk); padding:.12em .34em; border-radius:2px; }
+table, .num, time, .stat { font-variant-numeric:tabular-nums lining-nums; }
+.table-wrap { max-width:var(--measure); margin:var(--s5) auto; overflow-x:auto; -webkit-overflow-scrolling:touch; }
+.table-wrap table { margin:0; min-width:24rem; }
+table { width:100%; border-collapse:collapse; margin:var(--s5) auto; font-size:.94em; }
+thead th { font-size:.8rem; font-weight:600; color:var(--ink-muted); text-align:left; padding:0 var(--s3) var(--s2);
+  border-bottom:1px solid var(--ink); white-space:nowrap; }
+thead th.num { text-align:right; }
+tbody td { padding:var(--s3); border-bottom:1px solid var(--rule); vertical-align:top; }
+tbody tr:last-child td { border-bottom:1px solid var(--ink); }
+.num { text-align:right; }
+.callout { margin:var(--s5) auto; padding:var(--s4); background:var(--accent-sunk); border-left:2px solid var(--accent); font-size:.96em; }
+.callout p:last-child { margin-bottom:0; }
+.stat { font-family:var(--font-display); font-size:2.5rem; font-weight:600; line-height:1; letter-spacing:-.02em; display:block; }
+.stat-label { font-size:.875rem; color:var(--ink-muted); margin-top:var(--s2); }
+
+
+form { display:grid; grid-template-columns:1fr auto auto; gap:var(--s3); align-items:end; }
+label.field { display:block; font-size:.8rem; font-weight:600; color:var(--ink-muted); margin-bottom:var(--s1); }
+input[type=search], select, button { font:inherit; font-size:1rem; color:var(--ink); background:var(--paper);
+  border:1px solid var(--rule); border-radius:2px; padding:var(--s2) var(--s3); min-height:2.75rem; }
+input[type=search] { width:100%; }
+button { background:var(--accent); border-color:var(--accent); color:var(--paper); font-weight:600; cursor:pointer; }
+@media (max-width:34rem) {
+  body { padding:var(--s5) var(--s4) var(--s7); }
+  h2 { margin-top:var(--s6); }
+  form { grid-template-columns:1fr 1fr; }
+  form > div:first-child { grid-column:1 / -1; }
+  table { font-size:.88em; }
+}
+ol.results { list-style:none; padding:0; margin:var(--s5) auto; }
+ol.results li { padding:var(--s3) 0; border-bottom:1px solid var(--rule); margin:0; }
+ol.results .where { color:var(--ink-muted); font-size:.9em; }
+.muted { color:var(--ink-muted); }
+.hidden { display:none; }
+@media (prefers-reduced-motion:reduce) { *, *::before, *::after { animation-duration:.01ms !important; transition-duration:.01ms !important; } }
+@media print {
+  :root { --paper:#fff; --ink:#000; --ink-muted:#444; --accent:#000; }
+  body { font-size:11pt; padding:0; }
+  form { display:none; }
+  a { text-decoration:none; color:inherit; }
+  h2, h3 { break-after:avoid; }
+  table { break-inside:avoid; }
+  .table-wrap { overflow:visible; }
+  .sn-body { display:block !important; float:none; width:auto; margin:var(--s2) 0 var(--s3); padding-left:var(--s4); border-left:1px solid #999; }
+}
+
+.meta{font-size:.85em;color:var(--ink-muted);}</style>
+</head><body><main class="page">
+<p class="meta"><a href="../">Nursing Home Penalty Ledger</a></p>
+<h1>The largest fines CMS no longer shows</h1>
+<p>Nursing homes CMS inspects today, ranked by the fines its current file has dropped. Each page lists every penalty in CMS's archive since 2019, with the edition that published it.</p>
+<div class="table-wrap"><table><thead><tr><th>Home</th><th>Where</th><th class="num">Fines no longer shown</th><th class="num">Total</th></tr></thead><tbody>
+<tr><td><a href="515049-morgantown-heights-of-journey.html">Morgantown Heights of Journey</a></td><td>Morgantown, WV</td><td class="num">4</td><td class="num">$1,825,129</td></tr>
+<tr><td><a href="445174-orchardview-post-acute-and-rehabilitation-center.html">Orchardview Post-acute and Rehabilitation Center</a></td><td>Kingsport, TN</td><td class="num">14</td><td class="num">$1,719,826</td></tr>
+<tr><td><a href="505296-avalon-healthcare-bellingham.html">Avalon Healthcare Bellingham</a></td><td>Bellingham, WA</td><td class="num">18</td><td class="num">$1,680,529</td></tr>
+<tr><td><a href="075182-grandview-rehabilitation-and-healthcare-center.html">Grandview Rehabilitation and Healthcare Center</a></td><td>New Britain, CT</td><td class="num">28</td><td class="num">$1,667,385</td></tr>
+<tr><td><a href="445017-asbury-place-at-maryville.html">Asbury Place at Maryville</a></td><td>Maryville, TN</td><td class="num">3</td><td class="num">$1,559,538</td></tr>
+<tr><td><a href="515174-complete-care-at-oak-ridge-llc.html">Complete Care at Oak Ridge LLC</a></td><td>Charleston, WV</td><td class="num">2</td><td class="num">$1,459,121</td></tr>
+<tr><td><a href="055862-golden-rose-care-center.html">Golden Rose Care Center</a></td><td>Pasadena, CA</td><td class="num">25</td><td class="num">$1,417,918</td></tr>
+<tr><td><a href="525482-burlington-health-and-rehabilitation-center.html">Burlington Health and Rehabilitation Center</a></td><td>Burlington, WI</td><td class="num">14</td><td class="num">$1,326,742</td></tr>
+<tr><td><a href="345223-valley-hill-health-rehab-center.html">Valley Hill Health &amp; Rehab Center</a></td><td>Hendersonville, NC</td><td class="num">8</td><td class="num">$1,299,206</td></tr>
+<tr><td><a href="676127-avir-at-emerald-hills.html">Avir at Emerald Hills</a></td><td>North Richland Hills, TX</td><td class="num">8</td><td class="num">$1,283,189</td></tr>
+<tr><td><a href="105407-siesta-key-health-and-rehabilitation-center.html">Siesta Key Health and Rehabilitation Center</a></td><td>Sarasota, FL</td><td class="num">10</td><td class="num">$1,275,391</td></tr>
+<tr><td><a href="145180-aperion-care-chicago-heights.html">Aperion Care Chicago Heights</a></td><td>Chicago Heights, IL</td><td class="num">22</td><td class="num">$1,271,574</td></tr>
+<tr><td><a href="056078-alta-view-post-acute.html">Alta View Post Acute</a></td><td>Los Angeles, CA</td><td class="num">16</td><td class="num">$1,234,359</td></tr>
+<tr><td><a href="366207-bella-terrace-rehabilitation-and-nursing-center.html">Bella Terrace Rehabilitation and Nursing Center</a></td><td>Columbus, OH</td><td class="num">38</td><td class="num">$1,223,186</td></tr>
+<tr><td><a href="075017-montowese-center-for-health-rehabilitation.html">Montowese Center for Health &amp; Rehabilitation</a></td><td>North Haven, CT</td><td class="num">13</td><td class="num">$1,213,801</td></tr>
+<tr><td><a href="135094-wellspring-health-rehabilitation-of-cascadia.html">Wellspring Health &amp; Rehabilitation of Cascadia</a></td><td>Nampa, ID</td><td class="num">5</td><td class="num">$1,206,145</td></tr>
+<tr><td><a href="225488-tremont-rehabilitation-skilled-care-center.html">Tremont Rehabilitation &amp; Skilled Care Center</a></td><td>Wareham, MA</td><td class="num">15</td><td class="num">$1,170,516</td></tr>
+<tr><td><a href="185122-eastway-health-rehabilitation.html">Eastway Health &amp; Rehabilitation</a></td><td>Louisville, KY</td><td class="num">25</td><td class="num">$1,168,743</td></tr>
+<tr><td><a href="215077-autumn-lake-healthcare-at-ruxton.html">Autumn Lake Healthcare at Ruxton</a></td><td>Towson, MD</td><td class="num">7</td><td class="num">$1,162,036</td></tr>
+<tr><td><a href="145333-west-suburban-nursing-rehab-center.html">West Suburban Nursing &amp; Rehab Center</a></td><td>Bloomingdale, IL</td><td class="num">20</td><td class="num">$1,153,233</td></tr>
+<tr><td><a href="215025-complete-care-at-wheaton.html">Complete Care at Wheaton</a></td><td>Wheaton, MD</td><td class="num">3</td><td class="num">$1,142,745</td></tr>
+<tr><td><a href="235654-the-orchards-at-lapeer.html">The Orchards at Lapeer</a></td><td>Lapeer, MI</td><td class="num">15</td><td class="num">$1,140,528</td></tr>
+<tr><td><a href="345133-ridge-valley-center-for-nursing-and-rehabilitation.html">Ridge Valley Center for Nursing and Rehabilitation</a></td><td>Wilkesboro, NC</td><td class="num">11</td><td class="num">$1,119,488</td></tr>
+<tr><td><a href="235263-medilodge-of-sterling-heights.html">Medilodge of Sterling Heights</a></td><td>Sterling Heights, MI</td><td class="num">16</td><td class="num">$1,117,206</td></tr>
+<tr><td><a href="145967-elevate-care-country-club-hill.html">Elevate Care Country Club Hill</a></td><td>Country Club Hills, IL</td><td class="num">20</td><td class="num">$1,110,005</td></tr>
+<tr><td><a href="525108-resolve-at-west-allis-respiratory-and-rehab.html">Resolve at West Allis Respiratory and Rehab</a></td><td>West Allis, WI</td><td class="num">12</td><td class="num">$1,105,387</td></tr>
+<tr><td><a href="145424-landmark-of-richton-park-rehab-nsg-ctr.html">Landmark of Richton Park Rehab &amp; Nsg Ctr</a></td><td>Richton Park, IL</td><td class="num">15</td><td class="num">$1,089,019</td></tr>
+<tr><td><a href="395397-edenbrook-on-second-ave.html">Edenbrook on Second Ave</a></td><td>Kingston, PA</td><td class="num">13</td><td class="num">$1,042,776</td></tr>
+<tr><td><a href="265822-bridgewood-health-care-center.html">Bridgewood Health Care Center</a></td><td>Kansas City, MO</td><td class="num">14</td><td class="num">$1,042,129</td></tr>
+<tr><td><a href="375568-tulsa-center-for-rehabilitation-and-healthcare.html">Tulsa Center for Rehabilitation and Healthcare</a></td><td>Tulsa, OK</td><td class="num">9</td><td class="num">$1,041,465</td></tr>
+</tbody></table></div>
+<p class="meta">Built 2026-09-26 by <code>tools/facility_pages.py</code>. Data: CMS, public domain.</p>
+</main></body></html>
