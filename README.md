@@ -82,19 +82,11 @@ fails the run if anything reports as skipped. The 69 engine tests need nothing.
 
 ## Status
 
-**The page is live at `cms-penalty-ledger.pages.dev`; this repository stays
-private.** Deployed to Cloudflare Pages on 2026-09-19 from an account that is
-not the real-name one, the same arrangement Outcrop uses. So the
-surface is public and the code is not.
-
-**That is worth stating precisely, because it bounds what the engine move
-bought.** Moving the engine in makes this repository self-contained: everything
+**The page is live at `cms-penalty-ledger.pages.dev`**, deployed to
+Cloudflare Pages on 2026-09-19. This repository is self-contained: everything
 needed to capture an edition, rebuild the history from `data.cms.gov` and
-regenerate the page is here, and its own suite runs against it. What it does
-**not** yet do is let anyone else rebuild the data, because nobody else can
-clone a private repository. The fourth production criterion — documented well
-enough for someone else to run it — is met by the repository and blocked by its
-visibility, which is a different thing from the defect that used to be here.
+regenerate the page is here, and its own suite runs against it. The figures a
+written piece quotes are printed by `tools/findings.py`.
 
 **Checked against existing tools on 2026-09-19, and re-checked on the same
 day.** Every consumer tool found — ProPublica's Nursing Home Inspect,

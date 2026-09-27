@@ -1,26 +1,12 @@
 # Hosting the Ledger page
 
-Live at **`cms-penalty-ledger.pages.dev`** since 2026-09-19. Cloudflare Pages,
-from an account that is not the real-name one. **This repository stays private.**
+Live at **`cms-penalty-ledger.pages.dev`** since 2026-09-19, on Cloudflare
+Pages. Only `docs/` is deployed; the page carries no byline. The project name
+`cms-penalty-ledger` was free, so there is no random suffix.
 
-That is Outcrop's arrangement rather than Farewatch,
-Greenlight and Assay's: those three are public and each carries a real-name
-copyright line and real-name commits. Deploying `docs/` alone puts the page in
-public without putting the history there, and the page carries no byline.
-
-`wrangler whoami` before any deploy — the account not being the real-name one
-is the property the whole arrangement depends on. Unlike `outcrop`, the project
-name `cms-penalty-ledger` was free, so there is no random suffix.
-
-## What this does and does not buy
-
-**It publishes the surface, not the code.** The engine moved into this
-repository on 2026-09-19 so that a clone can capture an edition, rebuild the
-history from `data.cms.gov` and regenerate the page. That is now true of the
-repository and untrue of the world, because nobody can clone a private
-repository. The fourth production criterion is met by the tree and blocked by
-its visibility — which is a different state from the defect that used to be
-here, and worth not overstating.
+Run `wrangler whoami` before any deploy, and check it is the account you mean
+to deploy from. Wrangler's local cache, `.wrangler/`, records that account, so
+it is ignored here and must stay out of commits.
 
 ## Deploying an update
 
