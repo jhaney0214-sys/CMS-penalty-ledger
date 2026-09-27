@@ -100,5 +100,36 @@ class TestRepublish(unittest.TestCase):
         self.assertIn("not refreshed", lines[0])
 
 
+class TestLiveCheck(unittest.TestCase):
+    """The page is uploaded by hand, so a pushed capture can leave it behind."""
+
+    def setUp(self):
+        self.root = tempfile.mkdtemp()
+        os.makedirs(os.path.join(self.root, "docs", "data"))
+        with open(os.path.join(self.root, "docs", "data", "meta.json"), "w") as handle:
+            handle.write('{"capture": "2026-10-02"}')
+
+    def tearDown(self):
+        shutil.rmtree(self.root)
+
+    def test_current_page_passes(self):
+        behind, line = cms_scheduled.live_check(self.root, fetch=lambda u: '{"capture": "2026-10-02"}')
+        self.assertFalse(behind)
+        self.assertIn("current", line)
+
+    def test_behind_page_is_said_loudly(self):
+        behind, line = cms_scheduled.live_check(self.root, fetch=lambda u: '{"capture": "2026-09-18"}')
+        self.assertTrue(behind)
+        self.assertIn("LIVE PAGE BEHIND", line)
+        self.assertIn("2026-09-18", line)
+
+    def test_an_unreachable_page_is_not_checked_not_current(self):
+        def down(url):
+            raise OSError("offline")
+        behind, line = cms_scheduled.live_check(self.root, fetch=down)
+        self.assertTrue(behind)
+        self.assertIn("NOT CHECKED", line)
+
+
 if __name__ == "__main__":
     unittest.main()

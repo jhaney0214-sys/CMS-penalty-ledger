@@ -24,9 +24,11 @@ is the only place an unattended failure is visible.
 """
 
 import datetime
+import json
 import os
 import subprocess
 import sys
+import urllib.request
 
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(HERE, "tools"))
@@ -40,6 +42,12 @@ LOG = os.path.join(HERE, "snapshots", "cms", ".last_run.log")
 # the page lived here - which is exactly what stopped a clone rebuilding its
 # own data. One repository, so one root.
 LEDGER = HERE
+#: What the public page is serving. The page is a direct upload, not built
+#: from this repository, so a pushed capture does not reach it by itself.
+LIVE_META = "https://cms-penalty-ledger.pages.dev/data/meta.json"
+#: Exit code when the page is behind the repository: not a failed capture,
+#: but a deploy nobody has done, and it must show in Task Scheduler.
+BEHIND = 3
 
 
 def _git_in(cwd, *args):
@@ -97,6 +105,27 @@ def republish(ledger=LEDGER, export=None, git=None):
                    "page data")
 
 
+def live_check(ledger=LEDGER, fetch=None):
+    """(behind, log line): is the public page serving the repository's capture?
+
+    Found 2026-09-27 checking the Ledger against the production bar: this task
+    pushes new data every month CMS publishes, and the page, uploaded by hand,
+    would have stayed on the old one with every run reporting success."""
+    # Cloudflare answers Python's default user agent with 403.
+    fetch = fetch or (lambda url: urllib.request.urlopen(urllib.request.Request(
+        url, headers={"User-Agent": "cms-penalty-ledger weekly check"}), timeout=30).read().decode("utf-8"))
+    with open(os.path.join(ledger, "docs", "data", "meta.json"), encoding="utf-8") as handle:
+        here = json.load(handle)["capture"]
+    try:
+        live = json.loads(fetch(LIVE_META))["capture"]
+    except Exception as error:                                   # noqa: BLE001
+        return True, "  live page NOT CHECKED: %s: %s" % (type(error).__name__, error)
+    if live != here:
+        return True, ("  LIVE PAGE BEHIND: it serves capture %s, the repository has %s;"
+                      " deploy docs/ (notes/hosting-the-page.md)" % (live, here))
+    return False, "  live page current: capture %s" % here
+
+
 def main():
     lines = ["=== %s" % datetime.datetime.now().isoformat(timespec="seconds")]
     try:
@@ -108,6 +137,10 @@ def main():
         failed = any(r["status"] in ("fetch_failed", "unresolved")
                      for r in rows)
         code = 2 if failed else 0
+        behind, line = live_check()
+        lines.append(line)
+        if behind and code == 0:
+            code = BEHIND
     except Exception as error:                                   # noqa: BLE001
         lines.append("  RUN FAILED: %s: %s" % (type(error).__name__, error))
         code = 1
