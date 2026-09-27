@@ -96,9 +96,17 @@ def figures(rows, surveyed):
     had_dropped = {r["ccn"] for r in dropped} & no_current
 
     dropped_fines = collections.defaultdict(float)
+    dropped_rows = collections.defaultdict(list)
     for r in dropped:
         if r["ccn"] in had_dropped and r["kind"] == "Fine":
             dropped_fines[r["ccn"]] += _amount(r)
+            dropped_rows[r["ccn"]].append(r["date"])
+
+    # The article's table of homes, so it is printed here rather than typed:
+    # added 2026-09-26, when a desktop check found the table matched the data
+    # to the dollar but no command produced it.
+    top = sorted((c for c, v in dropped_fines.items() if v >= THRESHOLDS[-1]),
+                 key=lambda c: -dropped_fines[c])
 
     def fines(group):
         chosen = [r for r in group if r["kind"] == "Fine"]
@@ -107,6 +115,7 @@ def figures(rows, surveyed):
 
     return {
         "penalties": len(rows),
+        "editions": len({r["first_seen"] for r in rows} | {r["last_seen"] for r in rows}),
         "current": len(current),
         "dropped": len(dropped),
         "dropped_fines": fines(dropped),
@@ -124,6 +133,11 @@ def figures(rows, surveyed):
         "without_current_dropped_fines_at_least": {
             str(t): sum(1 for v in dropped_fines.values() if v >= t)
             for t in THRESHOLDS},
+        "without_current_dropped_fines_top": [
+            {"ccn": c, "dollars": round(dropped_fines[c]),
+             "fines": len(dropped_rows[c]),
+             "years": min(dropped_rows[c])[:4] + "-" + max(dropped_rows[c])[:4]}
+            for c in top],
     }
 
 
