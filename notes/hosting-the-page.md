@@ -6,9 +6,9 @@ to GitHub, production branch `main`, no build command, output directory
 `docs/`. Every push to `main` redeploys it. The page carries no byline.
 
 It was first a direct upload to `cms-penalty-ledger.pages.dev` (2026-09-19),
-from a different Cloudflare account. That project still holds the name, so the
-Git-built project took a new one. The old address serves a frozen copy until
-that project is deleted.
+from a different Cloudflare account. That project held the name, so the
+Git-built project took a new one; the old project was deleted on 2026-09-27,
+and the old address no longer resolves.
 
 **The page now follows a push by itself.** The weekly task pushes each new
 capture, and the push rebuilds the page. The task still checks what the page
