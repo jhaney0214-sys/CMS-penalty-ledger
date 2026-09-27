@@ -1,0 +1,129 @@
+{
+ "_": "The numbers this repository and its launch posts state, checked by docclaims (github.com/jhaney0214-sys/docclaims).",
+ "claims": [
+  {
+   "id": "editions",
+   "claim": "Distinct CMS editions read to rebuild the history",
+   "value": "83 distinct editions",
+   "format": "%d distinct editions",
+   "derive": {
+    "files": [
+     "reports/2026-09-18-findings.txt"
+    ],
+    "capture": "^editions\\s+(\\d+)$"
+   },
+   "status": "measured",
+   "anchor": "reports/2026-09-18-findings.txt, printed by tools/findings.py from the archive at capture 2026-09-18",
+   "checked_on": "2026-09-27",
+   "durable": "read from the committed transcript on every verify; it records capture 2026-09-18 and is not re-run, because each new capture moves these figures",
+   "appears_in": [
+    "README.md"
+   ],
+   "near": [
+    "read"
+   ],
+   "window": 120
+  },
+  {
+   "id": "penalties",
+   "claim": "Penalties rebuilt from those editions",
+   "value": "83,164 penalties",
+   "format": "{:,} penalties",
+   "derive": {
+    "files": [
+     "reports/2026-09-18-findings.txt"
+    ],
+    "capture": "^penalties\\s+(\\d+)$"
+   },
+   "status": "measured",
+   "anchor": "reports/2026-09-18-findings.txt, printed by tools/findings.py from the archive at capture 2026-09-18",
+   "checked_on": "2026-09-27",
+   "durable": "read from the committed transcript on every verify; it records capture 2026-09-18 and is not re-run, because each new capture moves these figures",
+   "appears_in": [
+    "README.md"
+   ],
+   "near": [
+    "rebuilt"
+   ],
+   "window": 120
+  },
+  {
+   "id": "dropped",
+   "claim": "Penalties CMS no longer publishes",
+   "value": "67,468",
+   "format": "{:,}",
+   "derive": {
+    "files": [
+     "reports/2026-09-18-findings.txt"
+    ],
+    "capture": "^dropped\\s+(\\d+)$"
+   },
+   "status": "measured",
+   "anchor": "reports/2026-09-18-findings.txt, printed by tools/findings.py from the archive at capture 2026-09-18",
+   "checked_on": "2026-09-27",
+   "durable": "read from the committed transcript on every verify; it records capture 2026-09-18 and is not re-run, because each new capture moves these figures",
+   "appears_in": [
+    "README.md"
+   ],
+   "near": [
+    "no longer publishes"
+   ],
+   "window": 120,
+   "allow": {
+    "83,164": "the total rebuilt, stated in the sentence before; a different count",
+    "29,545": "penalties whose amount CMS revised; a different count"
+   }
+  },
+  {
+   "id": "surveyed",
+   "claim": "Nursing homes CMS inspects in the current file",
+   "value": "14,690",
+   "format": "{:,}",
+   "derive": {
+    "files": [
+     "reports/2026-09-18-findings.txt"
+    ],
+    "capture": "^surveyed\\s+(\\d+)$"
+   },
+   "status": "measured",
+   "anchor": "reports/2026-09-18-findings.txt, printed by tools/findings.py from the archive at capture 2026-09-18",
+   "checked_on": "2026-09-27",
+   "durable": "read from the committed transcript on every verify; it records capture 2026-09-18 and is not re-run, because each new capture moves these figures",
+   "appears_in": []
+  },
+  {
+   "id": "clean_now",
+   "claim": "Inspected homes with no penalty in the current file",
+   "value": "7,915",
+   "format": "{:,}",
+   "derive": {
+    "files": [
+     "reports/2026-09-18-findings.txt"
+    ],
+    "capture": "^surveyed_without_current_penalty\\s+(\\d+)$"
+   },
+   "status": "measured",
+   "anchor": "reports/2026-09-18-findings.txt, printed by tools/findings.py from the archive at capture 2026-09-18",
+   "checked_on": "2026-09-27",
+   "durable": "read from the committed transcript on every verify; it records capture 2026-09-18 and is not re-run, because each new capture moves these figures",
+   "appears_in": []
+  },
+  {
+   "id": "clean_but_penalised",
+   "claim": "Of those, homes penalised in an earlier edition",
+   "value": "6,255",
+   "format": "{:,}",
+   "derive": {
+    "files": [
+     "reports/2026-09-18-findings.txt"
+    ],
+    "capture": "^without_current_but_penalised_before\\s+(\\d+)$"
+   },
+   "status": "measured",
+   "anchor": "reports/2026-09-18-findings.txt, printed by tools/findings.py from the archive at capture 2026-09-18",
+   "checked_on": "2026-09-27",
+   "durable": "read from the committed transcript on every verify; it records capture 2026-09-18 and is not re-run, because each new capture moves these figures",
+   "appears_in": []
+  }
+ ]
+}

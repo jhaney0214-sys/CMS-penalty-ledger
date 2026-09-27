@@ -1,0 +1,19 @@
+aged_out                                      58918
+capture                                       2026-09-18
+current                                       15696
+dropped                                       67468
+dropped_fines                                 {'count': 60468, 'dollars': 1260403145}
+earliest_dropped                              2016-01-04
+early                                         8550
+early_facility_gone                           4455
+early_redated                                 128
+early_unexplained                             3967
+early_unexplained_fines                       {'count': 3594, 'dollars': 97359038}
+editions                                      83
+penalties                                     83164
+surveyed                                      14690
+surveyed_with_current_penalty                 6775
+surveyed_without_current_penalty              7915
+without_current_but_penalised_before          6255
+without_current_dropped_fines_at_least        {'100000': 1156, '1000000': 12}
+without_current_dropped_fines_top             [{'ccn': '105407', 'dollars': 1275391, 'fines': 10, 'years': '2016-2023'}, {'ccn': '145180', 'dollars': 1271574, 'fines': 22, 'years': '2017-2023'}, {'ccn': '215077', 'dollars': 1162036, 'fines': 7, 'years': '2017-2022'}, {'ccn': '215025', 'dollars': 1142745, 'fines': 3, 'years': '2016-2019'}, {'ccn': '235654', 'dollars': 1140528, 'fines': 15, 'years': '2017-2022'}, {'ccn': '345133', 'dollars': 1119488, 'fines': 11, 'years': '2016-2023'}, {'ccn': '235263', 'dollars': 1117206, 'fines': 16, 'years': '2016-2022'}, {'ccn': '395397', 'dollars': 1042776, 'fines': 13, 'years': '2019-2023'}, {'ccn': '375568', 'dollars': 1041465, 'fines': 9, 'years': '2017-2022'}, {'ccn': '105702', 'dollars': 1035092, 'fines': 8, 'years': '2016-2023'}, {'ccn': '215160', 'dollars': 1024648, 'fines': 4, 'years': '2017-2022'}, {'ccn': '106027', 'dollars': 1014076, 'fines': 3, 'years': '2017-2021'}]
