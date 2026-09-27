@@ -104,8 +104,9 @@ fails the run if anything reports as skipped. The 69 engine tests need nothing.
 
 ## Status
 
-**The page is live at `cms-penalty-ledger.pages.dev`**, deployed to
-Cloudflare Pages on 2026-09-19. This repository is self-contained: everything
+**The page is live at `penalty-ledger.pages.dev`**, built by Cloudflare Pages
+from this repository's `docs/` on every push (since 2026-09-27; it was first
+a direct upload to `cms-penalty-ledger.pages.dev` on 2026-09-19). This repository is self-contained: everything
 needed to capture an edition, rebuild the history from `data.cms.gov` and
 regenerate the page is here, and its own suite runs against it. The figures a
 written piece quotes are printed by `tools/findings.py`.

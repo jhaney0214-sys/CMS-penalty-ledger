@@ -42,9 +42,10 @@ LOG = os.path.join(HERE, "snapshots", "cms", ".last_run.log")
 # the page lived here - which is exactly what stopped a clone rebuilding its
 # own data. One repository, so one root.
 LEDGER = HERE
-#: What the public page is serving. The page is a direct upload, not built
-#: from this repository, so a pushed capture does not reach it by itself.
-LIVE_META = "https://cms-penalty-ledger.pages.dev/data/meta.json"
+#: What the public page is serving. Since 2026-09-27 Cloudflare Pages builds
+#: the page from this repository on every push, so the page should follow the
+#: push this task makes; the check stays, because "it should" is not "it did".
+LIVE_META = "https://penalty-ledger.pages.dev/data/meta.json"
 #: Exit code when the page is behind the repository: not a failed capture,
 #: but a deploy nobody has done, and it must show in Task Scheduler.
 BEHIND = 3
@@ -122,7 +123,7 @@ def live_check(ledger=LEDGER, fetch=None):
         return True, "  live page NOT CHECKED: %s: %s" % (type(error).__name__, error)
     if live != here:
         return True, ("  LIVE PAGE BEHIND: it serves capture %s, the repository has %s;"
-                      " deploy docs/ (notes/hosting-the-page.md)" % (live, here))
+                      " check the Cloudflare Pages build (notes/hosting-the-page.md)" % (live, here))
     return False, "  live page current: capture %s" % here
 
 
