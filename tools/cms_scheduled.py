@@ -36,6 +36,7 @@ sys.path.insert(0, os.path.join(HERE, "tools"))
 import backfill_cms  # noqa: E402
 import cms_export  # noqa: E402
 import facility_pages  # noqa: E402
+import ratings_history  # noqa: E402
 import snapshot_cms  # noqa: E402
 
 LOG = os.path.join(HERE, "snapshots", "cms", ".last_run.log")
@@ -112,11 +113,18 @@ def republish(ledger=LEDGER, export=None, git=None):
 
 
 #: What a history refresh commits: the rebuilt history and the pages built on it.
-HISTORY_PATHS = ("snapshots/cms-archive", "docs/facilities", "docs/sitemap.xml",
-                 "docs/robots.txt")
+HISTORY_PATHS = ("snapshots/cms-archive", "snapshots/cms-ratings", "docs/facilities",
+                 "docs/sitemap.xml", "docs/robots.txt")
 
 
-def refresh_history(cache=None, backfill=None, pages=None, git=None):
+def _ratings():
+    """The star-rating history, when its cache exists. The weekly captures
+    carry no ProviderInfo file, so it moves when CMS archives an edition."""
+    if os.path.isdir(ratings_history.CACHE) and os.listdir(ratings_history.CACHE):
+        ratings_history.run(log=lambda *a: None)
+
+
+def refresh_history(cache=None, backfill=None, pages=None, git=None, ratings=None):
     """After a new capture, fold it into the penalty history and rebuild the
     facility pages, then commit both. Added 2026-09-28: until then the pages
     moved only when somebody ran backfill_cms.py by hand.
@@ -132,9 +140,11 @@ def refresh_history(cache=None, backfill=None, pages=None, git=None):
                 " run tools/backfill_cms.py once by hand" % cache]
     backfill = backfill or (lambda: backfill_cms.run(log=lambda *a: None)[0])
     pages = pages or (lambda: facility_pages.build(every=True))
+    ratings = ratings or _ratings
     git = git or globals()["git"]
     try:
         summary = backfill()
+        ratings()
         entries = pages()
     except (Exception, SystemExit) as error:                     # noqa: BLE001
         return ["  history NOT refreshed: %s: %s" % (type(error).__name__, error)]

@@ -19,7 +19,7 @@ while a claims ledger was being added elsewhere in the workstation.
 
 ```bash
 python -m unittest discover -s ../tests   # from this directory
-python -m unittest discover -s tests      # from the repository root, 107 tests
+python -m unittest discover -s tests      # from the repository root, 130 tests
 ```
 
 ## `snapshot_cms.py` — archive a source that discards its own history

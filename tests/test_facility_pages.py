@@ -75,6 +75,50 @@ class Pages(unittest.TestCase):
         self.assertNotIn("<CARE>", text)
 
 
+class Ratings(unittest.TestCase):
+
+    RUNS = [
+        {"from_edition": "2019-01-17", "to_edition": "2021-06-27", "overall": "4", "inspection": "4",
+         "quality": "5", "staffing": "3", "in_latest": "no"},
+        {"from_edition": "2021-07-28", "to_edition": "2026-08-26", "overall": "1", "inspection": "1",
+         "quality": "", "staffing": "3", "in_latest": "yes"}]
+
+    def page(self, runs, moved):
+        return facility_pages.facility_page("105407", [row()], URLS, TODAY, "2026-09-27", runs, moved)
+
+    def test_newest_first_with_a_summary(self):
+        text = self.page(self.RUNS, {})
+        self.assertIn("Overall rating in CMS's files: 4 in 2019-01, 1 now. Lowest 1, highest 4, "
+                      "across 1 change.", text)
+        self.assertLess(text.index("2021-07-28 to now"), text.index("2019-01-17 to 2021-06-27"))
+
+    def test_only_an_exceptional_edition_is_marked_on_its_row(self):
+        self.assertIn("53% of rated homes changed overall rating in this edition",
+                      self.page(self.RUNS, {"2021-07-28": 0.53}))
+        self.assertNotIn("in this edition", self.page(self.RUNS, {"2021-07-28": 0.24}))
+
+    def test_the_quarterly_pattern_is_stated_once(self):
+        moved = {"2021-02": 0.04, "2021-03": 0.05, "2021-04": 0.25, "2021-05": 0.03, "2021-07-28": 0.30}
+        self.assertIn("In most editions about 4% of rated homes change overall rating; in CMS's "
+                      "quarterly refreshes 25&ndash;30% do", self.page(self.RUNS, moved))
+
+    def test_a_component_change_within_a_stretch_is_a_range_not_a_new_row(self):
+        runs = [dict(self.RUNS[0], to_edition="2019-12-17"),
+                dict(self.RUNS[0], from_edition="2020-01-09", staffing="2"),
+                self.RUNS[1]]
+        moved = {"2019-12-17": 0.05, "2020-01-09": 0.27, "2021-07-28": 0.1}
+        text = self.page(runs, moved)
+        self.assertIn("2019-01-17 to 2021-06-27", text)
+        self.assertIn("2&ndash;3&#9733;", text)
+        self.assertIn("across 1 change.", text)
+
+    def test_a_missing_star_says_not_rated(self):
+        self.assertIn("not rated", self.page(self.RUNS, {}))
+
+    def test_no_ratings_means_no_section(self):
+        self.assertNotIn("Star ratings over time", self.page(None, None))
+
+
 class Choosing(unittest.TestCase):
 
     def test_ranked_by_dropped_fines_among_homes_inspected_today(self):

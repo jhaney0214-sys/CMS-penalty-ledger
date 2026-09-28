@@ -1,0 +1,1192 @@
+{
+ "archives": [
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2019-01-17.zip",
+   "archive_date": "2019-01-17",
+   "homes": 15578,
+   "member": "ProviderInfo_Download.csv",
+   "note": "cache",
+   "processed": "2019-01-01",
+   "sha256": "1003d569daf0e9e3cbb4784988d246621929f9fec229ba6e4ad25bbbe9e4d023"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2019-02-09.zip",
+   "archive_date": "2019-02-09",
+   "homes": 15579,
+   "member": "ProviderInfo_Download.csv",
+   "note": "cache",
+   "processed": "2019-02-01",
+   "sha256": "04caae42984bee4a03009a302a95b3ad6f12a5bc68e8aa08f95e54b543948eb7"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2019-03-09.zip",
+   "archive_date": "2019-03-09",
+   "homes": 15580,
+   "member": "ProviderInfo_Download.csv",
+   "note": "cache",
+   "processed": "2019-03-01",
+   "sha256": "83387342b301e43bda8fb3ca82067e248da0655f5e3c2f20121f5cec77a5c80d"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2019-04-09.zip",
+   "archive_date": "2019-04-09",
+   "homes": 15563,
+   "member": "ProviderInfo_Download.csv",
+   "note": "fetched",
+   "processed": "2019-04-01",
+   "sha256": "b763e5d7bf1918ac2e9b8a95a726066efa860d590bac9882fb40a1f71218987c"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2019-05-09.zip",
+   "archive_date": "2019-05-09",
+   "homes": 15538,
+   "member": "ProviderInfo_Download.csv",
+   "note": "fetched",
+   "processed": "2019-05-01",
+   "sha256": "8fb17d857955bc306c96664cd4528a0bf0e8fc055c228f2c23ced7538ec744e8"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2019-06-09.zip",
+   "archive_date": "2019-06-09",
+   "homes": 15527,
+   "member": "ProviderInfo_Download.csv",
+   "note": "fetched",
+   "processed": "2019-06-01",
+   "sha256": "93be6987bb079519bc7c6df511f43a63f1e13bb8428aa8c637cab1468e03fc14"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2019-07-09.zip",
+   "archive_date": "2019-07-09",
+   "homes": 15530,
+   "member": "ProviderInfo_Download.csv",
+   "note": "fetched",
+   "processed": "2019-07-01",
+   "sha256": "e505aa4f58195024b74da93df492cc29b6b17126a4264daaf7a0a2e5acba9f53"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2019-08-09.zip",
+   "archive_date": "2019-08-09",
+   "homes": 15512,
+   "member": "ProviderInfo_Download.csv",
+   "note": "fetched",
+   "processed": "2019-08-01",
+   "sha256": "68662163552d569ce41a8c265b3659c5b37d920b368d017632c8f13210c3d106"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2019-09-09.zip",
+   "archive_date": "2019-09-09",
+   "homes": 15511,
+   "member": "ProviderInfo_Download.csv",
+   "note": "fetched",
+   "processed": "2019-09-01",
+   "sha256": "76d1e29fcf24b24bd8a21c735449b54b381a18047d4ac8aa69865547058c3719"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2019-10-09.zip",
+   "archive_date": "2019-10-09",
+   "homes": 15491,
+   "member": "ProviderInfo_Download.csv",
+   "note": "fetched",
+   "processed": "10/1/2019",
+   "sha256": "66a23340349816dbf1621fe5b79c781e93c4e341ab4c08bbc61453c29fe4dc03"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2019-12-17.zip",
+   "archive_date": "2019-12-17",
+   "homes": 15471,
+   "member": "ProviderInfo_Download.csv",
+   "note": "fetched",
+   "processed": "2019-11-01",
+   "sha256": "3d76b92d7670ad092e42d8d327237bb8499680ef194435d38dc5f8ac928102ad"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_annual_2019.zip",
+   "archive_date": "2019-12-31",
+   "note": "no ProviderInfo member"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2020-01-09.zip",
+   "archive_date": "2020-01-09",
+   "homes": 15454,
+   "member": "ProviderInfo_Download.csv",
+   "note": "fetched",
+   "processed": "2020-01-01",
+   "sha256": "0d919fe42484c6d019b2c6f44391d91d3ff02e85071b83527a76b32c20781934"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2020-02-09.zip",
+   "archive_date": "2020-02-09",
+   "homes": 15450,
+   "member": "ProviderInfo_Download.csv",
+   "note": "fetched",
+   "processed": "2020-02-01",
+   "sha256": "ca4cb56789238a6c74c104c5f753cc66b65f553a82a339b43a87eaff278d841c"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2020-03-09.zip",
+   "archive_date": "2020-03-09",
+   "homes": 15446,
+   "member": "ProviderInfo_Download.csv",
+   "note": "fetched",
+   "processed": "2020-03-01",
+   "sha256": "3d609392d08efad3183dd1848aa400ad3f5d3754cafd042f44c0e86e113c8d48"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2020-04-09.zip",
+   "archive_date": "2020-04-09",
+   "homes": 15436,
+   "member": "ProviderInfo_Download.csv",
+   "note": "fetched",
+   "processed": "2020-04-01",
+   "sha256": "a983f9787c963eee9ac7c4735203e2158e85ef8cafd54217f34fa55f100b8fb9"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2020-05-09.zip",
+   "archive_date": "2020-05-09",
+   "homes": 15427,
+   "member": "ProviderInfo_Download.csv",
+   "note": "fetched",
+   "processed": "2020-05-01",
+   "sha256": "5d1670f591d3ae4e1fbbd5ecd81ee25b69809a603309c7386373481e91ecb067"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2020-06-17.zip",
+   "archive_date": "2020-06-17",
+   "homes": 15421,
+   "member": "ProviderInfo_Download.csv",
+   "note": "fetched",
+   "processed": "2020-06-01",
+   "sha256": "da2229b8d9627a123c97a233d19f5aac1050391a3b24bb2c82508ff347dda3f5"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2020-07-09.zip",
+   "archive_date": "2020-07-09",
+   "homes": 15404,
+   "member": "ProviderInfo_Download.csv",
+   "note": "fetched",
+   "processed": "2020-07-01",
+   "sha256": "0a0919a7406961dda20318d9c29b5d0c4ba23ce86dbb827769f4ae56302e57a2"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2020-08-09.zip",
+   "archive_date": "2020-08-09",
+   "homes": 15377,
+   "member": "NH_ProviderInfo_Aug2020.csv",
+   "note": "fetched",
+   "processed": "2020-08-01",
+   "sha256": "747df877bb98ae7bc47f0533823e14cae5362f051216b37b8259c818e583a51b"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2020-09-09.zip",
+   "archive_date": "2020-09-09",
+   "homes": 15361,
+   "member": "NH_ProviderInfo_Sep2020.csv",
+   "note": "fetched",
+   "processed": "2020-09-01",
+   "sha256": "dc13b12364ed8f20a0ad82e73dc9838d1988e9a0f1cc247c4a9a995da79604b6"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2020-10-09.zip",
+   "archive_date": "2020-10-09",
+   "homes": 15350,
+   "member": "NH_ProviderInfo.csv",
+   "note": "fetched",
+   "processed": "2020-10-01",
+   "sha256": "317f4daf310715cf40102388256c28b246df7e7baaf93338030b084c80139a45"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2020-11-21.zip",
+   "archive_date": "2020-11-21",
+   "homes": 15348,
+   "member": "NH_ProviderInfo_Nov2020.csv",
+   "note": "fetched",
+   "processed": "2020-11-01",
+   "sha256": "4a12c18eecf733c74d0505a23e0dac6d10471e6c22e2fe3032c0066306749d28"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2020-12-21.zip",
+   "archive_date": "2020-12-21",
+   "duplicate_of": "2020-11-21",
+   "homes": 15348,
+   "member": "NH_ProviderInfo_Nov2020.csv",
+   "note": "fetched",
+   "processed": "2020-11-01",
+   "sha256": "4a12c18eecf733c74d0505a23e0dac6d10471e6c22e2fe3032c0066306749d28"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_annual_2020.zip",
+   "archive_date": "2020-12-31",
+   "note": "no ProviderInfo member"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2021-01-27.zip",
+   "archive_date": "2021-01-27",
+   "homes": 15340,
+   "member": "NH_ProviderInfo_Jan2021.csv",
+   "note": "fetched",
+   "processed": "2021-01-01",
+   "sha256": "031e4f7c4e6e282d64ee94e1e4018b472000dbb8203fa44976c93331307642aa"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2021-02-27.zip",
+   "archive_date": "2021-02-27",
+   "homes": 15331,
+   "member": "NH_ProviderInfo_Feb2021.csv",
+   "note": "fetched",
+   "processed": "2021-02-01",
+   "sha256": "f03dceed70a8375ad674265ea58c1ff2108821096cfab24c19bb35751137d10e"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2021-03-27.zip",
+   "archive_date": "2021-03-27",
+   "homes": 15331,
+   "member": "NH_ProviderInfo_Mar2021.csv",
+   "note": "fetched",
+   "processed": "2021-03-01",
+   "sha256": "971511dce23ded9721d058a74518d05a6c0b927e3971af9ca2f1710e4aec2356"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2021-04-27.zip",
+   "archive_date": "2021-04-27",
+   "homes": 15328,
+   "member": "NH_ProviderInfo_Apr2021.csv",
+   "note": "fetched",
+   "processed": "2021-04-01",
+   "sha256": "0ff18075cdbc50bf9381394e4ec5d2887370e7bdd946118dda954a78bf25ab20"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2021-05-27.zip",
+   "archive_date": "2021-05-27",
+   "homes": 15315,
+   "member": "NH_ProviderInfo_May2021.csv",
+   "note": "fetched",
+   "processed": "2021-05-01",
+   "sha256": "7526eefb8bb57311572bf7f10893ba1390d62bdfbe9d1af9d97970a736847f0f"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2021-06-27.zip",
+   "archive_date": "2021-06-27",
+   "homes": 15302,
+   "member": "NH_ProviderInfo_Jun2021.csv",
+   "note": "fetched",
+   "processed": "2021-06-01",
+   "sha256": "e86d66af402ffe51ec3b8c98a40cfe96d4ce6d60f1a8d2ff7655f38695291f9b"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2021-07-27.zip",
+   "archive_date": "2021-07-27",
+   "homes": 15298,
+   "member": "NH_ProviderInfo_Jul2021.csv",
+   "note": "fetched",
+   "processed": "2021-07-01",
+   "sha256": "bfba1151b4b7fa77bc89e89550a531abb2bda7de0daef873b1b2a3c701b559fc"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2021-08-27.zip",
+   "archive_date": "2021-08-27",
+   "homes": 15283,
+   "member": "NH_ProviderInfo_Aug2021.csv",
+   "note": "fetched",
+   "processed": "2021-08-01",
+   "sha256": "2b0b27c942b6a11b2f9663f7f52f83ded068f4fc903e609540185534936cba4f"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2021-09-27.zip",
+   "archive_date": "2021-09-27",
+   "homes": 15266,
+   "member": "NH_ProviderInfo_Sep2021.csv",
+   "note": "fetched",
+   "processed": "2021-09-01",
+   "sha256": "a554dae510045793edb49507f6deefdcb2e91accd05e5bd310554ef31175ecd6"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2021-10-27.zip",
+   "archive_date": "2021-10-27",
+   "homes": 15270,
+   "member": "NH_ProviderInfo_Oct2021.csv",
+   "note": "fetched",
+   "processed": "2021-10-01",
+   "sha256": "116bd73bafcc03c4fefe9fcfe6a186ecc7355bf085644168be98c92725e1d962"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2021-11-27.zip",
+   "archive_date": "2021-11-27",
+   "duplicate_of": "2021-10-27",
+   "homes": 15270,
+   "member": "NH_ProviderInfo_Oct2021.csv",
+   "note": "fetched",
+   "processed": "2021-10-01",
+   "sha256": "116bd73bafcc03c4fefe9fcfe6a186ecc7355bf085644168be98c92725e1d962"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2021-12-27.zip",
+   "archive_date": "2021-12-27",
+   "homes": 15264,
+   "member": "nursing_homes_including_rehab_services_12_2021/NH_ProviderInfo_Nov2021.csv",
+   "note": "fetched",
+   "processed": "2021-11-01",
+   "sha256": "8076635640fd247909eb3b4980d1197dafa1a4a96f5a7e97a41e7f448882a54b"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_annual_2021.zip",
+   "archive_date": "2021-12-31",
+   "note": "no ProviderInfo member"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2022-01-27.zip",
+   "archive_date": "2022-01-27",
+   "homes": 15238,
+   "member": "nursing_homes_including_rehab_services_01_2022/NH_ProviderInfo_Jan2022.csv",
+   "note": "fetched",
+   "processed": "2022-01-01",
+   "sha256": "78e2633a1e9b86151a5d2dfa2bf5271bb341c6bb6371e3dd32ccedcf4320ad48"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2022-02-27.zip",
+   "archive_date": "2022-02-27",
+   "homes": 15224,
+   "member": "nursing_homes_including_rehab_services_02_2022/NH_ProviderInfo_Feb2022.csv",
+   "note": "fetched",
+   "processed": "2022-02-01",
+   "sha256": "43ee625ba8becca36aaf14f8e5957e3a5a9ddb7ac0efd3fcf86c9dbc14868142"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2022-03-27.zip",
+   "archive_date": "2022-03-27",
+   "homes": 15216,
+   "member": "nursing_homes_including_rehab_services_03_2022/NH_ProviderInfo_Mar2022.csv",
+   "note": "fetched",
+   "processed": "2022-03-01",
+   "sha256": "f73adf55b495e4bb97fefbf079e1bfa20756c7289eb963f803c2b5278b207b9c"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2022-04-27.zip",
+   "archive_date": "2022-04-27",
+   "homes": 15203,
+   "member": "nursing_homes_including_rehab_services_04_2022/NH_ProviderInfo_Apr2022.csv",
+   "note": "fetched",
+   "processed": "2022-04-01",
+   "sha256": "5486f6abe80682846df5fdccbb38a5b4fb112b1540ca82021bb10a2920fa072e"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2022-05-27.zip",
+   "archive_date": "2022-05-27",
+   "homes": 15197,
+   "member": "nursing_homes_including_rehab_services_05_2022/NH_ProviderInfo_May2022.csv",
+   "note": "fetched",
+   "processed": "2022-05-01",
+   "sha256": "ce0bd7f4a7c0ce5564227451bb5453126dab1d9dc3e11019fb9472d3fb7abd52"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2022-06-27.zip",
+   "archive_date": "2022-06-27",
+   "homes": 15190,
+   "member": "nursing_homes_including_rehab_services_06_2022/NH_ProviderInfo_Jun2022.csv",
+   "note": "fetched",
+   "processed": "2022-06-01",
+   "sha256": "c34c55d3ffbbc673a031ae4a9d14dd2740ed3f482c70d8d64c18392b2233e3c4"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2022-07-27.zip",
+   "archive_date": "2022-07-27",
+   "homes": 15178,
+   "member": "nursing_homes_including_rehab_services_07_2022/NH_ProviderInfo_Jul2022.csv",
+   "note": "fetched",
+   "processed": "2022-07-01",
+   "sha256": "e88153052645fc3ab2c9613f0aa9ead222bea1f0941d39a7053cbcfc0d90252b"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2022-08-27.zip",
+   "archive_date": "2022-08-27",
+   "homes": 15169,
+   "member": "nursing_homes_including_rehab_services_08_2022/NH_ProviderInfo_Aug2022.csv",
+   "note": "fetched",
+   "processed": "2022-08-01",
+   "sha256": "da717fcb93861907e9444ebf00b9a7426ac70213db50502ab47f9609c7ffe8ea"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2022-09-27.zip",
+   "archive_date": "2022-09-27",
+   "homes": 15151,
+   "member": "nursing_homes_including_rehab_services_09_2022/NH_ProviderInfo_Sep2022.csv",
+   "note": "fetched",
+   "processed": "2022-09-01",
+   "sha256": "60a681979f07a806f9291f8ea4e9b408867b486099e3d01f6cd4fc9dea74c6d7"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2022-10-27.zip",
+   "archive_date": "2022-10-27",
+   "homes": 15147,
+   "member": "nursing_homes_including_rehab_services_10_2022/NH_ProviderInfo_Oct2022.csv",
+   "note": "fetched",
+   "processed": "2022-10-01",
+   "sha256": "512cd8647cb8b366f8562f06f44d6670e2a061c1d478f2eade5c1ee9600f39b7"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2022-11-27.zip",
+   "archive_date": "2022-11-27",
+   "duplicate_of": "2022-10-27",
+   "homes": 15147,
+   "member": "nursing_homes_including_rehab_services_11_2022/NH_ProviderInfo_Oct2022.csv",
+   "note": "fetched",
+   "processed": "2022-10-01",
+   "sha256": "512cd8647cb8b366f8562f06f44d6670e2a061c1d478f2eade5c1ee9600f39b7"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2022-12-02.zip",
+   "archive_date": "2022-12-02",
+   "homes": 15136,
+   "member": "NH_ProviderInfo_Nov2022.csv",
+   "note": "fetched",
+   "processed": "2022-11-01",
+   "sha256": "229c8320c73a12d4b22c9f9c316c337b9d9a140062101df586f529e88723e8bb"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_annual_2022.zip",
+   "archive_date": "2022-12-31",
+   "note": "no ProviderInfo member"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2023-01-02.zip",
+   "archive_date": "2023-01-02",
+   "homes": 15107,
+   "member": "NH_ProviderInfo_Jan2023.csv",
+   "note": "fetched",
+   "processed": "2023-01-01",
+   "sha256": "d419c5066db448ea0504e894b96977ed1ff084cc1361c4b8cfa2fab72865d114"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2023-02-21.zip",
+   "archive_date": "2023-02-21",
+   "homes": 15090,
+   "member": "NH_ProviderInfo_Feb2023.csv",
+   "note": "fetched",
+   "processed": "2023-02-01",
+   "sha256": "4dd63ff8f2745b5bbcaf6b33e40fc79eadb2311af479ae01431d7c064d0612e4"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2023-03-02.zip",
+   "archive_date": "2023-03-02",
+   "homes": 15082,
+   "member": "NH_ProviderInfo_Mar2023.csv",
+   "note": "fetched",
+   "processed": "2023-03-01",
+   "sha256": "c05cae5bc848eec148e094f8bdc03b43010312bcd901cacbccf0ef10d0f94f19"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2023-04-26.zip",
+   "archive_date": "2023-04-26",
+   "homes": 15076,
+   "member": "NH_ProviderInfo_Apr2023.csv",
+   "note": "fetched",
+   "processed": "2023-04-01",
+   "sha256": "1ac53169b1c18bda0349e27e247dde56dea2757147f650e5387f9708714b43ed"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2023-05-30.zip",
+   "archive_date": "2023-05-30",
+   "homes": 15046,
+   "member": "NH_ProviderInfo_May2023.csv",
+   "note": "fetched",
+   "processed": "2023-05-01",
+   "sha256": "5e89175d65923b2afde00b8034cf6124db96a802cddccd301524e1b7861e72eb"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2023-06-27.zip",
+   "archive_date": "2023-06-27",
+   "homes": 15018,
+   "member": "NH_ProviderInfo_Jun2023.csv",
+   "note": "fetched",
+   "processed": "2023-06-01",
+   "sha256": "522d719f9c60b15f082860d758773a5e482232177c8eb321ecdaa53558c8953b"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2023-07-25.zip",
+   "archive_date": "2023-07-25",
+   "homes": 15010,
+   "member": "NH_ProviderInfo_Jul2023.csv",
+   "note": "fetched",
+   "processed": "2023-07-01",
+   "sha256": "4bc8767486775774e8f56cb4687b57be31d3b40ddb625852d8afcd3dd9530648"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2023-08-30.zip",
+   "archive_date": "2023-08-30",
+   "homes": 14993,
+   "member": "NH_ProviderInfo_Aug2023.csv",
+   "note": "fetched",
+   "processed": "2023-08-01",
+   "sha256": "0627f11a3a22743f4113557bca4b1f7818698341edb04677d6896a36a3259dc2"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2023-09-02.zip",
+   "archive_date": "2023-09-02",
+   "homes": 14956,
+   "member": "NH_ProviderInfo_Sep2023.csv",
+   "note": "fetched",
+   "processed": "2023-09-01",
+   "sha256": "4136aee5b6165bb29e17f412a3858d47a8126d668ea95eae899597a7bc4bb922"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2023-10-02.zip",
+   "archive_date": "2023-10-02",
+   "homes": 14944,
+   "member": "NH_ProviderInfo_Oct2023.csv",
+   "note": "fetched",
+   "processed": "2023-10-01",
+   "sha256": "79056fc491cdbd6dfaa355e88eba0e4b08ad4213c6c5bf2e968c617a8e865699"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2023-11-02.zip",
+   "archive_date": "2023-11-02",
+   "duplicate_of": "2023-10-02",
+   "homes": 14944,
+   "member": "NH_ProviderInfo_Oct2023.csv",
+   "note": "fetched",
+   "processed": "2023-10-01",
+   "sha256": "79056fc491cdbd6dfaa355e88eba0e4b08ad4213c6c5bf2e968c617a8e865699"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2023-12-21.zip",
+   "archive_date": "2023-12-21",
+   "homes": 14924,
+   "member": "NH_ProviderInfo_Nov2023.csv",
+   "note": "fetched",
+   "processed": "2023-11-01",
+   "sha256": "3fe6fdd8e42666f1e033129f70a0b08593e06a65aeb16741c5cca2a6f5fdc28f"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_annual_2023.zip",
+   "archive_date": "2023-12-31",
+   "note": "no ProviderInfo member"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2024-01-31.zip",
+   "archive_date": "2024-01-31",
+   "homes": 14906,
+   "member": "NH_ProviderInfo_Jan2024.csv",
+   "note": "fetched",
+   "processed": "2024-01-01",
+   "sha256": "5862376b980a21a4d3990cf07e4077d2d593471ad835118cfd7601726ac675ab"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2024-02-29.zip",
+   "archive_date": "2024-02-29",
+   "homes": 14893,
+   "member": "NH_ProviderInfo_Feb2024.csv",
+   "note": "fetched",
+   "processed": "2024-02-01",
+   "sha256": "b410c1430593fc648d44b8168651b08bfc480e8a0ec713b09d0b9399e678ea1c"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2024-03-28.zip",
+   "archive_date": "2024-03-28",
+   "homes": 14878,
+   "member": "NH_ProviderInfo_Mar2024.csv",
+   "note": "fetched",
+   "processed": "2024-03-01",
+   "sha256": "4bccf02b15a35f9e9979c9f46b6d9dee11303a5a001422ae21060cf5e3c96a95"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2024-04-25.zip",
+   "archive_date": "2024-04-25",
+   "homes": 14860,
+   "member": "NH_ProviderInfo_Apr2024.csv",
+   "note": "fetched",
+   "processed": "2024-04-01",
+   "sha256": "c480b273f779952467d292586c8a3520eca2e29c0a811742512cabc0b0c6ca2f"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2024-05-29.zip",
+   "archive_date": "2024-05-29",
+   "homes": 14858,
+   "member": "NH_ProviderInfo_May2024.csv",
+   "note": "fetched",
+   "processed": "2024-05-01",
+   "sha256": "a5baefbe1e47b3a125a0762500d2cf61587d74bb5c88b8dd1fd86e6089b3a79b"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2024-06-26.zip",
+   "archive_date": "2024-06-26",
+   "homes": 14845,
+   "member": "NH_ProviderInfo_Jun2024.csv",
+   "note": "fetched",
+   "processed": "2024-06-01",
+   "sha256": "64ffc0e526d00a782af88b4c53a58ac1ce97d4de93cb10d11bcc211bc508a4c3"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2024-07-31.zip",
+   "archive_date": "2024-07-31",
+   "homes": 14834,
+   "member": "NH_ProviderInfo_Jul2024.csv",
+   "note": "fetched",
+   "processed": "2024-07-01",
+   "sha256": "ac2b3c368a9ab2a69c79be834282621beabe65d3a7b0d8f640aa22e501e83606"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2024-08-29.zip",
+   "archive_date": "2024-08-29",
+   "homes": 14825,
+   "member": "NH_ProviderInfo_Aug2024.csv",
+   "note": "fetched",
+   "processed": "2024-08-01",
+   "sha256": "fde80be24083dc10d05b1c266b807d3cbea06b5da894746a0cfa310ef37b65ae"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2024-09-26.zip",
+   "archive_date": "2024-09-26",
+   "homes": 14817,
+   "member": "NH_ProviderInfo_Sep2024.csv",
+   "note": "fetched",
+   "processed": "2024-09-01",
+   "sha256": "28e963feabefa9a9bec736c43a430ef9bb335de31955b989ab7824531a94117d"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2024-10-30.zip",
+   "archive_date": "2024-10-30",
+   "homes": 14814,
+   "member": "NH_ProviderInfo_Oct2024.csv",
+   "note": "fetched",
+   "processed": "2024-10-01",
+   "sha256": "6a6ce2e529a8a01bf455359889f22b855050120df285188830b3a8ecc3a51235"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2024-11-07.zip",
+   "archive_date": "2024-11-07",
+   "duplicate_of": "2024-10-30",
+   "homes": 14814,
+   "member": "NH_ProviderInfo_Oct2024.csv",
+   "note": "fetched",
+   "processed": "2024-10-01",
+   "sha256": "6a6ce2e529a8a01bf455359889f22b855050120df285188830b3a8ecc3a51235"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2024-12-20.zip",
+   "archive_date": "2024-12-20",
+   "homes": 14807,
+   "member": "NH_ProviderInfo_Nov2024.csv",
+   "note": "fetched",
+   "processed": "2024-11-01",
+   "sha256": "7e33c2037df7553a6695f3c54e701d70e27e6889f6267ed79824ef59ea117c4a"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_annual_2024.zip",
+   "archive_date": "2024-12-31",
+   "note": "no ProviderInfo member"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2025-02-26.zip",
+   "archive_date": "2025-02-26",
+   "homes": 14782,
+   "member": "NH_ProviderInfo_Feb2025.csv",
+   "note": "fetched",
+   "processed": "2025-02-01",
+   "sha256": "28fc2ecc900453c8ada9ee9c793a1845b88bdce69a5395c8b809b873169b8ff8"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2025-03-26.zip",
+   "archive_date": "2025-03-26",
+   "homes": 14779,
+   "member": "NH_ProviderInfo_Mar2025.csv",
+   "note": "fetched",
+   "processed": "2025-03-01",
+   "sha256": "c458036d281deabc2d77465a2170a6f1a4af9b3461923d3bb4c1469682d44315"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2025-04-30.zip",
+   "archive_date": "2025-04-30",
+   "homes": 14769,
+   "member": "NH_ProviderInfo_Apr2025.csv",
+   "note": "fetched",
+   "processed": "2025-04-01",
+   "sha256": "9b7a9877d430edff17fdb6babbcf35c4b5e6422ed6a9a499558555f57845334e"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2025-05-28.zip",
+   "archive_date": "2025-05-28",
+   "homes": 14759,
+   "member": "NH_ProviderInfo_May2025.csv",
+   "note": "fetched",
+   "processed": "2025-05-01",
+   "sha256": "3a4cc5e292edc8fec4a92a977df6c71f66ba9828e1958eb79f876ec051936bac"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2025-06-25.zip",
+   "archive_date": "2025-06-25",
+   "homes": 14754,
+   "member": "NH_ProviderInfo_Jun2025.csv",
+   "note": "fetched",
+   "processed": "2025-06-01",
+   "sha256": "37fd8b20def399ca094e21d80466f002da28910542cee300761ce039d9b59aa9"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2025-07-30.zip",
+   "archive_date": "2025-07-30",
+   "homes": 14752,
+   "member": "NH_ProviderInfo_Jul2025.csv",
+   "note": "fetched",
+   "processed": "2025-07-01",
+   "sha256": "e3347035f1b62235c6b9517bc7e4384b4ecc53654b7af0f6b94deb388a745485"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2025-09-24.zip",
+   "archive_date": "2025-09-24",
+   "homes": 14752,
+   "member": "NH_ProviderInfo_Sep2025.csv",
+   "note": "fetched",
+   "processed": "2025-09-01",
+   "sha256": "d19a88a991c35da6713012defe39c7148dd5e11dad1d4d7c9dd0d92545cfce4f"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2025-11-20.zip",
+   "archive_date": "2025-11-20",
+   "homes": 14721,
+   "member": "NH_ProviderInfo_Oct2025.csv",
+   "note": "fetched",
+   "processed": "2025-10-01",
+   "sha256": "d02d3fe44534a045d295f1a74c95e16ab46cc24e95474a69d408669d0e611b26"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2025-12-15.zip",
+   "archive_date": "2025-12-15",
+   "homes": 14721,
+   "member": "NH_ProviderInfo_Nov2025.csv",
+   "note": "fetched",
+   "processed": "2025-11-01",
+   "sha256": "9693cd243b7518cdd801fcf7404d62332b9d61c964d90c96be8f08df18a21cc2"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_annual_2025.zip",
+   "archive_date": "2025-12-31",
+   "note": "no ProviderInfo member"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2026-01-14.zip",
+   "archive_date": "2026-01-14",
+   "homes": 14713,
+   "member": "NH_ProviderInfo_Dec2025.csv",
+   "note": "fetched",
+   "processed": "2025-12-01",
+   "sha256": "1f2f1160d7b54ed29a426f49b8295f8ea00fd8d286619e6f2fcbde30c867df26"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2026-02-25.zip",
+   "archive_date": "2026-02-25",
+   "homes": 14710,
+   "member": "NH_ProviderInfo_Feb2026.csv",
+   "note": "fetched",
+   "processed": "2026-02-01",
+   "sha256": "74f6e443593fde0f82260e35358e96256b8286becdac2ecbc5f71b38b1dcaa94"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2026-03-25.zip",
+   "archive_date": "2026-03-25",
+   "homes": 14703,
+   "member": "NH_ProviderInfo_Mar2026.csv",
+   "note": "fetched",
+   "processed": "2026-03-01",
+   "sha256": "a8a26aa0772dd39aa2bb0ac05b7dad27bcaf765bc6c1fdd873ca9988d3f183b0"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2026-04-29.zip",
+   "archive_date": "2026-04-29",
+   "homes": 14699,
+   "member": "NH_ProviderInfo_Apr2026.csv",
+   "note": "fetched",
+   "processed": "2026-04-01",
+   "sha256": "1fbd7d2a887c50172cb4ca6e88405f24546aa12f576f81ce06cea305abb2ce2e"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2026-05-27.zip",
+   "archive_date": "2026-05-27",
+   "homes": 14700,
+   "member": "NH_ProviderInfo_May2026.csv",
+   "note": "fetched",
+   "processed": "2026-05-01",
+   "sha256": "188b22d50f344ec2535d15cf57dcc391faffc95dbddbcb88f9973fdbfdcada09"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2026-06-24.zip",
+   "archive_date": "2026-06-24",
+   "homes": 14695,
+   "member": "NH_ProviderInfo_Jun2026.csv",
+   "note": "fetched",
+   "processed": "2026-06-01",
+   "sha256": "553892988e6b6e95a801a66d4cba1d63f751f2ec5680008e9b62509ac5109629"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2026-07-29.zip",
+   "archive_date": "2026-07-29",
+   "homes": 14693,
+   "member": "nursing-homes_2026-07-29/4pq5-n9py_2026-07-01_NH_ProviderInfo_Jul2026.csv",
+   "note": "fetched",
+   "processed": "2026-07-01",
+   "sha256": "e3d1ccc7e205e8bdfdde574858bd2aa935bd7d594a1979ecd7e8ced94124a661"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_2026-08-06.zip",
+   "archive_date": "2026-08-06",
+   "homes": 14693,
+   "member": "4pq5-n9py_2026-07-29_NH_ProviderInfo_Jul2026.csv",
+   "note": "fetched",
+   "processed": "2026-07-01",
+   "sha256": "dd15b5c31a632e46f9f28260ed9ad89486e48bba5d0589b3ccaa68214e8b9ef1"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/theme/nursing-homes/nursing-homes_annual_2026.zip",
+   "archive_date": "2026-08-26",
+   "note": "no ProviderInfo member"
+  },
+  {
+   "archive": "https://data.cms.gov/provider-data/sites/default/files/dataset-archives/unknown-type/nursing-homes_2026-08-26.zip",
+   "archive_date": "2026-08-26",
+   "homes": 14690,
+   "member": "4pq5-n9py_2026-08-01_NH_ProviderInfo_Aug2026.csv",
+   "note": "fetched",
+   "processed": "2026-08-01",
+   "sha256": "a5808fcded1ca73a629fde88fc23dcba3b6ff8ed75199883062a262e14ef8fe0"
+  }
+ ],
+ "moved": {
+  "2019-02-09": {
+   "changed": 112,
+   "compared": 15329
+  },
+  "2019-03-09": {
+   "changed": 116,
+   "compared": 15323
+  },
+  "2019-04-09": {
+   "changed": 8017,
+   "compared": 15217
+  },
+  "2019-05-09": {
+   "changed": 825,
+   "compared": 15333
+  },
+  "2019-06-09": {
+   "changed": 697,
+   "compared": 15336
+  },
+  "2019-07-09": {
+   "changed": 3781,
+   "compared": 15332
+  },
+  "2019-08-09": {
+   "changed": 777,
+   "compared": 15307
+  },
+  "2019-09-09": {
+   "changed": 726,
+   "compared": 15309
+  },
+  "2019-10-09": {
+   "changed": 3943,
+   "compared": 15201
+  },
+  "2019-12-17": {
+   "changed": 783,
+   "compared": 15176
+  },
+  "2020-01-09": {
+   "changed": 4118,
+   "compared": 15254
+  },
+  "2020-02-09": {
+   "changed": 854,
+   "compared": 15260
+  },
+  "2020-03-09": {
+   "changed": 802,
+   "compared": 15251
+  },
+  "2020-04-09": {
+   "changed": 3594,
+   "compared": 15247
+  },
+  "2020-05-09": {
+   "changed": 221,
+   "compared": 15235
+  },
+  "2020-06-17": {
+   "changed": 81,
+   "compared": 15225
+  },
+  "2020-07-09": {
+   "changed": 1653,
+   "compared": 15203
+  },
+  "2020-08-09": {
+   "changed": 49,
+   "compared": 15172
+  },
+  "2020-09-09": {
+   "changed": 133,
+   "compared": 15151
+  },
+  "2020-10-09": {
+   "changed": 2794,
+   "compared": 15139
+  },
+  "2020-11-21": {
+   "changed": 127,
+   "compared": 15130
+  },
+  "2021-01-27": {
+   "changed": 5178,
+   "compared": 15115
+  },
+  "2021-02-27": {
+   "changed": 535,
+   "compared": 15100
+  },
+  "2021-03-27": {
+   "changed": 528,
+   "compared": 15104
+  },
+  "2021-04-27": {
+   "changed": 4231,
+   "compared": 15084
+  },
+  "2021-05-27": {
+   "changed": 542,
+   "compared": 15077
+  },
+  "2021-06-27": {
+   "changed": 575,
+   "compared": 15063
+  },
+  "2021-07-27": {
+   "changed": 3834,
+   "compared": 15056
+  },
+  "2021-08-27": {
+   "changed": 645,
+   "compared": 15036
+  },
+  "2021-09-27": {
+   "changed": 721,
+   "compared": 15022
+  },
+  "2021-10-27": {
+   "changed": 4062,
+   "compared": 15027
+  },
+  "2021-12-27": {
+   "changed": 653,
+   "compared": 15023
+  },
+  "2022-01-27": {
+   "changed": 4473,
+   "compared": 14985
+  },
+  "2022-02-27": {
+   "changed": 626,
+   "compared": 15001
+  },
+  "2022-03-27": {
+   "changed": 572,
+   "compared": 14991
+  },
+  "2022-04-27": {
+   "changed": 3939,
+   "compared": 14982
+  },
+  "2022-05-27": {
+   "changed": 561,
+   "compared": 14973
+  },
+  "2022-06-27": {
+   "changed": 655,
+   "compared": 14969
+  },
+  "2022-07-27": {
+   "changed": 5236,
+   "compared": 14966
+  },
+  "2022-08-27": {
+   "changed": 664,
+   "compared": 14965
+  },
+  "2022-09-27": {
+   "changed": 763,
+   "compared": 14947
+  },
+  "2022-10-27": {
+   "changed": 3756,
+   "compared": 14950
+  },
+  "2022-12-02": {
+   "changed": 701,
+   "compared": 14944
+  },
+  "2023-01-02": {
+   "changed": 4020,
+   "compared": 14912
+  },
+  "2023-02-21": {
+   "changed": 711,
+   "compared": 14900
+  },
+  "2023-03-02": {
+   "changed": 660,
+   "compared": 14891
+  },
+  "2023-04-26": {
+   "changed": 3601,
+   "compared": 14895
+  },
+  "2023-05-30": {
+   "changed": 644,
+   "compared": 14870
+  },
+  "2023-06-27": {
+   "changed": 746,
+   "compared": 14847
+  },
+  "2023-07-25": {
+   "changed": 3593,
+   "compared": 14839
+  },
+  "2023-08-30": {
+   "changed": 661,
+   "compared": 14828
+  },
+  "2023-09-02": {
+   "changed": 818,
+   "compared": 14791
+  },
+  "2023-10-02": {
+   "changed": 3638,
+   "compared": 14781
+  },
+  "2023-12-21": {
+   "changed": 774,
+   "compared": 14763
+  },
+  "2024-01-31": {
+   "changed": 3923,
+   "compared": 14745
+  },
+  "2024-02-29": {
+   "changed": 762,
+   "compared": 14733
+  },
+  "2024-03-28": {
+   "changed": 685,
+   "compared": 14720
+  },
+  "2024-04-25": {
+   "changed": 2748,
+   "compared": 14703
+  },
+  "2024-05-29": {
+   "changed": 759,
+   "compared": 14700
+  },
+  "2024-06-26": {
+   "changed": 753,
+   "compared": 14692
+  },
+  "2024-07-31": {
+   "changed": 3822,
+   "compared": 14679
+  },
+  "2024-08-29": {
+   "changed": 729,
+   "compared": 14675
+  },
+  "2024-09-26": {
+   "changed": 772,
+   "compared": 14669
+  },
+  "2024-10-30": {
+   "changed": 3249,
+   "compared": 14663
+  },
+  "2024-12-20": {
+   "changed": 808,
+   "compared": 14657
+  },
+  "2025-02-26": {
+   "changed": 4772,
+   "compared": 14621
+  },
+  "2025-03-26": {
+   "changed": 657,
+   "compared": 14628
+  },
+  "2025-04-30": {
+   "changed": 3283,
+   "compared": 14617
+  },
+  "2025-05-28": {
+   "changed": 833,
+   "compared": 14604
+  },
+  "2025-06-25": {
+   "changed": 890,
+   "compared": 14603
+  },
+  "2025-07-30": {
+   "changed": 4848,
+   "compared": 14604
+  },
+  "2025-09-24": {
+   "changed": 148,
+   "compared": 14601
+  },
+  "2025-11-20": {
+   "changed": 4513,
+   "compared": 14573
+  },
+  "2025-12-15": {
+   "changed": 486,
+   "compared": 14586
+  },
+  "2026-01-14": {
+   "changed": 906,
+   "compared": 14574
+  },
+  "2026-02-25": {
+   "changed": 3747,
+   "compared": 14559
+  },
+  "2026-03-25": {
+   "changed": 908,
+   "compared": 14557
+  },
+  "2026-04-29": {
+   "changed": 3508,
+   "compared": 14560
+  },
+  "2026-05-27": {
+   "changed": 1020,
+   "compared": 14559
+  },
+  "2026-06-24": {
+   "changed": 968,
+   "compared": 14558
+  },
+  "2026-07-29": {
+   "changed": 3419,
+   "compared": 14556
+  },
+  "2026-08-06": {
+   "changed": 0,
+   "compared": 14561
+  },
+  "2026-08-26": {
+   "changed": 1036,
+   "compared": 14552
+  }
+ },
+ "summary": {
+  "built": "2026-09-28",
+  "editions": 84,
+  "first_edition": "2019-01-17",
+  "homes": 16169,
+  "last_edition": "2026-08-26",
+  "runs": 326186
+ }
+}

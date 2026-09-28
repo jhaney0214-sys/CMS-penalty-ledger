@@ -45,6 +45,19 @@ then rebuilds the pages and commits both. It does this only when the local
 archive cache in `data/cms-archive/` exists: filling an empty one fetches about
 350 MB from CMS, which is run once by hand, never by the task.
 
+**Star ratings over time, since 2026-09-28.** Each page also carries the home's
+overall, inspection, staffing and quality-measure stars from every monthly
+edition since January 2019, one row per stretch of the same overall rating,
+which Care Compare does not show. `tools/ratings_history.py` reads the
+ProviderInfo member of the same archive ZIPs (about 250 MB fetched once, 5 MB
+cached in `data/cms-ratings/`) and writes `snapshots/cms-ratings/`. Stars move
+when CMS recalculates as well as when a home changes: in most editions about
+5% of rated homes change overall rating, in CMS's quarterly refreshes 24-28%,
+and in April 2019 53%. Each page says so, marks only editions beyond 40%, and
+never says why a rating changed. Checked against a hand count: of the homes
+rated in both January 2019 and August 2026, 10,048 have a different overall
+rating, the same count found by reading the two raw files.
+
 *"Not shown since" was wrong on 18,000 rows until 2026-09-28.* It named the next
 archive, and 13 archives are not editions: year-end ZIPs with no penalties file
 (14,882 rows) and re-archived copies of the edition before (3,050 rows, which
@@ -105,10 +118,10 @@ The exporter computes everything through `tools/cms_ledger.py`, the command-line
 ## Tests
 
 ```bash
-python -m unittest discover -s tests     # 107 tests
+python -m unittest discover -s tests     # 130 tests
 ```
 
-**107 tests: 69 over the engine, 4 over the article's figures, 8 driving the page, 10 over the unattended run, 16 over the facility pages.** *(This line said 88 until 2026-09-28; the facility pages' tests and three for the unattended run had landed without it.)*
+**130 tests: 71 over the engine, 4 over the article's figures, 8 driving the page, 13 over the unattended run, 23 over the facility pages, 11 over the star-rating history.** *(This line said 88 until 2026-09-28; the facility pages' tests and three for the unattended run had landed without it.)*
 All 84 are in this repository as of 2026-09-19; 76 of them used to be in the
 workstation, which meant a clone could run 8.
 
@@ -122,7 +135,7 @@ numbers. They need Playwright (`pip install playwright`, then
 `python -m playwright install chromium`) and **skip without it** — which is a
 real hazard rather than a convenience, because a green `OK (skipped=8)` looks
 exactly like a suite that tested the page. CI installs chromium on purpose and
-fails the run if anything reports as skipped. The 69 engine tests need nothing.
+fails the run if anything reports as skipped. The 71 engine tests need nothing.
 
 ## Status
 

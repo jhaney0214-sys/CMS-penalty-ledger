@@ -44,6 +44,7 @@ ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 import cms_ledger                                             # noqa: E402
 import findings                                               # noqa: E402
+import ratings_history                                        # noqa: E402
 
 OUT = os.path.join(ROOT, "docs", "facilities")
 MANIFEST = os.path.join(ROOT, "snapshots", "cms-archive", "manifest.json")
@@ -170,7 +171,99 @@ def row_html(r, urls, today_name):
             % (r["date"], name, html.escape(r["kind"]), what, listed, status))
 
 
-def facility_page(ccn, history, urls, today, generated):
+STAR_NAMES = (("overall", "Overall"), ("inspection", "Inspection"), ("staffing", "Staffing"),
+              ("quality", "Quality measures"))
+#: CMS refreshes components quarterly, and in those editions a quarter to a
+#: third of all homes change overall rating; only an edition beyond even that
+#: is marked on a row. The first cut marked every edition over 15% and so
+#: marked nearly every row, which said nothing.
+QUARTERLY = 0.15
+EXCEPTIONAL = 0.40
+
+
+def _stars(value):
+    return value + "&#9733;" if value else '<span class="meta">not rated</span>'
+
+
+def _span(values):
+    rated = sorted({int(v) for v in values if v})
+    if not rated:
+        return _stars("")
+    if len(rated) == 1:
+        return _stars(str(rated[0]))
+    return "%d&ndash;%d&#9733;" % (rated[0], rated[-1])
+
+
+def _merge(runs, dates):
+    """Consecutive runs with the same overall rating, as one stretch."""
+    after = dict(zip(dates, dates[1:]))
+    out = []
+    for r in runs:
+        last = out[-1] if out else None
+        joined = last is not None and (not dates or after.get(last["to_edition"]) == r["from_edition"])
+        if joined and last["overall"] == r["overall"]:
+            last["to_edition"], last["in_latest"] = r["to_edition"], r["in_latest"]
+            last["parts"].append(r)
+        else:
+            out.append(dict(r, parts=[r]))
+    return out
+
+
+def _context(moved):
+    shares = sorted(v for v in moved.values() if v is not None)
+    quiet = [v for v in shares if v < QUARTERLY]
+    busy = [v for v in shares if v >= QUARTERLY]
+    if not quiet or not busy:
+        return ""
+    return (" In most editions about %.0f%% of rated homes change overall rating; in CMS's quarterly "
+            "refreshes %.0f&ndash;%.0f%% do, so a change landing in one of those is common."
+            % (100 * quiet[len(quiet) // 2], 100 * busy[len(busy) // 4], 100 * busy[3 * len(busy) // 4]))
+
+
+def ratings_section(runs, moved):
+    """Star ratings over time: one row per stretch of unchanged overall rating."""
+    if not runs:
+        return []
+    dates = sorted(moved)
+    if dates:
+        dates = sorted(set(dates) | {runs[0]["from_edition"]})
+    stretches = _merge(runs, dates)
+    rows = []
+    for r in reversed(stretches):
+        share = moved.get(r["from_edition"])
+        note = ""
+        if share is not None and share >= EXCEPTIONAL:
+            note = ('<br><span class="meta">%.0f%% of rated homes changed overall rating in this '
+                    'edition</span>' % (100 * share))
+        rows.append("<tr><td>%s to %s%s</td>%s</tr>" % (
+            r["from_edition"], "now" if r["in_latest"] == "yes" else r["to_edition"], note,
+            "".join('<td class="num">%s</td>' % _span([p[k] for p in r["parts"]]) for k, _ in STAR_NAMES)))
+    first, last = stretches[0], stretches[-1]
+    rated = [r for r in stretches if r["overall"]]
+    summary = ""
+    if rated:
+        changes = len(stretches) - 1
+        summary = ("<p>Overall rating in CMS's files: %s in %s, %s %s. Lowest %d, highest %d, "
+                   "across %d change%s.</p>" % (
+                       first["overall"] or "not rated", first["from_edition"][:7],
+                       last["overall"] or "not rated",
+                       "now" if last["in_latest"] == "yes" else "when last listed (%s)" % last["to_edition"],
+                       min(int(r["overall"]) for r in rated), max(int(r["overall"]) for r in rated),
+                       changes, "" if changes == 1 else "s"))
+    return [
+        "<h2>Star ratings over time</h2>",
+        summary,
+        "<p>Care Compare shows only today's rating. These are the ratings every monthly edition "
+        "since January 2019 carried, one row per stretch of the same overall rating; a component "
+        "that moved within a stretch is shown as a range. A rating moves when the home changes and "
+        "also when CMS recalculates, and nothing here says why a rating changed.%s</p>" % _context(moved),
+        '<div class="table-wrap"><table><thead><tr><th>Editions</th>%s</tr></thead><tbody>'
+        % "".join('<th class="num">%s</th>' % name for _, name in STAR_NAMES),
+        "\n".join(rows), "</tbody></table></div>",
+    ]
+
+
+def facility_page(ccn, history, urls, today, generated, ratings=None, moved=None):
     """One home's page. `history` is every archive row for the CCN."""
     rows = sorted(history, key=lambda r: (r["date"], r["kind"]), reverse=True)
     name, city, state = today["name"], today["city"], today["state"]
@@ -220,6 +313,9 @@ def facility_page(ccn, history, urls, today, generated):
         "<th>Listed by CMS</th><th>Now</th></tr></thead><tbody>",
         "\n".join(row_html(r, urls, name) for r in rows),
         "</tbody></table></div>",
+    ]
+    parts += ratings_section(ratings or [], moved or {})
+    parts += [
         "<h2>What this is, and what it is not</h2>",
         "<p>CMS publishes nursing-home penalties as a rolling three-year window. When a penalty "
         "turns three it leaves the current file, and Care Compare and the tools built on it stop "
@@ -336,6 +432,9 @@ def _write(path, text):
 
 def build(ccns=None, top=30, out=OUT, docs=DOCS, every=False):
     rows = findings.read_history()
+    ratings, moved = {}, {}
+    if os.path.isfile(ratings_history.HISTORY):
+        ratings, moved = ratings_history.read_history(), ratings_history.read_moved()
     capture = cms_ledger.load()
     by_ccn = collections.defaultdict(list)
     for r in rows:
@@ -352,7 +451,8 @@ def build(ccns=None, top=30, out=OUT, docs=DOCS, every=False):
         if today is None or not by_ccn[ccn]:
             raise SystemExit("%s: not in the current capture or the archive" % ccn)
         page = page_name(ccn, today["name"])
-        _write(os.path.join(out, page), facility_page(ccn, by_ccn[ccn], urls, today, edition))
+        _write(os.path.join(out, page), facility_page(ccn, by_ccn[ccn], urls, today, edition,
+                                                            ratings.get(ccn), moved))
         entries.append({"page": page, "name": today["name"], "city": today["city"],
                         "state": today["state"], "dollars": dollars.get(ccn, 0.0),
                         "dropped": sum(1 for r in by_ccn[ccn]

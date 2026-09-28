@@ -6,6 +6,10 @@ __pycache__/
 # redistribute. backfill_cms.py rebuilds this cache on demand.
 data/cms-archive/
 
+# The star-rating cache: six columns of each archived ProviderInfo file, rebuilt
+# by ratings_history.py from the same ZIPs.
+data/cms-ratings/
+
 # The unattended run's log. Local to whichever machine ran the task.
 snapshots/cms/.last_run.log
 

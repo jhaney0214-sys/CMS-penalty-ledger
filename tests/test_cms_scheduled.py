@@ -123,7 +123,7 @@ class TestRefreshHistory(unittest.TestCase):
         git = FakeGit()
         lines = cms_scheduled.refresh_history(
             self.cache, backfill=lambda: {"last_edition": "2026-10-02"},
-            pages=lambda: [{}] * 3, git=git)
+            pages=lambda: [{}] * 3, git=git, ratings=lambda: None)
         commit = [c for c in git.calls if c[0] == "commit"][0]
         self.assertEqual(commit[commit.index("--") + 1:], cms_scheduled.HISTORY_PATHS)
         self.assertIn("3 facility pages through edition 2026-10-02", commit[2])
@@ -135,7 +135,8 @@ class TestRefreshHistory(unittest.TestCase):
         def refuse():
             raise SystemExit("1 archive(s) failed; nothing written")
         git = FakeGit()
-        lines = cms_scheduled.refresh_history(self.cache, backfill=refuse, pages=lambda: [], git=git)
+        lines = cms_scheduled.refresh_history(self.cache, backfill=refuse, pages=lambda: [], git=git,
+                                             ratings=lambda: None)
         self.assertIn("NOT refreshed", lines[0])
         self.assertEqual(git.calls, [])
 
