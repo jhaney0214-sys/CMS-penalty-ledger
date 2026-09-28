@@ -87,6 +87,23 @@ class Choosing(unittest.TestCase):
         self.assertEqual(facility_pages.next_edition(dates, "2025-12-15"), "2025-12-31")
         self.assertIsNone(facility_pages.next_edition(dates, "2026-08-26"))
 
+    def test_an_edition_is_never_a_duplicate_or_a_zip_without_penalties(self):
+        import json
+        import tempfile
+        archives = [
+            {"archive_date": "2020-11-27", "archive": "u1", "member": "p.csv", "sha256": "a"},
+            {"archive_date": "2020-12-21", "archive": "u2", "member": "p.csv", "duplicate_of": "2020-11-27"},
+            {"archive_date": "2020-12-31", "archive": "u3", "member": None},
+            {"archive_date": "2021-01-27", "archive": "u4", "member": "p.csv", "sha256": "b"}]
+        with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False) as fh:
+            json.dump({"archives": archives}, fh)
+        try:
+            urls = facility_pages.editions(fh.name)
+        finally:
+            os.remove(fh.name)
+        self.assertEqual(urls, {"2020-11-27": "u1", "2021-01-27": "u4"})
+        self.assertEqual(facility_pages.next_edition(list(urls), "2020-11-27"), "2021-01-27")
+
     def test_a_name_reads_as_a_title(self):
         self.assertEqual(facility_pages.display("MORGANTOWN HEIGHTS OF JOURNEY"), "Morgantown Heights of Journey")
         self.assertEqual(facility_pages.display("THE VILLAGES AT LAPEER LLC"), "The Villages at Lapeer LLC")

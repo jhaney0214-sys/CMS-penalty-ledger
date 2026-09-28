@@ -100,6 +100,46 @@ class TestRepublish(unittest.TestCase):
         self.assertIn("not refreshed", lines[0])
 
 
+class TestRefreshHistory(unittest.TestCase):
+    """After a new capture the history and the facility pages follow it, but
+    never by filling an empty archive cache unattended."""
+
+    def setUp(self):
+        self.cache = tempfile.mkdtemp()
+
+    def tearDown(self):
+        shutil.rmtree(self.cache)
+
+    def test_no_cache_means_no_download_and_says_so(self):
+        called = []
+        lines = cms_scheduled.refresh_history(
+            self.cache, backfill=lambda: called.append(1), pages=lambda: [], git=FakeGit())
+        self.assertIn("NOT refreshed", lines[0])
+        self.assertIn("by hand", lines[0])
+        self.assertEqual(called, [])
+
+    def test_rebuilds_then_commits_history_and_pages_only(self):
+        open(os.path.join(self.cache, "listing.json"), "w").close()
+        git = FakeGit()
+        lines = cms_scheduled.refresh_history(
+            self.cache, backfill=lambda: {"last_edition": "2026-10-02"},
+            pages=lambda: [{}] * 3, git=git)
+        commit = [c for c in git.calls if c[0] == "commit"][0]
+        self.assertEqual(commit[commit.index("--") + 1:], cms_scheduled.HISTORY_PATHS)
+        self.assertIn("3 facility pages through edition 2026-10-02", commit[2])
+        self.assertIn("committed and pushed", lines[0])
+
+    def test_a_refused_backfill_commits_nothing(self):
+        open(os.path.join(self.cache, "listing.json"), "w").close()
+
+        def refuse():
+            raise SystemExit("1 archive(s) failed; nothing written")
+        git = FakeGit()
+        lines = cms_scheduled.refresh_history(self.cache, backfill=refuse, pages=lambda: [], git=git)
+        self.assertIn("NOT refreshed", lines[0])
+        self.assertEqual(git.calls, [])
+
+
 class TestLiveCheck(unittest.TestCase):
     """The page is uploaded by hand, so a pushed capture can leave it behind."""
 

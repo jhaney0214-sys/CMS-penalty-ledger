@@ -33,7 +33,9 @@ import urllib.request
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(HERE, "tools"))
 
+import backfill_cms  # noqa: E402
 import cms_export  # noqa: E402
+import facility_pages  # noqa: E402
 import snapshot_cms  # noqa: E402
 
 LOG = os.path.join(HERE, "snapshots", "cms", ".last_run.log")
@@ -62,16 +64,19 @@ def git(*args):
 
 
 def _commit(git, rel, message, what):
-    """Commit `rel` alone on main and push. Returns log lines; never raises."""
+    """Commit `rel` (a path, or a list of them) alone on main and push.
+    Returns log lines; never raises."""
+    paths = [rel] if isinstance(rel, str) else list(rel)
+    rel = " ".join(paths)
     code, branch = git("rev-parse", "--abbrev-ref", "HEAD")
     if code or branch != "main":
         return ["  %s NOT COMMITTED: repository is on %r, not main"
                 % (what, branch)]
-    code, out = git("add", "--", rel)
+    code, out = git("add", "--", *paths)
     if code:
         return ["  %s NOT COMMITTED: git add failed: %s" % (what, out)]
     # A pathspec on commit takes only that path, whatever else is staged.
-    code, out = git("commit", "-m", message, "--", rel)
+    code, out = git("commit", "-m", message, "--", *paths)
     if code:
         return ["  %s NOT COMMITTED: %s" % (what, out)]
     code, out = git("push", "-q", "origin", "main")
@@ -106,6 +111,38 @@ def republish(ledger=LEDGER, export=None, git=None):
                    "page data")
 
 
+#: What a history refresh commits: the rebuilt history and the pages built on it.
+HISTORY_PATHS = ("snapshots/cms-archive", "docs/facilities", "docs/sitemap.xml",
+                 "docs/robots.txt")
+
+
+def refresh_history(cache=None, backfill=None, pages=None, git=None):
+    """After a new capture, fold it into the penalty history and rebuild the
+    facility pages, then commit both. Added 2026-09-28: until then the pages
+    moved only when somebody ran backfill_cms.py by hand.
+
+    Only against an archive cache that already exists. Filling an empty one
+    fetches about 350 MB from CMS, which is a decision for a person, not for
+    a task that fires while nobody watches; with the cache in place a run
+    fetches the listing and any newly archived member, a few MB a month.
+    Returns log lines. Never raises."""
+    cache = cache or backfill_cms.CACHE
+    if not os.path.isfile(os.path.join(cache, "listing.json")):
+        return ["  history NOT refreshed: no archive cache at %s;"
+                " run tools/backfill_cms.py once by hand" % cache]
+    backfill = backfill or (lambda: backfill_cms.run(log=lambda *a: None)[0])
+    pages = pages or (lambda: facility_pages.build(every=True))
+    git = git or globals()["git"]
+    try:
+        summary = backfill()
+        entries = pages()
+    except (Exception, SystemExit) as error:                     # noqa: BLE001
+        return ["  history NOT refreshed: %s: %s" % (type(error).__name__, error)]
+    return _commit(git, list(HISTORY_PATHS),
+                   "History and %d facility pages through edition %s"
+                   % (len(entries), summary["last_edition"]), "history")
+
+
 def live_check(ledger=LEDGER, fetch=None):
     """(behind, log line): is the public page serving the repository's capture?
 
@@ -135,6 +172,7 @@ def main():
         if wrote:
             lines += commit_and_push(wrote)
             lines += republish()
+            lines += refresh_history()
         failed = any(r["status"] in ("fetch_failed", "unresolved")
                      for r in rows)
         code = 2 if failed else 0

@@ -35,9 +35,21 @@ home CMS inspects today with at least one fine its current file no longer
 shows, a page per state, and `docs/sitemap.xml` and `docs/robots.txt` so search
 engines can find them. It removes pages for homes that have left the set. A
 page names the edition it was built through, not the day, so rebuilding
-without a new edition changes nothing. The pages follow
-`penalties_history.csv.gz`, which only `backfill_cms.py` rewrites, so they are
-as current as the last backfill, not the last weekly capture.
+without a new edition changes nothing.
+
+**Since 2026-09-28 the weekly task keeps them current.** After a new capture it
+reruns `backfill_cms.py`, which now reads the weekly captures as editions beside
+CMS's archive (CMS archives an edition only once the next is out, and a
+capture's file is byte-identical to the archived one, so the pair counts once),
+then rebuilds the pages and commits both. It does this only when the local
+archive cache in `data/cms-archive/` exists: filling an empty one fetches about
+350 MB from CMS, which is run once by hand, never by the task.
+
+*"Not shown since" was wrong on 18,000 rows until 2026-09-28.* It named the next
+archive, and 13 archives are not editions: year-end ZIPs with no penalties file
+(14,882 rows) and re-archived copies of the edition before (3,050 rows, which
+still listed the penalty the page said was gone). It now names only distinct
+editions with a penalties file.
 
 One static page per home under `docs/facilities/`, listing every penalty in
 CMS's archive since 2019, including those the current file no longer shows.

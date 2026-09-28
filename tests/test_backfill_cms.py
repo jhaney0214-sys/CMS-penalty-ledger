@@ -213,6 +213,39 @@ class TestBuild(unittest.TestCase):
         self.assertEqual(len(editions), 1)
         self.assertEqual(manifest[1]["duplicate_of"], "2020-11-21")
 
+    def test_a_capture_the_archive_already_holds_is_counted_once_and_keeps_cms_link(self):
+        import gzip
+        import shutil
+        import tempfile
+        raw = (ERA_NOW + rownow("1", "2025-01-01", "900", "7")).encode()
+        root = tempfile.mkdtemp()
+        try:
+            os.makedirs(os.path.join(root, "2026-09-18"))
+            with gzip.open(os.path.join(root, "2026-09-18", "penalties.csv.gz"), "wb") as fh:
+                fh.write(raw)
+            caps = bf.captured(root)
+        finally:
+            shutil.rmtree(root)
+        self.assertEqual(caps[0][0]["date"], "2026-09-18")
+        self.assertTrue(caps[0][0]["link"].endswith("snapshots/cms/2026-09-18/penalties.csv.gz"))
+        manifest, editions, _ = bf.build(
+            [(self.entry("2026-08-26"), "NH_Penalties_Aug2026.csv", raw, "cache")] + caps)
+        self.assertEqual(len(editions), 1)
+        self.assertEqual(manifest[0]["archive"], "https://data.cms.gov/x/2026-08-26.zip")
+        self.assertEqual(manifest[1]["duplicate_of"], "2026-08-26")
+
+    def test_a_new_capture_is_the_latest_edition(self):
+        old = (ERA_NOW + rownow("1", "2023-01-01", "900", "7")).encode()
+        new = (ERA_NOW + rownow("1", "2026-09-01", "50", "8")).encode()
+        cap = ({"date": "2026-10-02", "id": "capture", "name": "c", "link": "gh"},
+               "penalties.csv.gz", new, "capture")
+        manifest, editions, _ = bf.build(
+            [(self.entry("2026-08-26"), "NH_Penalties_Aug2026.csv", old, "cache"), cap])
+        pens, _, _ = bf.link_restatements(bf.build_history(editions))
+        latest = {p["date"]: p["in_latest"] for p in pens}
+        self.assertEqual(latest, {"2023-01-01": False, "2026-09-01": True})
+        self.assertEqual(manifest[1]["archive"], "gh")
+
     def test_a_failed_archive_is_named(self):
         _, _, failed = bf.build([(self.entry("2021-01-27"), None, None,
                                   "FAILED: IOError: reset")])

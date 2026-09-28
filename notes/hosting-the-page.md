@@ -65,3 +65,10 @@ workstation root, and would have failed on its next run otherwise.
 It captures, commits and pushes the capture, re-exports `docs/data` and
 commits and pushes that: two commits against one repository, each taking only
 its own path. The second push rebuilds the page.
+
+Since 2026-09-28 a third follows a new capture: `refresh_history` reruns the
+backfill with the captures included, rebuilds every facility page, and commits
+`snapshots/cms-archive`, `docs/facilities`, `docs/sitemap.xml` and
+`docs/robots.txt` together. It logs `history NOT refreshed` and does nothing
+when `data/cms-archive/listing.json` is missing, because filling that cache is
+a 350 MB fetch a person should start.

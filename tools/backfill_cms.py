@@ -78,6 +78,9 @@ import zlib
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(HERE, "snapshots", "cms-archive")
 CACHE = os.path.join(HERE, "data", "cms-archive")
+SNAPSHOTS = os.path.join(HERE, "snapshots", "cms")
+#: Where a capture's file can be read by anyone checking a page's citation.
+REPO_FILES = "https://github.com/jhaney0214-sys/cms-penalty-ledger/blob/main/"
 
 BASE = "https://data.cms.gov"
 LISTING = (BASE + "/provider-data/api/1/archive/aggregate/theme/"
@@ -408,6 +411,29 @@ def _cached(e):
     return os.path.join(CACHE, hits[0]) if hits else None
 
 
+def captured(root=SNAPSHOTS):
+    """The weekly captures' penalties files, as editions beside the archive's.
+
+    CMS archives an edition only once the next one is out, so the archive
+    alone runs a month behind what the weekly task already holds. A capture's
+    file is byte-identical to the archived member (sha256 3683f1de... for
+    August 2026), so `build` counts the pair once, and an archive dated the
+    same day sorts first and keeps its CMS link. Added 2026-09-28."""
+    out = []
+    if not os.path.isdir(root):
+        return out
+    for date in sorted(os.listdir(root)):
+        path = os.path.join(root, date, "penalties.csv.gz")
+        if not os.path.isfile(path):
+            continue
+        with gzip.open(path, "rb") as fh:
+            raw = fh.read()
+        entry = {"date": date, "id": "capture", "name": "Weekly capture (%s)" % date,
+                 "link": REPO_FILES + "snapshots/cms/%s/penalties.csv.gz" % date}
+        out.append((entry, "penalties.csv.gz", raw, "capture"))
+    return out
+
+
 def fetch_all(offline=False, fetch=http_range, log=print):
     """[(archive entry, member name or None, raw bytes or None, note)]."""
     saved = os.path.join(CACHE, "listing.json")
@@ -424,7 +450,10 @@ def fetch_all(offline=False, fetch=http_range, log=print):
     for e in entries:
         url = BASE + e["url"]
         hit = _cached(e)
-        if offline:
+        # A cached member is used without asking CMS again, online or not:
+        # an archived edition does not change, and the weekly task should
+        # cost CMS one listing request, not ninety-seven directory reads.
+        if offline or hit is not None:
             if hit is None:
                 out.append((e, None, None, "FAILED: not cached"))
             elif hit.endswith("__" + NONE_MARKER):
@@ -463,7 +492,7 @@ def fetch_all(offline=False, fetch=http_range, log=print):
 def build(fetched):
     manifest, editions, seen = [], [], {}
     for e, member, raw, note in fetched:
-        row = {"archive_date": e["date"], "archive": BASE + e["url"],
+        row = {"archive_date": e["date"], "archive": e.get("link") or BASE + e["url"],
                "archive_name": e["name"], "member": member, "note": note}
         if raw is None:
             manifest.append(row)
@@ -489,8 +518,13 @@ def build(fetched):
     return manifest, editions, failed
 
 
-def run(offline=False, log=print):
+def run(offline=False, log=print, captures=True):
     fetched = fetch_all(offline=offline, log=log)
+    if captures:
+        # Archive before capture on the same date, so the pair's surviving
+        # link is CMS's own.
+        fetched = sorted(fetched + captured(),
+                         key=lambda t: (t[0]["date"], t[0].get("id") == "capture"))
     manifest, editions, failed = build(fetched)
     if failed:
         # Refuse to write a history with a hole in it; the hole would read

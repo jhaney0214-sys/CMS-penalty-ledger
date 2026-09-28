@@ -54,10 +54,18 @@ FACILITY_FILE = re.compile(r"^[0-9A-Z]{6}-[a-z0-9-]*\.html$")
 
 
 def editions(path=MANIFEST):
-    """{archive date: the CMS URL of that edition's ZIP}, oldest first."""
+    """{edition date: where its file can be read}, oldest first: only the
+    archives that are editions in their own right.
+
+    Until 2026-09-28 this took every archive in the manifest, so "Not shown
+    since" could name a year-end ZIP with no penalties file (14,882 rows) or a
+    re-archived copy of the edition before it, which still listed the penalty
+    (3,050 rows: a false sentence). A duplicate or a ZIP without the member is
+    not an edition a penalty can be missing from."""
     with open(path, encoding="utf-8") as handle:
         manifest = json.load(handle)
-    return dict(sorted((a["archive_date"], a["archive"]) for a in manifest["archives"]))
+    return dict(sorted((a["archive_date"], a["archive"]) for a in manifest["archives"]
+                       if a.get("member") and not a.get("duplicate_of")))
 
 
 def next_edition(dates, after):
