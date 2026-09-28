@@ -91,6 +91,37 @@ class Choosing(unittest.TestCase):
         self.assertEqual(facility_pages.display("MORGANTOWN HEIGHTS OF JOURNEY"), "Morgantown Heights of Journey")
         self.assertEqual(facility_pages.display("THE VILLAGES AT LAPEER LLC"), "The Villages at Lapeer LLC")
 
+    def test_all_means_every_home_with_a_dropped_fine_and_no_other(self):
+        rows = [row(ccn="1", amount="500"), row(ccn="2", amount="900", in_latest="yes"),
+                row(ccn="3", kind="Payment Denial", amount=""), row(ccn="4", amount="70")]
+        self.assertEqual(facility_pages.choose(rows, {"1", "2", "3", "4"}, None), ["1", "4"])
+
+    def test_a_page_carries_its_edition_not_the_build_day(self):
+        text = facility_pages.facility_page("105407", [row()], URLS, TODAY, "2030-01-01")
+        self.assertIn("through the 2026-08-26 edition", text)
+        self.assertNotIn("2030-01-01", text)
+
+    def test_a_page_links_its_state_and_names_its_clean_url(self):
+        text = facility_pages.facility_page("105407", [row()], URLS, TODAY, "2026-09-27")
+        self.assertIn('<a href="state-fl.html">FL</a>', text)
+        self.assertIn('<link rel="canonical" href="https://penalty-ledger.pages.dev/facilities/'
+                      '105407-siesta-key-health-and-rehabilitation-center">', text)
+
+    def test_the_sitemap_lists_clean_urls_dated_to_the_edition(self):
+        text = facility_pages.sitemap(["", "state-fl.html", "105407-siesta-key.html"], "2026-08-26")
+        self.assertIn("<loc>https://penalty-ledger.pages.dev/</loc>", text)
+        self.assertIn("<loc>https://penalty-ledger.pages.dev/facilities/105407-siesta-key</loc>", text)
+        self.assertIn("<loc>https://penalty-ledger.pages.dev/facilities/state-fl</loc>", text)
+        self.assertEqual(text.count("<lastmod>2026-08-26</lastmod>"), 4)
+        self.assertNotIn(".html", text)
+
+    def test_a_state_index_ranks_largest_first(self):
+        entries = [{"page": "a.html", "name": "A", "city": "X", "state": "FL", "dollars": 10.0, "dropped": 1},
+                   {"page": "b.html", "name": "B", "city": "X", "state": "FL", "dollars": 99.0, "dropped": 2}]
+        text = facility_pages.state_index("FL", entries, "2026-08-26")
+        self.assertLess(text.index('href="b.html"'), text.index('href="a.html"'))
+        self.assertIn("largest first: 2.", text)
+
     def test_a_page_name_is_stable_and_safe(self):
         self.assertEqual(facility_pages.page_name("105407", "Siesta Key Health & Rehab, LLC"),
                          "105407-siesta-key-health-rehab-llc.html")

@@ -6,8 +6,15 @@ archived edition that published it.
     python tools/facility_pages.py              # the 30 homes with the most in dropped fines
     python tools/facility_pages.py --top 50
     python tools/facility_pages.py --ccn 105407 --ccn 015411
+    python tools/facility_pages.py --all        # every inspected home with a dropped fine
 
-Writes docs/facilities/<ccn>-<name>.html and docs/facilities/index.html.
+Writes docs/facilities/<ccn>-<name>.html, docs/facilities/index.html and one
+page per state; with --all, also docs/sitemap.xml and docs/robots.txt, and it
+removes pages for homes no longer in the set.
+
+Widened to --all on 2026-09-28: a lawyer searches for one defendant, so thirty
+pages could not show whether anyone looks. A page carries the edition it was
+built through, not the day, so a rebuild with no new edition changes nothing.
 
 Written 2026-09-27 as a demand test: whether people looking up a home, and
 the lawyers who sue them, find and read a complete history. Two things set it
@@ -41,6 +48,9 @@ import findings                                               # noqa: E402
 OUT = os.path.join(ROOT, "docs", "facilities")
 MANIFEST = os.path.join(ROOT, "snapshots", "cms-archive", "manifest.json")
 MAIN_PAGE = os.path.join(ROOT, "docs", "index.html")
+DOCS = os.path.join(ROOT, "docs")
+SITE = "https://penalty-ledger.pages.dev"
+FACILITY_FILE = re.compile(r"^[0-9A-Z]{6}-[a-z0-9-]*\.html$")
 
 
 def editions(path=MANIFEST):
@@ -97,10 +107,12 @@ def dropped_fine_dollars(rows):
 
 
 def choose(rows, surveyed, top):
-    """The homes CMS inspects today with the most in dropped fines."""
+    """The homes CMS inspects today with the most in dropped fines; all of
+    them when `top` is None."""
     dollars = dropped_fine_dollars(rows)
-    ranked = sorted((c for c in dollars if c in surveyed), key=lambda c: (-dollars[c], c))
-    return ranked[:top]
+    ranked = sorted((c for c in dollars if c in surveyed and dollars[c] > 0),
+                    key=lambda c: (-dollars[c], c))
+    return ranked if top is None else ranked[:top]
 
 
 def style():
@@ -177,9 +189,11 @@ def facility_page(ccn, history, urls, today, generated):
         '<meta name="viewport" content="width=device-width, initial-scale=1">',
         "<title>%s: every CMS penalty since %s</title>" % (html.escape(title), earliest[:4]),
         '<meta name="description" content="%s">' % html.escape(summary),
-        "<style>%s\n.meta{font-size:.85em;color:var(--ink-muted);}</style>" % style(),
+        '<link rel="stylesheet" href="style.css">',
+        '<link rel="canonical" href="%s/facilities/%s">' % (SITE, page_name(ccn, name)[:-5]),
         '</head><body><main class="page">',
-        '<p class="meta"><a href="../">Nursing Home Penalty Ledger</a> &rsaquo; <a href="./">Homes</a></p>',
+        '<p class="meta"><a href="../">Nursing Home Penalty Ledger</a> &rsaquo; <a href="./">Homes</a>'
+        ' &rsaquo; <a href="%s">%s</a></p>' % (state_page(state), state),
         "<h1>%s</h1>" % html.escape(display(name)),
         "<p>%s, %s &middot; CMS certification number %s</p>" % (html.escape(display(city)), state, ccn),
         "<p>%s</p>" % html.escape(summary, quote=False),
@@ -210,68 +224,145 @@ def facility_page(ccn, history, urls, today, generated):
         "corrections are all possible. Amounts are as CMS published them. Payment denials are counted "
         "in days, not dollars. This page states records; it is not legal advice and makes no finding "
         "about the care this home provides.</p>",
-        '<p class="meta">Built %s from CMS\'s archive through the %s edition by '
+        '<p class="meta">Built from CMS\'s archive through the %s edition by '
         '<code>tools/facility_pages.py</code> in <a href="https://github.com/jhaney0214-sys/cms-penalty-ledger">'
         "cms-penalty-ledger</a>. Data: Centers for Medicare &amp; Medicaid Services, Provider Data "
-        "Catalog, public domain.</p>" % (generated, list(urls)[-1]),
+        "Catalog, public domain.</p>" % list(urls)[-1],
         "</main></body></html>",
     ]
     return "\n".join(parts) + "\n"
 
 
-def index_page(entries, generated):
+def state_page(state):
+    return "state-%s.html" % state.lower()
+
+
+def _head(title, description, canonical):
+    return [
+        "<!DOCTYPE html>",
+        '<html lang="en"><head><meta charset="utf-8">',
+        '<meta name="viewport" content="width=device-width, initial-scale=1">',
+        "<title>%s</title>" % html.escape(title),
+        '<meta name="description" content="%s">' % html.escape(description),
+        '<link rel="stylesheet" href="style.css">',
+        '<link rel="canonical" href="%s/facilities/%s">' % (SITE, canonical),
+        '</head><body><main class="page">',
+    ]
+
+
+def _table(entries):
     rows = "\n".join(
         '<tr><td><a href="%s">%s</a></td><td>%s, %s</td><td class="num">%d</td><td class="num">%s</td></tr>'
         % (html.escape(e["page"]), html.escape(display(e["name"])), html.escape(display(e["city"])),
            e["state"], e["dropped"], money(e["dollars"])) for e in entries)
-    return "\n".join([
-        "<!DOCTYPE html>",
-        '<html lang="en"><head><meta charset="utf-8">',
-        '<meta name="viewport" content="width=device-width, initial-scale=1">',
-        "<title>Nursing homes with the largest fines CMS no longer shows</title>",
-        '<meta name="description" content="Full CMS penalty histories, including fines older than '
-        'the three years Care Compare shows, for the homes with the most in dropped fines.">',
-        "<style>%s\n.meta{font-size:.85em;color:var(--ink-muted);}</style>" % style(),
-        '</head><body><main class="page">',
+    return ['<div class="table-wrap"><table><thead><tr><th>Home</th><th>Where</th>'
+            '<th class="num">Fines no longer shown</th><th class="num">Total</th></tr></thead><tbody>',
+            rows, "</tbody></table></div>"]
+
+
+def _count(n):
+    return "{:,}".format(n)
+
+
+def index_page(entries, edition, top=100):
+    ranked = sorted(entries, key=lambda e: (-e["dollars"], e["page"]))
+    states = collections.Counter(e["state"] for e in entries)
+    parts = _head("Nursing homes with the largest fines CMS no longer shows",
+                  "Full CMS penalty histories, including fines older than the three years Care "
+                  "Compare shows, for %s nursing homes." % _count(len(entries)), "")
+    parts += [
         '<p class="meta"><a href="../">Nursing Home Penalty Ledger</a></p>',
-        "<h1>The largest fines CMS no longer shows</h1>",
-        "<p>Nursing homes CMS inspects today, ranked by the fines its current file has dropped. "
-        "Each page lists every penalty in CMS's archive since 2019, with the edition that "
-        "published it.</p>",
-        '<div class="table-wrap"><table><thead><tr><th>Home</th><th>Where</th>'
-        '<th class="num">Fines no longer shown</th><th class="num">Total</th></tr></thead><tbody>',
-        rows, "</tbody></table></div>",
-        '<p class="meta">Built %s by <code>tools/facility_pages.py</code>. Data: CMS, public domain.</p>'
-        % generated,
-        "</main></body></html>",
-    ]) + "\n"
+        "<h1>The fines CMS no longer shows</h1>",
+        "<p>%s nursing home%s CMS inspects today ha%s fines its current file has dropped. Each "
+        "page lists every penalty in CMS's archive since 2019, with the edition that published "
+        "it.</p>" % (_count(len(entries)), "" if len(entries) == 1 else "s",
+                     "s" if len(entries) == 1 else "ve"),
+        "<h2>By state</h2>",
+        "<p>%s</p>" % " &middot; ".join('<a href="%s">%s</a> (%s)' % (state_page(st), st, _count(n))
+                                        for st, n in sorted(states.items())),
+    ]
+    if len(ranked) > top:
+        parts.append("<h2>The %d largest</h2>" % top)
+    parts += _table(ranked[:top])
+    parts += ['<p class="meta">Built from CMS\'s archive through the %s edition by '
+              '<code>tools/facility_pages.py</code>. Data: CMS, public domain.</p>' % edition,
+              "</main></body></html>"]
+    return "\n".join(parts) + "\n"
 
 
-def build(ccns=None, top=30, out=OUT, generated=None):
-    generated = generated or datetime.date.today().isoformat()
+def state_index(state, entries, edition):
+    ranked = sorted(entries, key=lambda e: (-e["dollars"], e["page"]))
+    parts = _head("%s nursing homes: fines CMS no longer shows" % state,
+                  "Full CMS penalty histories for %s nursing homes in %s, including fines older "
+                  "than the three years Care Compare shows." % (_count(len(entries)), state),
+                  state_page(state)[:-5])
+    parts += [
+        '<p class="meta"><a href="../">Nursing Home Penalty Ledger</a> &rsaquo; <a href="./">Homes</a></p>',
+        "<h1>%s: fines CMS no longer shows</h1>" % state,
+        "<p>Nursing homes in %s that CMS inspects today with fines its current file has dropped, "
+        "largest first: %s.</p>" % (state, _count(len(entries))),
+    ]
+    parts += _table(ranked)
+    parts += ['<p class="meta">Built from CMS\'s archive through the %s edition. Data: CMS, public '
+              'domain.</p>' % edition, "</main></body></html>"]
+    return "\n".join(parts) + "\n"
+
+
+def sitemap(pages, edition):
+    """Clean URLs, as Cloudflare Pages serves them: /x.html redirects to /x."""
+    urls = ["%s/" % SITE] + ["%s/facilities/%s" % (SITE, p[:-5] if p.endswith(".html") else p)
+                             for p in pages]
+    body = "\n".join("<url><loc>%s</loc><lastmod>%s</lastmod></url>" % (html.escape(u), edition)
+                     for u in urls)
+    return ('<?xml version="1.0" encoding="UTF-8"?>\n'
+            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n%s\n</urlset>\n' % body)
+
+
+ROBOTS = "User-agent: *\nAllow: /\n\nSitemap: %s/sitemap.xml\n" % SITE
+
+
+def _write(path, text):
+    with open(path, "w", encoding="utf-8", newline="\n") as handle:
+        handle.write(text)
+
+
+def build(ccns=None, top=30, out=OUT, docs=DOCS, every=False):
     rows = findings.read_history()
     capture = cms_ledger.load()
     by_ccn = collections.defaultdict(list)
     for r in rows:
         by_ccn[r["ccn"]].append(r)
-    chosen = ccns or choose(rows, capture.facilities(), top)
+    chosen = ccns or choose(rows, capture.facilities(), None if every else top)
     urls = editions()
+    edition = list(urls)[-1]
     dollars = dropped_fine_dollars(rows)
     os.makedirs(out, exist_ok=True)
+    _write(os.path.join(out, "style.css"), style() + "\n.meta{font-size:.85em;color:var(--ink-muted);}\n")
     entries = []
     for ccn in chosen:
         today = cms_ledger.facility(capture, ccn)
         if today is None or not by_ccn[ccn]:
             raise SystemExit("%s: not in the current capture or the archive" % ccn)
         page = page_name(ccn, today["name"])
-        with open(os.path.join(out, page), "w", encoding="utf-8", newline="\n") as handle:
-            handle.write(facility_page(ccn, by_ccn[ccn], urls, today, generated))
+        _write(os.path.join(out, page), facility_page(ccn, by_ccn[ccn], urls, today, edition))
         entries.append({"page": page, "name": today["name"], "city": today["city"],
                         "state": today["state"], "dollars": dollars.get(ccn, 0.0),
                         "dropped": sum(1 for r in by_ccn[ccn]
                                        if r["in_latest"] == "no" and r["kind"] == "Fine")})
-    with open(os.path.join(out, "index.html"), "w", encoding="utf-8", newline="\n") as handle:
-        handle.write(index_page(entries, generated))
+    _write(os.path.join(out, "index.html"), index_page(entries, edition))
+    by_state = collections.defaultdict(list)
+    for e in entries:
+        by_state[e["state"]].append(e)
+    for state, group in by_state.items():
+        _write(os.path.join(out, state_page(state)), state_index(state, group, edition))
+    if every:
+        keep = {e["page"] for e in entries} | {state_page(s) for s in by_state}
+        for name in os.listdir(out):
+            if name not in keep and (FACILITY_FILE.match(name) or name.startswith("state-")):
+                os.remove(os.path.join(out, name))
+        pages = [""] + sorted(state_page(s) for s in by_state) + sorted(e["page"] for e in entries)
+        _write(os.path.join(docs, "sitemap.xml"), sitemap(pages, edition))
+        _write(os.path.join(docs, "robots.txt"), ROBOTS)
     return entries
 
 
@@ -279,9 +370,11 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--top", type=int, default=30)
     parser.add_argument("--ccn", action="append", help="build these homes instead of the top list")
+    parser.add_argument("--all", action="store_true",
+                        help="every inspected home with a dropped fine, plus sitemap.xml and robots.txt")
     args = parser.parse_args(argv)
     ccns = [cms_ledger.normalise_ccn(c) for c in args.ccn] if args.ccn else None
-    entries = build(ccns, args.top)
+    entries = build(ccns, args.top, every=args.all and not ccns)
     print("%d pages -> %s" % (len(entries), os.path.relpath(OUT, ROOT)))
     for e in entries[:5]:
         print("  %-50s %s" % (e["name"][:50], money(e["dollars"])))

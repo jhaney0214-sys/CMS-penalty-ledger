@@ -25,9 +25,19 @@ Then open `http://127.0.0.1:8765/`. The page supports these links:
 ## Facility pages
 
 ```bash
-python tools/facility_pages.py              # the 30 homes with the most in dropped fines
+python tools/facility_pages.py --all        # every inspected home with a dropped fine
+python tools/facility_pages.py              # the 30 with the most in dropped fines
 python tools/facility_pages.py --ccn 105407 # or named homes
 ```
+
+`--all` is what the live site carries since 2026-09-28: 12,373 pages, one per
+home CMS inspects today with at least one fine its current file no longer
+shows, a page per state, and `docs/sitemap.xml` and `docs/robots.txt` so search
+engines can find them. It removes pages for homes that have left the set. A
+page names the edition it was built through, not the day, so rebuilding
+without a new edition changes nothing. The pages follow
+`penalties_history.csv.gz`, which only `backfill_cms.py` rewrites, so they are
+as current as the last backfill, not the last weekly capture.
 
 One static page per home under `docs/facilities/`, listing every penalty in
 CMS's archive since 2019, including those the current file no longer shows.
@@ -83,10 +93,10 @@ The exporter computes everything through `tools/cms_ledger.py`, the command-line
 ## Tests
 
 ```bash
-python -m unittest discover -s tests     # 88 tests
+python -m unittest discover -s tests     # 107 tests
 ```
 
-**88 tests: 69 over the engine, 4 over the article's figures, 8 driving the page, 7 over the unattended run.**
+**107 tests: 69 over the engine, 4 over the article's figures, 8 driving the page, 10 over the unattended run, 16 over the facility pages.** *(This line said 88 until 2026-09-28; the facility pages' tests and three for the unattended run had landed without it.)*
 All 84 are in this repository as of 2026-09-19; 76 of them used to be in the
 workstation, which meant a clone could run 8.
 
