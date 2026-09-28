@@ -55,6 +55,20 @@ inspection cycles. **Check the dropped-penalty block specifically**: it is the
 thing no other consumer tool shows, so it is the thing worth proving still
 renders.
 
+**Comparing against `cms_ledger.py` checks only what `cms_ledger.py` prints.**
+Found 2026-09-28: the check above was run on Magnolia Ridge and passed, and
+the same page's "Not shown since" date for its $9,168 fine named 2021-12-31, a
+year-end ZIP with no penalties file. That column, the facility pages' star
+ratings, and the per-state ranking are computed in `facility_pages.py` alone;
+the command line prints none of them, so no page-against-engine read can catch
+them. 17,932 rows were wrong that way (3,050 of them false, naming a
+re-archived copy that still listed the penalty) until `editions()` was limited
+to distinct editions with a penalties file, with a test. For those columns
+the reference is `snapshots/cms-archive/manifest.json` and
+`snapshots/cms-ratings/`: check that a "Not shown since" date is an edition
+with a `member` and no `duplicate_of`, and read one home's rating runs from
+`ratings_history.read_history()` against its page.
+
 ## The weekly capture
 
 Windows task *CMS nursing-home capture*, weekly, running
