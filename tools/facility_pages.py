@@ -331,7 +331,9 @@ def facility_page(ccn, history, urls, today, generated, ratings=None, moved=None
         '<p class="meta">Built from CMS\'s archive through the %s edition by '
         '<code>tools/facility_pages.py</code> in <a href="https://github.com/jhaney0214-sys/cms-penalty-ledger">'
         "cms-penalty-ledger</a>. Data: Centers for Medicare &amp; Medicaid Services, Provider Data "
-        "Catalog, public domain.</p>" % list(urls)[-1],
+        "Catalog, public domain. Found an error? Open an issue at "
+        '<a href="https://github.com/jhaney0214-sys/cms-penalty-ledger/issues">the repository</a>; '
+        "every row is checked against the CMS edition it cites and corrected there.</p>" % list(urls)[-1],
         "</main></body></html>",
     ]
     return "\n".join(parts) + "\n"
