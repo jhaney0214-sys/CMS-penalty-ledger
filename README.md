@@ -172,6 +172,7 @@ Not tagged for production. Making this repository public would run through
 | Statements about named homes | Every penalty links the CMS edition that published it; amounts are as CMS published them; early removals are marked with appeals and settlements named as possible; each page says it makes no finding about care | - | Checked, no change |
 | Corrections | No way to report an error on a site that names businesses | fix | Added to all 12,373 facility pages and the main page: open an issue, corrected against the cited edition (`418f797`) |
 | Rendering | Archive text reaches the page through `esc()` | - | Checked |
+| Headers | No content security policy | low | Fixed (`6fb9118`): `_headers` allows the one inline script by hash, pinned by a test; preview checked in a browser (archive loads, search answers, console clean), then live |
 | Leak audit | 313 hits for "Huntsville", all facility addresses in the national data, public since 2026-09-27 | note | Accepted: data, not a personal leak |
 
 This review is not legal advice.
