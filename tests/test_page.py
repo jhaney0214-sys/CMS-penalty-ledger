@@ -137,3 +137,20 @@ class TestPage(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestContentSecurityPolicy(unittest.TestCase):
+    """docs/_headers allows index.html's inline script by its hash. Edit the
+    script without updating the hash and the live search stops working, with
+    no error anywhere but the visitor's browser console (2026-10-03)."""
+
+    def test_every_inline_script_is_allowed_by_its_hash(self):
+        import base64
+        import hashlib
+        import re
+        headers = (DOCS / "_headers").read_text(encoding="utf-8")
+        for page in [DOCS / "index.html"] + sorted((DOCS / "facilities").glob("*.html"))[:50]:
+            for block in re.findall(rb"<script>(.*?)</script>", page.read_bytes(), re.S):
+                digest = base64.b64encode(hashlib.sha256(block).digest()).decode()
+                self.assertIn("'sha256-%s'" % digest, headers,
+                              "%s: an inline script changed; update its hash in docs/_headers" % page.name)
